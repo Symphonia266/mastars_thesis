@@ -1,0 +1,87 @@
+% paper-layout.sty
+\NeedsTeXFormat{pLaTeX2e}
+\ProvidesPackage{paper-layout}
+
+% =====================
+% Page layout
+% =====================
+
+% paper-layout.sty
+\NeedsTeXFormat{pLaTeX2e}
+\ProvidesPackage{paper-layout}
+
+% =====================
+% Paper dimensions
+% =====================
+
+\ifnum\value{@paper}=1
+  \setlength\paperheight{297mm}
+  \setlength\paperwidth {210mm}
+\fi
+
+\ifnum\value{@paper}=2
+  \setlength\paperheight{210mm}
+  \setlength\paperwidth {148mm}
+\fi
+
+\ifnum\value{@paper}=3
+  \setlength\paperheight{364mm}
+  \setlength\paperwidth {257mm}
+\fi
+
+\ifnum\value{@paper}=4
+  \setlength\paperheight{257mm}
+  \setlength\paperwidth {182mm}
+\fi
+
+\if@twocolumn
+  \setlength\leftmargini {2em}
+\else
+  \setlength\leftmargini {2.5em}
+\fi
+\setlength\leftmarginii  {2.2em}
+\setlength\leftmarginiii {1.87em}
+\setlength\leftmarginiv  {1.7em}
+\if@twocolumn
+  \setlength\leftmarginv {.5em}
+  \setlength\leftmarginvi{.5em}
+\else
+  \setlength\leftmarginv {1em}
+  \setlength\leftmarginvi{1em}
+\fi
+\setlength  \labelsep  {.5em}
+\setlength  \labelwidth{\leftmargini}
+
+\newlength\abovecaptionskip
+\newlength\belowcaptionskip
+\setlength\abovecaptionskip{10\p@}
+\setlength\belowcaptionskip{0\p@}
+
+\setlength\arraycolsep{5\p@}
+\setlength\tabcolsep{6\p@}
+\setlength\arrayrulewidth{.4\p@}
+\setlength\doublerulesep{2\p@}
+\setlength\tabbingsep{\labelsep}
+\skip\@mpfootins = \skip\footins
+\setlength\fboxsep{3\p@}
+\setlength\fboxrule{.4\p@}
+\@addtoreset{equation}{chapter}
+
+\setlength\toclineskip{\z@}
+\setlength\bibindent{1.5em}
+
+%
+% ku-paper A4 size
+%
+\setlength{\topmargin}{0.3cm}      % 1.7 -> 0.3
+\setlength{\headsep}{5mm}          % 5 -> 5
+\setlength{\oddsidemargin}{0.6cm}  % 1.2 -> 0.6
+\setlength{\evensidemargin}{0.6cm} % 1.2 -> 0.6
+\setlength{\textheight}{23.3cm}    % 21 -> 23.3
+\setlength{\textwidth}{14.8cm}     % 15 -> 14.8
+
+%
+% page style
+%
+\pagestyle{headings}
+\setlength{\parindent}{1zw}

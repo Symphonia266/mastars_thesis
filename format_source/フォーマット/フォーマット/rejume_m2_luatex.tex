@@ -1,0 +1,88 @@
+% -*- coding: utf-8 -*-
+\documentclass[a4paper]{ltjsarticle}
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+\setmainjfont{Noto Sans CJK JP} % 環境に合わせてフォントを調整する必要あり
+
+\usepackage{eecspresen_m2_mo}
+\usepackage{graphicx}
+
+\No{○-○}
+\Jtitle{発表会予稿の書き方に関する研究}
+\Etitle{A Study of How to Prepare the Manuscript}
+\Author{00000000___都立_太郎_______________指導教官__都立_花子_教授}
+\presenyear{2025}
+\presendate{2026年2月12日,13日}
+\master   % 修士論文発表会の場合
+%\bachelor % 特別研究発表会の場合
+
+\begin{document}
+\mktitle
+%
+\renewcommand{\baselinestretch}{1.1}\small
+%
+\section{はじめに}
+この文章は，{\tt eecspresen\_m2\_mo.sty}（日野CP用) の使用法を説明しています．
+以下の説明を読み，フォーマットに関しては間違いのない予稿を作成してください．
+
+和文で修論を書く場合，英文タイトルは任意です。
+
+\section{設定が必要なマクロ}
+
+本文の前に以下のマクロの記述をする必要があります．
+\newcommand{\tbs}{\textbackslash}
+\newcommand{\macrocom}[1]{{\tt \textbackslash#1}}
+
+\begin{quote}
+\macrocom{No}\{○-○\}\\
+\macrocom{Jtitle}\{発表会予稿の書き方に関する研究\}\\
+\macrocom{Etitle}\{A Study of How to Prepare the Manuscript\}\\
+\macrocom{Author}\{00000000\_\_\_都立\_太郎\_\_\_指導教官\_\_都立\_花子\_教授\}\\
+\macrocom{presenyear}\{2022\}\\
+\macrocom{presendate}\{2022年2月8,~9日\}\\%
+\macrocom{master}   \% 修士論文発表会の場合\\
+\macrocom{bachelor} \% 特別研究発表会の場合
+\end{quote}
+
+\macrocom{No} は発表番号を設定します．
+\macrocom{Jtitle} および \macrocom{Etitle} は日本語と英語の
+論文名をそれぞれ設定します．本文を英語で書く場合でも両方を設定
+してください．
+
+\macrocom{Author} は氏名および指導教官を設定します．学習番号，氏名，指導教官の順で
+記述します．また `\_' はスペースを表しますので，必要な数を挿入し調整します．
+
+\macrocom{presenyear} は卒業・修了の年度を数字で設定します．また，\macrocom{presendate} 
+は発表会の日程を設定します．発表年度と日付の年と間違えない様に注意すること．
+
+最後の \macrocom{master} および \macrocom{bachelor} は，どちらか一方のみを
+残します．修士論文発表会の場合は \macrocom{master} を，特別研究発表会の場合は，
+\macrocom{bachelor} を残します．間違えるとフッターの情報が間違ったものとなって
+しまうので，注意すること．
+
+\section{本文について}
+ここでは，本文の記述について説明しています．本文は2ページまで記述することができます（修士論文発表会予稿の場合は4ページも可）．
+また，上下左右のマージンに関しては，このスタイルファイルのものから変更しないで下さい．
+
+\subsection{文字サイズなど}
+本文の文字サイズなどは特に指定はありません．長さや読みやすさなどを考慮し，適宜調整してください．
+\subsection{セクションなど}
+節などは，\LaTeX のコマンドの \macrocom{section} や \macrocom{subsection} を通常の論文と
+同様に用いて下さい．
+
+\subsection{図表など}
+図や表に関しても特にフォーマットは定めていません．
+
+\subsection{参考文献}
+参考文献も通常の \LaTeX のコマンドを使用してください．これは，使用例です\cite{tarou1}．
+\section{おわりに}
+不明な点は問い合わせを行って下さい．
+
+\begin{thebibliography}{9}\footnotesize
+\bibitem{tarou1} 都立太郎, ``特別研究'' 東京都立大学システムデザイン学部., VOL.1, NO.1,
+	 pp.1-2, 2008年12月.
+
+\end{thebibliography}
+%
+
+\end{document}

@@ -1,0 +1,56 @@
+% paper-japanese.sty
+\NeedsTeXFormat{pLaTeX2e}
+\ProvidesPackage{paper-japanese}
+
+% =====================
+% Japanese names
+% =====================
+
+\renewcommand{\contentsname}{目次}
+\renewcommand{\listfigurename}{図目次}
+\renewcommand{\listtablename}{表目次}
+
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+
+\renewcommand{\abstractname}{概要}
+\newcommand{\synopsisname}{梗概}
+\newcommand{\appendixname}{付録}
+
+% =====================
+% Japanese spacing
+% =====================
+
+\kanjiskip=0pt plus .4pt minus .5pt
+\xkanjiskip=0pt plus .4pt minus .5pt
+
+\spaceskip=.3333em plus .1667em minus .1111em
+\xspaceskip=.3333em plus .1667em minus .1111em
+
+\pretolerance=1000
+\tolerance=2000
+\emergencystretch=3pt
+
+% =====================
+% Japanese date
+% =====================
+
+\newif\ifwareki
+\warekifalse
+
+\def\西暦{\warekifalse}
+\def\和暦{\warekitrue}
+
+\def\today{%
+  \ifwareki
+    \@wareki
+  \else
+    \number\year 年\number\month 月\number\day 日%
+  \fi
+}
+
+\def\@wareki{%
+  平成\number\numexpr\year-1988\relax 年%
+  \number\month 月%
+  \number\day 日%
+}

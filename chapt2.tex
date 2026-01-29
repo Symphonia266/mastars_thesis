@@ -1,0 +1,128 @@
+\chapter[ラマンDIALによる二酸化硫黄分布観測のシミュレーション]{ラマンDIALによる二酸化硫黄分布観測のシミュレーション}\label{chapt2}
+
+\section{最適レーザ波長の存在}
+ラマンDIALによる測定で発生する統計誤差は\cref{equ:stat_err}で求められる
+\cite{StatErrorEqu}. 
+式中の$D$はダークカウント, $B_j$は背景光雑音, $F$はディテクターの雑音指数を表す. 
+$\mathrm{i}=1,2$ はon波長及びoff波長,  
+$\mathrm{j}=1,2$ は視線距離$R_1, R_2$に相当する. 
+\begin{align}
+    \staterr 
+    &= \dfrac{1}{2\Delta\subrm{\sigma}{SO2}\Delta R}\left[
+        \sum^2_{i=1}\sum^2_{j=1}
+        \frac{D+(P_{ij}+B_j)F}{P_{ij}}
+    \right]^{1/2}
+    \label{equ:stat_err}
+\end{align}
+
+\cref{equ:stat_err}より, 
+統計誤差\staterrは受信光子数$P$に強く依存することが分かる. 
+したがって, 二酸化硫黄吸収が強すぎる波長では信号が減衰し,測定誤差が増大する一方で, 
+吸収が弱すぎる波長では差分吸収量が小さくなるため, 波長選択には最適点が存在する。
+
+二酸化硫黄, オゾン, 硫化水素の吸収スペクトルを\cref{fig:3gases_absorption}に示す. 
+吸収断面積のデータセットはThe MPI-Mains UV/VIS Spectral Atlasより取得し, 吸収スペクトルは各気体の濃度による数密度と吸収断面積を乗じた消散係数である. 
+\cite{
+MPI_Mainz_UV_VIS_Atlas2013,
+SO2_dataset_Hermans2009_I,
+SO2_dataset_Vandaele2009_II,
+O3_dataset_Bogumil2003,
+H2S_dataset_Grosch2015,
+}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/sim_01_3gases_absorptance.png}
+    \caption{\ce{SO2}, \ce{O3}, \ce{H2S}の吸収スペクトル}
+    \label{fig:3gases_absorption}
+\end{figure}
+
+二酸化硫黄は紫外領域に吸収スペクトルを持ち, 
+300 nm付近の波長では吸収が櫛状に増減する特徴を持つ.
+二酸化硫黄測定にラマンDIALを適応する場合, 
+この櫛状のスペクトルの中にレーザ波長の最適点があるといえる. 
+
+また, ラマンIALにおいて測定対象でない物質による吸収は, 
+干渉誤差（オフセット誤差）を発生させる. 
+火山環境において, 大気や火山ガス中には二酸化硫黄以外にも紫外域に吸収を持つ気体（オゾンや硫化水素）が存在するため,
+測定精度は統計誤差だけでなく, 
+他ガスによる干渉誤差とのバランスで評価する必要がある. 
+
+\cref{equ:contam_err}は干渉要素を補正するための項であり, 
+対象気体濃度を算出するためにDIAL方程式を解く際に,
+干渉要素の推定値を含めて, 
+ある程度補正することが可能である. 
+\begin{align}
+    \cntmerr
+    &= \frac{\Delta \alpha_{\mathrm{air}}+n_{\mathrm{gas}}\Delta \sigma_{\mathrm{gas}}}{\Delta \sigma_{\mathrm{SO2}}}\label{equ:contam_err}
+\end{align}
+
+実際には, \cref{equ:n_SO2}から\cref{equ:contam_err}を引くことで補正後の二酸化硫黄濃度の推定値が得られる.
+
+以上より, \cref{equ:power}に火山環境の設定値やライダーシステムのパラメータを与えることで受信光子数を計算し, 
+\cref{equ:n_SO2}に与えることで二酸化硫黄の測定シミュレーションを行い, 
+\cref{equ:stat_err}で得られる統計誤差や\cref{equ:contam_err}で得られる干渉誤差により最適なレーザ波長を評価する. 
+
+\newpage
+\section{シミュレーション方法}
+高度$z$, 波長$\lambda$, ライダー視線距離$R$における大気モデルは以下の通りとした. 
+\cref{equ:atmnumber}は大気密度, 
+\cref{equ:sigmaray}はレイリー散乱断面積, 
+\cref{equ:betamol}は大気分子の後方散乱係数,
+\cref{equ:aermodel}エアロゾルモデル, 
+\cref{equ:betaaer}はエアロゾルの後方散乱係数, 
+\cref{equ:alphamol}は大気分子の消散係数, 
+\cref{equ:alphaaer}はエアロゾルの消散係数, 
+\cref{equ:alphagas}は光路上の気体の消散係数（$i=1,2,...,N$はN個のガス種）を表す.
+\begin{align}
+    &N(z)
+    =2.60\times10^{25}\exp\left(
+        -1.08\times10^{-4}z
+    \right)&[\si{m^{-3}}]
+    \label{equ:atmnumber}\\
+    &\subrm{\sigma}{ray}(\lambda)
+    =5.45\times10^{-32}\left(\frac{550}{\lambda}\right)&[\si{m^{2}}]
+    \label{equ:sigmaray}\\
+    &\subrm{\beta}{mol}(z, \lambda)
+    =N(z)\subrm{\sigma}{ray}(\lambda)&[\si{m^{-1}}]
+    \label{equ:betamol}\\
+    &\subrm{M}{aer}(z, \lambda)
+    =36.31\exp(-.78\times10^{-4}\subrm{\beta}{mol}(z))\left(\frac{\lambda}{710}\right)^4
+    \label{equ:aermodel}\\
+    &\subrm{\beta}{aer}(z, \lambda)
+    =\subrm{M}{aer}(z, \lambda)\times\left(\frac{710}{\lambda}\right)&[\si{m^{-1}}]
+    \label{equ:betaaer}\\
+    &\subrm{\alpha}{mol}=\frac{8\pi}{3}\subrm{\beta}{mol}&[\si{m^{-1}}]
+    \label{equ:alphamol}\\
+    &\subrm{\alpha}{aer}(z)
+    =s\subrm{\beta}{aer}(z)&[\si{m^{-1}}]
+    \label{equ:alphaaer}\\
+    &\subrm{\alpha}{gas}(z, R, \lambda)
+    =\sigma_{i=1}^{N}\subrm{N}{gas}(z, R)\subrm{\sigma}{gas}(\lambda)&[\si{m^{-1}}]
+    \label{equ:alphagas}
+\end{align}
+
+地表面の火口から二酸化硫黄を含む火山ガスが噴出している環境を想定し, 
+高度\SI{1}{km}地点の水平\SI{1}{km}を観測領域に設定した. 
+観測領域内の\SI{300}{m}から\SI{700}{m}を火山ガスが濃厚な高濃度区間, 
+それ以外を火口から遠い低濃度区間とした. 
+
+気温について, 低濃度区間は\SI{298}{K}, 
+高濃度区間は\SI{358}{K}を想定した. 
+これは放出される高温の火山ガスがある程度拡散した状況を想定しており, 
+気温は用いる吸収断面積のデータセットに反映されている. 
+
+火山ガスの濃度分布は三宅島での観測値を参考に決定した\cite{miyake}.
+三宅島では2004年
+これを受けて, 
+高濃度区間は二酸化硫黄が\SI{30}{ppm},
+硫化水素が\SI{15}{ppm}とし, 
+低濃度区間は二酸化硫黄が\SI{0.07}{ppm}
+低濃度区間は二酸化硫黄が\SI{0.035}{ppm}とした. 
+オゾンは観測領域全体で一定の\SI{0.005}{ppm}とした. 
+
+
+そして, 火山環境の濃度分布設定は三宅島での観測地を参考に決定した\cite{miyake}
+\cref{equ:power}には定義した大気モデルと
+
+\newpage
+\section{ラマンシフトの組み合わせとシミュレーション結果}

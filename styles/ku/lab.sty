@@ -1,0 +1,527 @@
+%
+% 川路研・松永研・岡島研スタイルファイル
+%
+%       Ver.1.00     Dec. 6, 1993
+%           ・figure 環境, table 環境の見出しの変更
+%           ・\list 環境の項目間の空きを調整
+%           ・定理環境の定義
+%           ・罫線を波線にする \clinesolid を定義
+%           ・各ページに図がたくさん入るようにパラメータを調整
+%           ・均等割付の定義
+%           ・罫線の太さを変える
+%           ・箇条書き環境 {namelist} の定義
+%           ・２次形式の行列表示（行ベクトルを行列の上部に揃える）
+%           ・キャプションの中に強制改行を入れる
+%           ・Photo 環境の定義
+%           ・時刻を出力するマクロ
+%           ・キーワードを脚注の位置に表示
+%           ・図・表に副番号を付ける
+%           ・section, subsection etc. サイズの変更
+%           ・字下げ環境 indention の定義
+%           ・上付き citation の定義
+%       Ver.1.01     Dec. 9, 1993
+%           ・equation* 環境の定義
+
+\typeout{Style File for Paper "klab.sty"}
+
+%------------------------------------------------------------------------------
+% figure 環境, table 環境の見出しの変更
+% ※「図」、「表」のままで良ければ以下の２行をコメントアウトする
+%------------------------------------------------------------------------------
+\def\fnum@figure{Fig.\thefigure}            % 図 → Fig.
+\def\fnum@table{Table \thetable}            % 表 → Table
+
+%------------------------------------------------------------------------------
+% \list 環境の項目間の空きを調整
+%
+% \listisep{n}      一番外側のリスト項目間に \parsep に加えて挿入する垂直方向の
+%                   スペース。
+% \listiisep{n}     その内側のリスト項目間に \parsep に加えて挿入する垂直方向の
+%                   スペース。
+% \listiiisep{n}    その内側のリスト項目間に \parsep に加えて挿入する垂直方向の
+%                   スペース。
+%
+% デフォルトでは、\listisep, \listiisep, \listiiisep はすべて 0pt に設定
+%
+% 例
+% \begin{enumerate}
+%   \listisep{1mm}
+%   \listiisep{1mm}
+%   \listiiisep{1mm}
+%   \item ここは一番外側のリストです。
+%   \item ここは一番外側のリストです。
+%   \begin{enumerate}
+%     \item その内側のリストです。
+%     \begin{enumerate}
+%       \item その内側のリストです。
+%       \item その内側のリストです。
+%     \end{enumerate}
+%     \item その内側のリストです。
+%   \end{enumerate}
+%   \item ここは一番外側のリストです。
+% \end{enumerate}
+%
+%------------------------------------------------------------------------------
+\def\listsep#1{\gdef\@listsep{#1}}
+%\def\listiisep#1{\gdef\@listiisep{#1}}
+%\def\listiiisep#1{\gdef\@listiiisep{#1}}
+
+\def\Listi@sep{%
+  \@ifundefined{@listsep}{0pt plus 2pt}{\@listsep}
+}
+
+\def\Listii@sep{%
+  \@ifundefined{@listsep}{0pt plus 2pt}{\@listsep}
+}
+
+\def\Listiii@sep{%
+  \@ifundefined{@listsep}{0pt plus 2pt}{\@listsep}
+}
+
+\def\@listI{% １番外側のリストのパラメータの初期値
+  \leftmargin\leftmargini % 左余白
+  \parsep=\z@  % 項目間の段落の空き
+  \topsep 6pt plus 2pt minus 2pt  % リスト上下の空き
+  \itemsep=\Listi@sep\relax % 項目間の空き
+}
+\let\@listi\@listI
+\@listi 
+%
+\def\@listii{% その内側のリストのパラメータ
+  \leftmargin\leftmarginii
+   \labelwidth\leftmarginii
+   \advance\labelwidth-\labelsep
+   \topsep 3pt plus 2pt minus 1pt
+   \parsep=\z@ %
+   \itemsep=\Listii@sep\relax
+}
+%
+\def\@listiii{% その内側のリストのパラメータ
+  \leftmargin\leftmarginiii
+   \labelwidth\leftmarginiii
+   \advance\labelwidth-\labelsep
+   \topsep 2pt plus 1pt minus 1pt 
+%   \parsep \z@ \partopsep 1pt plus 0pt minus 1pt
+   \parsep \z@ \partopsep \z@
+   \itemsep=\Listiii@sep\relax
+}
+%
+\def\@listiv{% その内側のリストのパラメータ
+  \leftmargin\leftmarginiv
+  \labelwidth\leftmarginiv
+  \advance\labelwidth-\labelsep
+}
+%
+\def\@listv{% その内側のリストのパラメータ
+  \leftmargin\leftmarginv
+  \labelwidth\leftmarginv
+  \advance\labelwidth-\labelsep
+}
+%
+\def\@listvi{% 最も内側のリストのパラメータ
+  \leftmargin\leftmarginvi
+  \labelwidth\leftmarginvi
+  \advance\labelwidth-\labelsep
+}
+
+%------------------------------------------------------------------------------
+% 定理環境の定義
+% 英語用
+%   theorem 環境        : Theorem
+%   lemma 環境          : Lemma
+%   definition 環境     : Definition
+%   proposition 環境    : Proposition
+%   corollary 環境      : Corollary
+% 日本語用
+%   jtheorem 環境       : 定理
+%   jlemma 環境         : 補題
+%   jdefinition 環境    : 定義
+%   jproposition 環境   : 命題
+%   jcorollary 環境     : 系
+%   
+%------------------------------------------------------------------------------
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{jtheorem}{定理}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{jlemma}{補題}[section]
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{jdefinition}{定義}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{jproposition}{命題}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{jcorollary}{系}[section]
+
+%------------------------------------------------------------------------------
+% 罫線を波線にする \clinesolid を定義
+% 例題：
+%   \begin{tabular}{|c|c|c|}\hline
+%       曜日 & 開店時間 & 閉店時間 \\ \hline
+%       金曜 & 10:00 & 17:00 \\ \clinesolid{1-3}
+%       土曜 & 10:00 & 18:00 \\ \clinesolid{1-3}
+%       日曜 & 10:00 & 20:00 \\ \hline
+%   \end{tabular}
+%------------------------------------------------------------------------------
+\def\clinesolidpattern#1#2{%
+    \ifdim#2<#1
+        \errmessage{clinepatternの第１引数は第２引数以下です。}%
+    \else
+        \gdef\clinesolid@solid{#1}\gdef\clinesolid@period{#2}
+    \fi
+}
+
+\clinesolidpattern{2pt}{4pt}%   4ptごとに2ptの線を引く
+
+\newcount\@clasolid
+\newcount\@clbsolid
+
+\def\clinesolid#1{\@clinesolid[#1]}
+\def\@clinesolid[#1-#2]{\noalign{\global\@clasolid#1\relax
+\global\advance\@clasolid\m@ne
+\ifnum\@clasolid>0\global\let\@gtempa\@clineasolid\else
+  \global\let\@gtempa\@clinebsolid\fi
+\global\@clbsolid#2\relax
+\global\advance\@clbsolid-\@clasolid}\@gtempa
+\noalign{\vskip-\arrayrulewidth}}
+
+\def\@clineasolid{\multispan\@clasolid&\multispan\@clbsolid
+    \unskip\cleaders\hbox to \clinesolid@period
+    {\hss\rule{\clinesolid@solid}{\arrayrulewidth}\hss}\hfill\cr}
+
+\def\@clinebsolid{\multispan\@clbsolid
+    \unskip\cleaders\hbox to \clinesolid@period
+    {\hss\rule{\clinesolid@solid}{\arrayrulewidth}\hss}\hfill\cr}
+
+%------------------------------------------------------------------------------
+% 各ページに図をたくさん入れる。
+%
+% 参考文献
+%   磯崎：LaTeX 自由自在、サイエンス社、pp.206, 1992
+%
+% 各ページに入れられる図の数や面積には上限が定められている。この値は
+% jarticle.sty などで定義されていて、これらのパラメータを調整することによって
+% 図をたくさん入れることができる。
+%
+% \setcounter{topnumber}{2}
+% \def\topfraction{.7}              % 各ページの上部に入れてよい図表の数と
+%                                     面積比のそれぞれの上限
+% \setcounter{bottomnumber}{1}
+% \def\bottomfraction{.3}           % 各ページの下部に入れてよい図表の数と
+%                                     面積比のそれぞれの上限
+% \setcounter{totalnumber}{3}       % 各ページに入れてよい図表の総数の上限
+% \def\textfraction{.2}             % 各段のテキスト部分の面積の割合の下限
+% \def\floatpagefraction{.5}        % 図表を独立したページにする場合に、図表
+% \def\dblfloatpagefraction{.5}       が占めるべき総面積の割合の下限
+% \setcounter{dbltopnumber}{2}      % ２段組みの場合にページ上部に２段にわたっ
+% \def\dbltopfraction{.7}             て入れてよい図表の数と面積比の上限
+%
+%------------------------------------------------------------------------------
+\setcounter{topnumber}{2}
+\def\topfraction{.9}            % \def\topfraction{.7}
+\setcounter{bottomnumber}{2}    % \setcounter{bottomnumber}{1}
+\def\bottomfraction{.9}         % \def\bottomfraction{.3}
+\setcounter{totalnumber}{3}
+\def\textfraction{.1}           % \def\textfraction{.2}
+\def\floatpagefraction{.5}
+\setcounter{dbltopnumber}{2}
+\def\dbltopfraction{.7}
+\def\dblfloatpagefraction{.5}
+
+%------------------------------------------------------------------------------
+% 均等割付
+% e.g. \kintou{4zw}{はじめに}
+%------------------------------------------------------------------------------
+\def\kintou#1#2{%
+  \makebox[#1]{\kanjiskip=0pt plus 1fill minus 1fill
+  \xkanjiskip=\kanjiskip#2}}
+
+%------------------------------------------------------------------------------
+% 罫線の太さを変える
+% \hrulethickness#1 : 横罫線の太さを変える
+% vhrulethickness#1 : 縦罫線の太さを変える
+%------------------------------------------------------------------------------
+\def\hrulethickness#1{\hrule height #1}
+\def\vrulethickness#1{\vrule width #1}
+
+%------------------------------------------------------------------------------
+% 箇条書き環境 namelist の定義
+%
+% 例
+% \begin{namelist}{beside, besidesxx}
+%   \item[{\bf beside, besides}] Beside means along side of; besides means
+%       in addition to.
+%       They sat beside the brook all afternoon.
+%       Besides, Tom doesn't want the job.
+%   \item[{\bf could of}] Do not use for could have.
+%   \item[{\bf data}] Data is the plural of datum. Data are gathered.
+%       Say these data rather than this data.
+% \end{namelist}
+%
+%------------------------------------------------------------------------------
+% namelist environment (Nelson H. F. Beebe)
+% form: \begin{namelist}{width}
+\newcommand{\namelistlabel}[1]{\mbox{#1}\hfil}
+\newenvironment{namelist}[1]{%
+\begin{list}{}
+  {\let\makelabel\namelistlabel
+   \settowidth{\labelwidth}{#1}
+   \setlength{\leftmargin}{1.1\labelwidth}}
+ }{%
+ \end{list}}
+
+%------------------------------------------------------------------------------
+% ２次形式の行列表示（行ベクトルを行列の上部に揃える）
+%
+% 例
+% \begin{equation}
+%   \pmatrix{x & y & z}
+%   \topmatrix{a_1 & a_2 & a_3 \cr
+%             a_4 & a_5 & a_6 \cr
+%             a_7 & a_8 & a_9 \cr
+%   }
+%   \topmatrix{b \cr c \cr d}
+% \end{equation}
+%
+% 変更点：オリジナルの \pmatrix では () ( \left(, \right) ) で定義されていた
+%         のを [] ( \left[, \rhgt] ) に変更
+% 
+% \def\pmatrix#1{\left( \matrix{#1} \right)}    % オリジナル
+%                    ~~~                 ~~
+% \def\pmatrix#1{\left[ \matrix{#1} \right]}    % 変更後
+%
+%------------------------------------------------------------------------------
+\def\pmatrix#1{\left[ \matrix{#1} \right]}
+\newbox\matbox
+\def\topmatrix#1{\setbox\matbox=\vtop{\normalbaselines\m@th % set the matrix in
+  \ialign{\hfil$##$\hfil&&\quad\hfil$##$\hfil\crcr % a \vtop so the
+  \mathstrut\crcr\noalign{\kern-\baselineskip} % first baseline
+  #1\crcr\mathstrut\crcr\noalign{\kern-\baselineskip}}} % line up.
+% get twice defference between baseline and centerline of inner matrix:
+  \dimen255=\dp\matbox \advance\dimen255 by -\ht\matbox
+% Center matrix and surround with parentheses:
+  \setbox\matbox=\hbox{$\left[ \,\vcenter{\box\matbox}\,\right]$}
+% Correct for difference between baseline and centerline of parentheses:
+  \advance\dimen255 by -\dp\matbox \advance\dimen255 by \ht\matbox
+% Lower centered matrix back to its prper baseline:
+  \lower0.5\dimen255\box\matbox
+}
+
+%------------------------------------------------------------------------------
+% キャプションの中に強制改行を入れる
+%
+% 例
+% \begin{figure}[h]
+%   \vspace{2cm}
+%   \parcaption{This is a long caption \\ with line-break.}
+% \end{figure}
+%
+%------------------------------------------------------------------------------
+\newsavebox{\@parc@ption}
+\def\parcaption#1{%
+  \sbox{\@parc@ption}{\shortstack[l]{#1}}%
+  \setbox\@tempboxa\hbox{\csname fnum@\@captype\endcsname}%
+  \@tempdima\columnwidth \advance\@tempdima-\wd\@tempboxa
+  \@tempdimb.8\@tempdima %<-- maximum length is set here
+  \ifdim\wd\@parc@ption>\@tempdimb \@tempdima\@tempdimb
+    \else\@tempdima\wd\@parc@ption\fi
+    \sbox{\@tempboxa}{\parbox[t]{\@tempdima}{#1}}%
+    \caption{\usebox{\@tempboxa}}}
+
+
+%------------------------------------------------------------------------------
+% Photo 環境の定義
+%
+% 例
+% \begin{photo}[h]
+%   \vspace{2cm}
+%   \caption{This is a photo environment}
+% \end{photo}
+%------------------------------------------------------------------------------
+\newcounter{photo}
+\def\thephoto{\@arabic\c@photo}
+\def\fps@photo{tbp}
+\def\ftype@photo{1}
+\def\ext@photo{lof}
+\def\fnum@photo{Photo \thephoto}
+\def\photo{\@float{photo}}
+\let\endphoto\end@float
+\@namedef{photo*}{\@dblfloat{photo}}
+\@namedef{endphoto*}{\end@dblfloat}
+\def\Photoname{Photo}
+
+%------------------------------------------------------------------------------
+% 時刻を出力するマクロ
+%
+% 例
+% 只今\the\hour:\the\minute
+% 
+%------------------------------------------------------------------------------
+% \mod<counter><value> : <counter>=<counter> % <value>
+\def\mod#1#2{
+    \count255=#1 \divide\count255 by #2 % <register> = <counter> / <value>
+    \multiply\count255 by #2            % <register> *= <value>
+    \advance\count255 by -#1            % <register> -= <counter>
+    #1=-\count255}                      % <counter> = -<register>
+  \newcount\hour
+  \hour=\time \divide\hour by 60        % <time> = <\time> / 60
+  \newcount\minute
+  \minute=\time \mod{\minute}{60}       % <minute> = <\time> % 60
+
+%------------------------------------------------------------------------------
+% キーワードを脚注の位置に表示
+%
+% 例
+% \keyword{Keyword}{Optimal Control}
+%------------------------------------------------------------------------------
+\def\keyword#1#2{\def\@thefnmark{}\@footnotetext{{\bf #1}: #2}}
+
+%------------------------------------------------------------------------------
+% 図・表に副番号を付ける
+%
+% 例
+% \begin{figure}
+%   \begin{minipage}{.5\textwidth}
+%     \vspace{2cm}
+%     \subcaption{This is subcaption 1} \label{fig1a}
+%   \end{minipage}\hfill
+%   \begin{minipage}{.5\textwidth}
+%     \vspace{2cm}
+%     \subcaption{This is subcaption 2} \label{fig1b}
+%   \end{minipage}
+%   \caption{Main Caption} \label{main fig}
+% \end{figure}
+%
+%------------------------------------------------------------------------------
+\@definecounter{subfloatnumber}
+\def\@T@bLe{table}
+%\def\subfloatcap{-\alph{subfloatnumber}}
+\def\subfloatcap{(\alph{subfloatnumber})}
+
+% \def\subcaption{\@addtoreset{subfloatnumber}{\@captype}%
+% \ifx\@captype\@T@bLe\relax\else\addtocounter{\@captype}{1}\fi%
+% \def\the@subfloatnumber{\csname the\@captype\endcsname\subfloatcap}%
+% \stepcounter{subfloatnumber}%
+% \edef\@currentlabel{\csname the@subfloatnumber\endcsname}%
+% \@dblarg{\@subcaption\@captype}}
+
+% \long\def\@subcaption#1[#2]#3{\par\addcontentsline{\csname
+% %  ext@#1\endcsname}{#1}{\protect\numberline{\csname
+% %  the#1\endcsname\subfloatcap}{\ignorespaces #2}}\begingroup
+%   ext@#1\endcsname}{#1}{\protect\numberline{
+%   \subfloatcap}{\ignorespaces #2}}\begingroup
+%     \@parboxrestore
+%     \normalsize
+%     \def\fnum@figure{}
+%     \@makecaption{\csname fnum@#1\endcsname\subfloatcap}%
+%       {\ignorespaces #3}\par
+%     \endgroup%
+%     \ifx\@captype\@T@bLe\relax\else\addtocounter{\@captype}{-1}\fi}
+
+%------------------------------------------------------------------------------
+% section, subsection etc. サイズの変更
+% 
+% 例
+% \documentstyle[a4j,mysty]{jarticle}
+% \begin{document}
+%   \sectionsize{\LARGE}
+%   \section{はじめに}
+%          text
+% \end{document}
+%
+% 解　説
+% sectionsize の定義
+% \def\section@size{%
+%   \@ifundefined{@sectionsize}{\Large\bf}{\@sectionsize\bf}
+% }
+%
+% ※ \sectionsize を指定しないとデフォルトでは section title は \Large\bf 。
+%    \sectionsize を指定するとその大きさの section title になる。
+%
+% section の変更
+% \def\section{\@startsection {section}{1}{\z@}{3.5ex plus 1ex minus 
+%  .2ex}{2.3ex plus .2ex}{\section@size}}
+%                         ~~~~~~~~~~~~~
+%                           ここを変更
+%
+% Nov. 22, 1993
+%------------------------------------------------------------------------------
+\def\sectionsize#1{\gdef\@sectionsize{#1}}
+\def\subsectionsize#1{\gdef\@subsectionsize{#1}}
+\def\subsubsectionsize#1{\gdef\@subsubsectionsize{#1}}
+\def\paragraphsize#1{\gdef\@paragraphsize{#1}}
+\def\subparagraphsize#1{\gdef\@subparagraphsize{#1}}
+
+% section サイズの定義
+\def\section@size{%
+  \@ifundefined{@sectionsize}{\Large\bf}{\@sectionsize\bf}
+}
+\def\subsection@size{%
+  \@ifundefined{@subsectionsize}{\large\bf}{\@subsectionsize\bf}
+}
+\def\subsubsection@size{%
+  \@ifundefined{@subsubsectionsize}{\normalsize\bf}{\@subsubsectionsize\bf}
+}
+\def\paragraph@size{%
+  \@ifundefined{@paragraphsize}{\normalsize\bf}{\@paragraphsize\bf}
+}
+\def\subparagraph@size{%
+  \@ifundefined{@subparagraphsize}{\normalsize\bf}{\@subparagraphsize\bf}
+}
+
+% section 等の変更
+\def\section{\@startsection {section}{1}{\z@}{3.5ex plus 1ex minus 
+ .2ex}{2.3ex plus .2ex}{\section@size}}
+
+\def\subsection{\@startsection{subsection}{2}{\z@}{3.25ex plus 1ex minus 
+ .2ex}{1.5ex plus .2ex}{\subsection@size}}
+
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{3.25ex plus 
+1ex minus .2ex}{1.5ex plus .2ex}{\subsubsection@size}}
+
+\def\paragraph{\@startsection
+ {paragraph}{4}{\z@}{3.25ex plus 1ex minus .2ex}{-1em}{\paragraph@size}}
+
+\def\subparagraph{\@startsection
+ {subparagraph}{4}{\parindent}{3.25ex plus 1ex minus 
+ .2ex}{-1em}{\subparagraph}}
+
+%------------------------------------------------------------------------------
+% 字下げ環境
+%------------------------------------------------------------------------------
+\newenvironment{indention}[1]{\par
+\addtolength{\leftskip}{#1}
+\begingroup}{\endgroup\par}
+
+%------------------------------------------------------------------------------
+% 上付き citation, supcite の定義
+%------------------------------------------------------------------------------
+%	\cite コマンドの出力を生成するマクロ
+%		\supcite (上つき参照) の作成
+%		\cite (通常参照) の作成
+%	Ver.1.00
+\def\@cite#1{$^{\mbox{\scriptsize{[#1]}}}$}
+\def\@cite#1#2{[{#1\if@tempswa , #2\fi}]}
+\def\cite{\@ifnextchar [{\@tempswatrue\@citex}{\@tempswafalse\@citex[]}}
+
+\def\@supcite#1{$^{\mbox{\scriptsize{[#1]}}}$}
+\def\supcite{\@ifnextchar [{\@tempswatrue\@supcitex}{\@tempswafalse\@supcitex[]}}
+\def\@supcitex[#1]#2{\if@filesw\immediate\write\@auxout{\string\citation{#2}}\fi
+  \def\@citea{}\@supcite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{,\penalty\@m\ }\@ifundefined
+       {b@\@citeb}{{\bf ?}\@warning
+       {Citation `\@citeb' on page \thepage \space undefined}}%
+\hbox{\csname b@\@citeb\endcsname}}}{#1}}
+
+%------------------------------------------------------------------------------
+% equation 環境で式番号を表示させない equation* 環境の定義
+%   通常、デフォルトでは displaymath が式番号を表示させない環境だが
+%   eqnarray と eqnarray* との対応をとるため displaymath を equation* として
+%   定義した。
+%
+% 例
+% \begin{equation*}
+%   \dot x = Ax + Bu
+% \end{equation*}
+%
+%------------------------------------------------------------------------------
+% \newenvironment{equation*}{\begin{displaymath}}{\end{displaymath}\par}
+

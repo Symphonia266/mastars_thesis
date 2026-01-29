@@ -1,0 +1,55 @@
+\documentclass[report,a4paper]{jsbook}
+
+% pLaTeX + dvipdfmx
+\usepackage[dvipdfmx]{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+
+% 参考文献（natbib + BibTeX）
+\usepackage[numbers]{natbib}
+
+\usepackage{ascmac}
+\usepackage{amsmath}
+\usepackage{plext}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[subrefformat=parens]{subcaption}
+
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{cleveref}
+
+\usepackage[version=4]{mhchem}
+\usepackage{titlesec}
+\usepackage{siunitx}
+\usepackage{comment}
+\usepackage{url}
+
+% =============================================================================
+\parindent 1zw
+% =============================================================================
+
+% --- ここ以下のマクロ・設定は元のまま ---
+
+\begin{document}
+
+\include{title}
+% \maketitle
+
+\tableofcontents
+\pagenumbering{arabic}
+
+\include{chapt1}
+\include{chapt2}
+% \include{chapt3}
+% \include{chapt4}
+% \include{chapt5}
+% \include{thanks}
+
+\bibliographystyle{unsrt}
+\bibliography{reference}
+
+% \include{appendix}
+
+\end{document}
