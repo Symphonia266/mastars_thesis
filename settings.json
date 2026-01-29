@@ -1,0 +1,171 @@
+{
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "security.workspace.trust.untrustedFiles": "open",
+    // "C_Cpp.updateChannel": "Insiders",
+    "markdown.preview.breaks": true,
+    "files.autoSave": "off",
+    "diffEditor.renderSideBySide": false, // Git の差分を行内に表示
+    "editor.minimap.renderCharacters": false, // ミニマップの表示文字をブロックに変更
+    "editor.minimap.showSlider": "always", // 表示領域をミニマップで常にハイライト
+    "editor.multiCursorModifier": "ctrlCmd", // マウスでの複数選択時の修飾キーを変更
+    "editor.renderControlCharacters": true, // 制御文字を表示
+    "editor.renderLineHighlight": "all", // 選択行を行番号含めすべてハイライト
+    "editor.renderWhitespace": "all", // 半角スペースを常に表示
+    "editor.tabSize": 2, // タブのサイズ変更
+    "explorer.confirmDelete": false, // インデントガイド(インデントに沿って縦線を表示)
+    "extensions.autoUpdate": true, // 拡張機能を自動更新
+    "files.associations": { // ファイルと言語の関連付けを変更
+        ".*lintrc": "json"
+    },
+    "files.exclude": { // エクスプローラーから非表示にするファイル
+        "**/*.map": true,
+        "**/node_modules": true
+    },
+    "files.insertFinalNewline": true, // ファイルの保存時に末尾を改行
+    "files.trimFinalNewlines": true, // ファイルの保存時に最終行以降をトリミング
+    "window.openFoldersInNewWindow": "on", // 新規ワークスペースを別ウインドウで開く
+    "window.title": "${activeEditorMedium}${separator}${rootName}", // ウインドウ上部に表示する文字列の設定
+    "workbench.editor.labelFormat": "short", // タブに表示する文字列の設定
+    "workbench.editor.tabSizing": "shrink", // タブの表示設定
+    "workbench.startupEditor": "none", // Welcome Page を表示しない
+    "python.showStartPage": false,
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook",
+        "*.ipynb": "jupyter-notebook",
+        "*.xlsx": "default"
+    },
+    "terminal.integrated.tabs.enabled": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.enablePreview": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    // ---------- Language ----------
+    "[tex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+    "[latex]": {
+        // スニペット補完中にも補完を使えるようにする
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+
+    "[bibtex]": {
+        // インデント幅を2にする
+        "editor.tabSize": 2
+    },
+    // ---------- LaTeX Workshop ----------
+
+    // 使用パッケージのコマンドや環境の補完を有効にする
+    "latex-workshop.intellisense.package.enabled": true,
+
+    // 生成ファイルを削除するときに対象とするファイル
+    // デフォルト値に "*.synctex.gz" を追加
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+
+    // 生成ファイルを "out" ディレクトリに吐き出す
+    "latex-workshop.latex.outDir": "out",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.view.pdf.viewer": "tab",
+    // "latex-workshop.latex.clean.enabled": true,
+    // "latex-workshop.latex.clean.run": "onBuild",
+    // "latex-workshop.latex.forceRecipeUsage": true
+    // ビルドのレシピ
+    "latex-workshop.latex.recipes": [
+        {
+        "name": "latexmk (LuaLaTeX)",
+        "tools": ["latexmk-lua"]
+        },
+        {
+        "name": "lualatex (upLaTeX)",
+        "tools": ["laetxmk-up"]
+        }
+    ],
+
+    // ビルドのレシピに使われるパーツ
+    "latex-workshop.latex.tools": [
+        {
+        "name": "latexmk-lua",
+        "command": "latexmk",
+        "args": [
+            "-lualatex",
+            "-outdir=out",
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "%DOC%"
+        ]
+        },
+        {
+        "name": "latexmk-up",
+        "command": "latexmk",
+        "args": [
+            "-pdfdvi",
+            "-outdir=out",
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "%DOC%"
+        ]
+        }
+    ],    
+
+    "editor.guides.indentation": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.typeCheckingMode": "basic",
+    "remote.SSH.remotePlatform": {
+        "ec2-3-107-186-26.ap-southeast-2.compute.amazonaws.com": "linux"
+    },
+    "python.analysis.extraPaths": [
+        "C:\\Users\\symph\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages"
+    ],
+    "python.createEnvironment.trigger": "off",
+    "autoDocstring.includeName": true,
+    "autoDocstring.docstringFormat": "numpy",
+    "gitlens.gitCommands.skipConfirmations": [
+        "fetch:command",
+        "stash-push:command",
+        "switch:command"
+    ],
+    "editor.stickyScroll.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+}

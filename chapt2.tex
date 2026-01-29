@@ -1,6 +1,6 @@
-\chapter[ラマンDIALによる二酸化硫黄分布観測のシミュレーション]{ラマンDIALによる二酸化硫黄分布観測のシミュレーション}\label{chapt2}
+\chapter[二酸化硫黄分布測定におけるラマンDIALの最適仕様]{ラマンDIALによる二酸化硫黄分布観測のシミュレーション}\label{chapt2}
 
-\section{最適レーザ波長の存在}
+\section{ラマンDIALの統計誤差}
 ラマンDIALによる測定で発生する統計誤差は\cref{equ:stat_err}で求められる
 \cite{StatErrorEqu}. 
 式中の$D$はダークカウント, $B_j$は背景光雑音, $F$はディテクターの雑音指数を表す. 
@@ -16,11 +16,16 @@ $\mathrm{j}=1,2$ は視線距離$R_1, R_2$に相当する.
 \end{align}
 
 \cref{equ:stat_err}より, 
-統計誤差\staterrは受信光子数$P$に強く依存することが分かる. 
-したがって, 二酸化硫黄吸収が強すぎる波長では信号が減衰し,測定誤差が増大する一方で, 
-吸収が弱すぎる波長では差分吸収量が小さくなるため, 波長選択には最適点が存在する。
+統計誤差\staterr は受信光子数$P$に強く依存することが分かる. 
+一方で, $P$は\ce{SO2}吸収が強すぎる
+レーザ波長\subrm{\lambda}{ls}
+及びラマン散乱波長\subrm{\lambda}{ram}では減衰し, 
+\subrm{\lambda}{on}（=\subrm{\lambda}{ram}）での\ce{SO2}吸収が弱すぎる波長では
+\subrm{\sigma}{SO2} が小さくなるため, 
+それぞれ\staterr は増大する.
 
 二酸化硫黄, オゾン, 硫化水素の吸収スペクトルを\cref{fig:3gases_absorption}に示す. 
+縦軸は消散係数（= $\subrm{n}{gas}(R)\times\subrm{\sigma}{gas}(\lambda)$）である. 
 吸収断面積のデータセットはThe MPI-Mains UV/VIS Spectral Atlasより取得し, 吸収スペクトルは各気体の濃度による数密度と吸収断面積を乗じた消散係数である. 
 \cite{
 MPI_Mainz_UV_VIS_Atlas2013,
@@ -35,33 +40,50 @@ H2S_dataset_Grosch2015,
     \caption{\ce{SO2}, \ce{O3}, \ce{H2S}の吸収スペクトル}
     \label{fig:3gases_absorption}
 \end{figure}
-
 二酸化硫黄は紫外領域に吸収スペクトルを持ち, 
-300 nm付近の波長では吸収が櫛状に増減する特徴を持つ.
-二酸化硫黄測定にラマンDIALを適応する場合, 
-この櫛状のスペクトルの中にレーザ波長の最適点があるといえる. 
+300 nm 付近の波長では吸収が櫛状に増減する特徴を持つ. 
+二酸化硫黄測定にラマン DIALを適応する場合, 
+\cref{equ:stat_err}の $P$ と \Delta\subrm{\sigma}{SO2}はon波長とoff波長に依存し, 
+on波長及びoff波長に相当するラマン散乱波長はレーザ波長に依存する. 
+したがって, 受信強度と差分吸収が十分に確保できるレーザ波長がの最適点が存在するといえる.
 
-また, ラマンIALにおいて測定対象でない物質による吸収は, 
-干渉誤差（オフセット誤差）を発生させる. 
-火山環境において, 大気や火山ガス中には二酸化硫黄以外にも紫外域に吸収を持つ気体（オゾンや硫化水素）が存在するため,
-測定精度は統計誤差だけでなく, 
-他ガスによる干渉誤差とのバランスで評価する必要がある. 
+そして, 受信するon波長とoff波長の構成にも注意する必要がある. 
+ラマン散乱におけるレーザ波長\subrm{\lambda}{ls}と
+ラマン散乱波長\subrm{\lambda}{ram}, 
+ラマンシフト\subrm{\lambda}{shift}の関係は\cref{fig:raman_shift}に示すとおりである. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{fig/raman_stokes_Astokes.png}
+    \caption{レーザ波長とラマン散乱波長の関係}
+    \label{fig:raman_shift}
+\end{figure}
+酸素分子\ce{O2}によるラマン散乱波長は
+ストークス散乱波長$\subrm{\lambda}{O2}^{S}$と
+アンチストークス散乱波長$\subrm{\lambda}{O2}^{AS}$の2種類存在し, 
+窒素分子\ce{N2}についても同様である. 
+1つのレーザ波長に対して生じる4つのラマン散乱波長から
+どの2波長を選択するかによっても\staterr は変化するため,
+レーザ波長と同様に最適な受信波長の構成が存在するといえる. 
 
-\cref{equ:contam_err}は干渉要素を補正するための項であり, 
-対象気体濃度を算出するためにDIAL方程式を解く際に,
-干渉要素の推定値を含めて, 
-ある程度補正することが可能である. 
-\begin{align}
-    \cntmerr
-    &= \frac{\Delta \alpha_{\mathrm{air}}+n_{\mathrm{gas}}\Delta \sigma_{\mathrm{gas}}}{\Delta \sigma_{\mathrm{SO2}}}\label{equ:contam_err}
-\end{align}
+ラマン散乱光の強度はレイリー散乱やミー散乱と比べて非常に微弱であり, 
+それに加えてアンチストークス散乱もストークス散乱と比較して弱いため, 
+一般的にラマンDIALをはじめとしたラマン散乱を利用するシステムでは
+アンチストークス散乱波長は利用されにくい.
+先行研究では, Nd:YAGの第4高調波である266 nmに対する
+酸素ストークス散乱波長と窒素ストークス散乱波長による
+ラマンDIALについて検討した\cite{Previous_research}. 
+しかし, \cref{fig:3gases_absorption}に示したように, 
+\ce{SO2}の吸収は\qty{240}{nm}付近や\qty{320}{nm}以降で
+吸収が弱まるため, レーザ波長とラマン散乱波長の関係によっては
+アンチストークス散乱波長の利用が優位となる可能性があるため, 
+検証する必要があると考えた. 
 
-実際には, \cref{equ:n_SO2}から\cref{equ:contam_err}を引くことで補正後の二酸化硫黄濃度の推定値が得られる.
-
-以上より, \cref{equ:power}に火山環境の設定値やライダーシステムのパラメータを与えることで受信光子数を計算し, 
-\cref{equ:n_SO2}に与えることで二酸化硫黄の測定シミュレーションを行い, 
-\cref{equ:stat_err}で得られる統計誤差や\cref{equ:contam_err}で得られる干渉誤差により最適なレーザ波長を評価する. 
-
+\cref{fig:raman_shift}より, 
+取り得る組み合わせは6通りとなる
+したがって, 4つのラマン散乱波長で\cref{equ:power}による受信光子数を計算し,
+\cref{equ:stat_err}に代入して6通りの\staterr を算出する. 
+それぞれで, \staterr が最小となるレーザ波長を探索し, 
+それを比較することで最適な受信波長の構成を決定する.
 \newpage
 \section{シミュレーション方法}
 高度$z$, 波長$\lambda$, ライダー視線距離$R$における大気モデルは以下の通りとした. 
@@ -100,29 +122,95 @@ H2S_dataset_Grosch2015,
     =\sigma_{i=1}^{N}\subrm{N}{gas}(z, R)\subrm{\sigma}{gas}(\lambda)&[\si{m^{-1}}]
     \label{equ:alphagas}
 \end{align}
+\cref{fig:gas_setting}に, シミュレーションに用いる火山ガス濃度分布の設定値を示す. 
+設定値を決めるにあたって, 三宅島での観測データを参考にした\cite{miyake}.
+\begin{figure}
+    \centering
+    \includegraphics{fig/sim_01_env_LoS.pdf}
+    \caption{火山ガス濃度分布の設定}
+    \label{fig:gas_setting}
+\end{figure}
 
+\noindent
 地表面の火口から二酸化硫黄を含む火山ガスが噴出している環境を想定し, 
-高度\SI{1}{km}地点の水平\SI{1}{km}を観測領域に設定した. 
-観測領域内の\SI{300}{m}から\SI{700}{m}を火山ガスが濃厚な高濃度区間, 
+高度\qty{1}{km}地点の水平\qty{1}{km}を観測領域に設定した. 
+観測領域内の\qty{300}{m}から\qty{700}{m}を火山ガスが濃厚な高濃度区間, 
 それ以外を火口から遠い低濃度区間とした. 
 
-気温について, 低濃度区間は\SI{298}{K}, 
-高濃度区間は\SI{358}{K}を想定した. 
+気温について, 低濃度区間は\qty{298}{K}, 
+高濃度区間は\qty{358}{K}を想定した. 
 これは放出される高温の火山ガスがある程度拡散した状況を想定しており, 
 気温は用いる吸収断面積のデータセットに反映されている. 
 
-火山ガスの濃度分布は三宅島での観測値を参考に決定した\cite{miyake}.
-三宅島では2004年
-これを受けて, 
-高濃度区間は二酸化硫黄が\SI{30}{ppm},
-硫化水素が\SI{15}{ppm}とし, 
-低濃度区間は二酸化硫黄が\SI{0.07}{ppm}
-低濃度区間は二酸化硫黄が\SI{0.035}{ppm}とした. 
-オゾンは観測領域全体で一定の\SI{0.005}{ppm}とした. 
+三宅火山は, 近年\ce{SO2}放出量が減少傾向で,
+2016年頃から1日あたりの放出量が数十トン以下と少なくなっているが,
+三宅空港での監視データでは,
+2001年2月から3月末までの2ヶ月間の間に最大で約\qty{11}{ppm}の高濃度が観測されており, 
+風による移流の影響を加味すると火口付近はさらに高濃度であると推測される.
+そのため, 高濃度区間は二酸化硫黄が\qty{30}{ppm},
+硫化水素が\qty{15}{ppm}とし, 
+低濃度区間は二酸化硫黄が\qty{0.07}{ppm}
+低濃度区間は二酸化硫黄が\qty{0.035}{ppm}とした. 
+オゾンは観測領域全体で一定の\qty{0.005}{ppm}とした. 
 
+\cref{equ:power}及び\cref{equ:stat_err}で用いる
+システムパラメータは\cref{tab:sys_params}に示すとおりである.
+\begin{table}
+    \centering
+    \caption{システムパラメータ設定値}
+    \label{tab:sys_params}
+    \begin{tabular}{lcc}
+        \hline
+        \hline
+        パルスエネルギー    &$E_0$                      & \qty{10}{mJ} \\
+        レーザ繰返し周波数  &$f$                        & \qty{100}{Hz} \\
+        積算時間            &$\subrm{t}{m}$             & \qty{10}{min} \\
+        積算回数            &$M=f\times \subrm{t}{m}$    & \num{6.0e4}\\
+        受信鏡直径          &$A$                       & \qty{0.3}{m} \\
+        光学系全効率        &$q$                        & 0.3 \\
+        ディテクター量子効率 &$\eta$                    & 0.3 \\
+        距離分解能          &$\Delta R$                 & \qty{5}{m} \\
+        ダークカウント      &$D$                        & 0\\
+        背景光雑音          &$B$                        & 0\\
+        ディテクター雑音指数 &$F$                        & 1 \\
+        \hline
+        \hline
+    \end{tabular}
+\end{table}
 
-そして, 火山環境の濃度分布設定は三宅島での観測地を参考に決定した\cite{miyake}
-\cref{equ:power}には定義した大気モデルと
+\noindent
+背景光雑音
+
+\section{ラマンDIALによる二酸化硫黄測定における干渉誤差}
+ラマンIALにおいて測定対象でない物質による吸収は, 
+干渉誤差（オフセット誤差）を発生させる. 
+火山環境において, 大気や火山ガス中には二酸化硫黄以外にも紫外域に吸収を持つ気体
+（オゾンや硫化水素）が存在するため,
+それらによる吸収は干渉誤差を引き起こす. 
+\cref{equ:contam_err}は干渉要素を補正するための項であり, 
+対象気体濃度を算出するためにDIAL方程式を解く際に,
+あらかじめ干渉要素の推定値を含めることで 
+その影響をある程度補正することが可能である. 
+\begin{align}
+    \cntmerr
+    &= \frac{\Delta \subrm{\alpha}{air}
+    +\Sigma^N_{\mathrm{gas}=1}\subrm{n}{gas}\Delta\subrm{\sigma}{gas}}{\Delta \subrm{\sigma}{SO2}}\label{equ:contam_err}
+\end{align}
+gas=1,2,...,Nは測定時に推定するガス種を表す. 
+例えば, オゾンによる干渉を補正したい場合, 
+オゾンのおおよその濃度\subrm{n}{O3}を推定し, 
+on波長とoff波長における二酸化硫黄, オゾンの差分吸収断面積\subrm{\sigma}{SO2}, \subrm{\sigma}{O3}を
+を用意して
+\subrm{n}{O3}\times\Delta\subrm{\sigma}{O3}/\Delta\subrm{\sigma}{SO2}
+を計算する. これを\cref{equ:n_SO2}から引くことで
+補正後の二酸化硫黄濃度の推定値が得られる.
+このとき, 推定した濃度が実際の濃度と異なる場合,
+干渉誤差が残存することになる.
+
+基本的に
+測定精度は統計誤差だけでなく, 
+他ガスによる干渉誤差とのバランスで評価する必要がある. 
+
 
 \newpage
 \section{ラマンシフトの組み合わせとシミュレーション結果}

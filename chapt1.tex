@@ -24,16 +24,39 @@
 火山ガスに起因する死亡者数は約1900人にのぼると報告されており,
 火山ガスの危険性は決して小さくない\cite{Hirabayashi2003VolcanicGas}. 
 火山ガスの中でも,二酸化硫黄（\ce{SO2}）は特に強い毒性を有する気体である. 
-は,濃度が5 ppmを超えると呼吸器系への刺激が確認され,
+\cref{tab:SO2_toxicity}に\ce{SO2}の人体への影響を示す.
+\begin{table}
+    \centering
+    \caption{二酸化硫黄の危険性}
+    \label{tab:SO2_toxicity}
+    \begin{tabular}{c|c}
+        濃度[\unit{ppm}] & 人体への影響 \\
+        \hline
+        5 & 刺激症状（咳, 喉の痛み） \\
+        30\sim40 & 呼吸困難 \\
+        400\sim500 & 嗅覚が侵され, 臭気を知覚できない \\
+        500 ppm\sim & 致死濃度\\
+    \end{tabular}
+\end{table}
+
+\noindent
+\ce{SO2}は,濃度が5 ppmを超えると呼吸器系への刺激が確認され,
 30～40 ppmでは呼吸が困難となる. 
 さらに,400 ppmを超える高濃度環境では生命に危険が及ぶことが知られている. 
+その上, 強い毒性によって嗅覚が麻痺し, 特徴的な臭気を感知できなくなるため,
+被害が拡大しやすいという性質も持ち合わせている.
 実際, 環境基準としては, 環境基本法に基づき, 
-「人の健康を保護し、生活環境を保全するうえで維持されることが望ましい基準」として
-1時間値の1日平均値が\SI{0.04}{ppm}以下であり,
-かつ, 1時間値が\SI{0.1}{ppm}以下であることと定められており, 
-許容濃度としては, 米国産業衛生専門家会議（ACGIH:American Conference of Governmental Industrial Hygienists）が
-通常の労働で, 平均暴露濃度が\SI{2}{ppm}以下であればほとんどの労働者に健康上の悪い影響が見られないと判断している\cite{miyake}. 
-ここでの通常の労働は, 1日8時間, 週40時間程度で肉体的に激しくない労働を指し, 
+% 「人の健康を保護し、生活環境を保全するうえで維持されることが望ましい基準」として
+1時間値の1日平均値が\qty{0.04}{ppm}以下であり,
+かつ, 1時間値が\qty{0.1}{ppm}以下であることと定められており, 
+許容濃度としては, ACGIH\footnote{
+    米国産業衛生専門家会議:American Conference of Governmental Industrial Hygienists
+}が
+通常の労働\footnote{
+    1日8時間, 週40時間程度で肉体的に激しくない労働を指す. 
+}
+で, 平均暴露濃度が\qty{2}{ppm}以下であれば
+ほとんどの労働者に健康上の悪い影響が見られないと判断している\cite{miyake}. 
 平均暴露濃度は呼吸保護具を装着していない状態で吸入するであろう濃度のことである. 
 大気中の二酸化炭素濃度が約425 ppm前後であることを考えると,
 \ce{SO2}が極めて低濃度で人体に深刻な影響を及ぼす強毒性ガスであることが分かる. 
@@ -60,8 +83,9 @@ DIALは, 測定対象気体に対して吸収特性の異なる2波長のレー�
 遠隔から周辺領域の濃度分布を時間的に連続して測定可能である点において優れている.
 
 \section{ラマンDIAL}
-本研究で提案するラマンDIALは, システムに用いる2波長を送信光により生じる
-ラマン散乱光として構成する手法である. 
+本研究で提案するラマンDIALは, 送信するレーザ波長によって生じる
+ラマン散乱光をシステムに用いる受信波長として構成し, 
+気体濃度の分布を測定する手法である. 
 ラマン散乱とは, 
 入射したレーザ光が分子の振動エネルギー準位と相互作用することで, 
 入射光とは異なる波長成分を持つ散乱光が生成される現象である.
@@ -77,32 +101,38 @@ DIALは, 測定対象気体に対して吸収特性の異なる2波長のレー�
     \label{fig:ramanDIAL}
 \end{figure}
 
+\noindent
 今回提案するラマンDIALは大気中の酸素分子（\ce{O2}）及び窒素分子(\ce{N2})のラマン散乱を利用する. 
-\ce{O2}のラマンシフトは\SI{1556}{cm^{-1}}, 
-\ce{N2}のラマンシフトは\SI{2331}{cm^{-1}}であり, 
+\ce{O2}のラマンシフトは\qty{1556}{cm^{-1}}, 
+\ce{N2}のラマンシフトは\qty{2331}{cm^{-1}}であり, 
 それぞれのラマン散乱波長はレーザ波長に対して, 
 このラマンシフト分だけ波長変化することになる. 
 ここで, 対象気体の吸収が強い波長をオン波長\subrm{\lambda}{on}, 
 吸収が弱い波長をオフ波長\subrm{\lambda}{off}と呼ぶ. 
-この手法の特徴は, 通常のDIALに対して, 送信レーザの波長数を削減し, 受信側で2波長を構成できることであり, これによりシステムの小型化が期待される.
+この手法の特徴は, 通常のDIALに対して, 送信レーザの波長数を削減し, 
+受信側で2波長を構成できることであり, 
+これによりシステムの小型化が期待される.
 
 ライダー視線上の距離$R$におけるライダーの受信光子数\subrm{P}{phot}は
 \cref{equ:power,equ:alpha}で求められる\cite{PowerEqu}. 
-
-% ===詳細バージョン=== 
 \begin{align}
     P(R)
     &=\frac{E_0}{h\subrm{\lambda}{ls}}
     M \eta q \Delta R \frac{A}{R^2}O(R) \subrm{\beta}{ram}
-    \exp\left[
-        \int^{R}_{0}\alpha(r, \subrm{\lambda}{ls})+\alpha(r, \subrm{\lambda}{ram})\dd r 
-    \right]\label{equ:power}\\
+    \exp\ab[
+        \int^{R}_{0}
+            \ab(
+                \alpha(r, \subrm{\lambda}{ls})
+                +\alpha(r, \subrm{\lambda}{ram})
+            )\dd r 
+    ]\label{equ:power}\\
     \alpha(\lambda, r) 
-    &= \alpha_{\mathrm{air}}(\lambda)
+    &= \subrm{\alpha}{air}(\lambda)
     +\sum^{N}_{\mathrm{gas}=1}
-        n_{\mathrm{gas}}(r)\sigma_{\mathrm{gas}}(\lambda)\label{equ:alpha}
+        \subrm{n}{gas}(r)\subrm{\sigma}{gas}(\lambda)\label{equ:alpha}
 \end{align}
 
+\noindent
 式中の$E_0$はパルスエネルギー, 
 $h$はプランク定数, 
 $M$は積算回数, 
@@ -111,28 +141,30 @@ $\eta$はディテクターの量子効率,
 $\Delta R$は距離分解能, 
 $A$は受信鏡直径
 $O(R)$は重なり関数を表す. 
-後方ラマン散乱断面積$\beta_{ram}$について,
+後方ラマン散乱断面積\subrm{\beta}{ram}について,
 清水らが報告した結果から, 
-窒素による$\beta_{ram}$は$2.8\times10^{-34} \mathrm{m}^2$, 
-酸素による$\beta_{ram}$は$3.9\times10^{-34} \mathrm{m}^2$とした\cite{ramanXS}. 
+窒素の\subrm{\beta}{ram}は\qty{2.8e-34}{m^2}, 
+酸素の\subrm{\beta}{ram}は\qty{3.9e-34}{m^2}とした\cite{ramanXS}. 
 そして, これを0.1した値をアンチストークス散乱の後方散乱断面積とした. 
 % 式中の$C$はライダーのシステムパラメータ, 
 % $\beta_{ram}$は後方ラマン散乱断面積,  
 % $\lambda_{\mathrm{ls}}$はレーザ波長, 
 % $\lambda_{\mathrm{ram}}$はラマン散乱波長である.  
 \cref{equ:alpha}に示す消散係数$\alpha$は, 大気及び各種気体による吸収の総和であり, 
-ここで$\mathrm{gas}=1,2,…,N$ はガス成分の種類を表す. 
+ここでgas=1,2,…,Nはガス成分の種類を表す. 
 
-距離$R_1, R_2(R_1<R_2)$における2波長\subrm{\lambda}{on}, \subrm{\lambda}{off}のライダーの受信光子数から\ce{SO2}の濃度分布は\cref{equ:n_SO2}で求められる\cite{DIALEqu}.
-$\Delta\sigma$はon波長とoff波長における
+距離$R_1, R_2(R_1<R_2)$における2波長\subrm{\lambda}{on}, 
+\subrm{\lambda}{off}のライダーの受信光子数から\ce{SO2}の濃度分布は
+\cref{equ:n_SO2}で求められる\cite{DIALEqu}.
+\Delta\sigma はon波長とoff波長における
 \ce{SO2}吸収断面積の差分である. 
 \begin{equation}
-    n_{\mathrm{SO2}}
-    =\frac{1}{\Delta\sigma_{\mathrm{SO2}}\Delta R}\ln\left(
+    \subrm{n}{SO2}
+    =\frac{1}{\Delta\subrm{\sigma}{SO2}\Delta R}\ln\ab(
         \frac
-        {P(\lambda_{\mathrm{on}}, R_1)P(\lambda_{\mathrm{off}}, R_2)}
-        {P(\lambda_{\mathrm{on}}, R_2)P(\lambda_{\mathrm{off}}, R_1)}
-    \right)\label{equ:n_SO2}
+        {P(\subrm{\lambda}{on}, R_1)P(\subrm{\lambda}{off}, R_2)}
+        {P(\subrm{\lambda}{on}, R_2)P(\subrm{\lambda}{off}, R_1)}
+    )\label{equ:n_SO2}
     % \Delta\sigma_{\mathrm{SO2}} &= 
     % \sigma_{\mathrm{SO2}}(\lambda_{\mathrm{on}})-
     % \sigma_{\mathrm{SO2}}(\lambda_{\mathrm{off}})
@@ -170,8 +202,7 @@ $\Delta\sigma$はon波長とoff波長における
 %   \end{tabular}
 % \end{table}
 
-
 \section{本研究の目的}
 本研究は, ラマンDIALの遠隔・分布・時間的連続観測に着目し, 
-火山ガス中の\ce{SO2}のの測定への適応可能性を数値シミュレーションにより
+火山ガス中の\ce{SO2}の測定への適応可能性を数値シミュレーションにより
 検証することを目的とする.

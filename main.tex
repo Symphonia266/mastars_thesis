@@ -1,55 +1,256 @@
-\documentclass[report,a4paper]{jsbook}
+\documentclass[
+  luatex,
+  report,
+  a4paper,
+  11pt,
+  jlreq_notes,
+]{jlreq}
 
-% pLaTeX + dvipdfmx
-\usepackage[dvipdfmx]{xcolor}
-\usepackage[dvipdfmx]{graphicx}
+% jlreqsetupで色々設定できるようにする
+\usepackage{jlreq-complements}
 
-% 参考文献（natbib + BibTeX）
-\usepackage[numbers]{natbib}
+% jlreqの設定
+\jlreqsetup{
+  thebibliography_heading={  % 参考文献の見出しの出力命令を設定
+    \chapter*{\refname}    % 見出しを章にする
+    \addcontentsline{toc}{chapter}{\refname}    % 目次に追加
+  },
+}
 
-\usepackage{ascmac}
-\usepackage{amsmath}
-\usepackage{plext}
+% =============================================================================
+% 基本パッケージ
+% =============================================================================
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% =============================================================================
+% 数式
+% =============================================================================
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+% \mathtoolsset{showonlyrefs=true} % 参照した数式番号のみを表示する
+\usepackage{siunitx}  % 単位付き数値の入力を楽にする
+\usepackage[version=4]{mhchem}
+\usepackage{physics2} % 数式の記述を楽にする
+\usephysicsmodule{ab}   % 括弧のサイズを自動調整する
+% 行列の記述を楽にする
+\usephysicsmodule{diagmat}
+\usephysicsmodule{xmat}
+\usepackage{derivative}   % 微分記号の入力を楽にする
+
+\usepackage[
+  % mathtoolsと一部競合するため，警告を無視
+  warnings-off={mathtools-colon,mathtools-overbracket}
+]{unicode-math}
+\unimathsetup{math-style=TeX,bold-style=TeX}
+\setmainfont[Ligatures=TeX]{Latin Modern Roman}
+\setsansfont[Ligatures=TeX]{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\setmathfont{Latin Modern Math}
+
+\usepackage[
+  noto-serif-jp,  % ヒラギノ明朝(プロポーショナル)を使用
+  deluxe,  % 多ウェイト化を有効にする
+  % jlreqで使えるようにする
+  jfm_yoko=jlreq,
+  jfm_tate=jlreqv,
+]{luatexja-preset}
+% \ltjsetparameter{jacharrange=full}
+% \setsansfont{Latin Modern Sans}
+% \setsansjfont{IPAexGothic}
+% \setmonofont{Latin Modern Mono}
+% 和文（jsarticle 既定相当）
+% \setmainjfont[
+%     UprightFont   = {Noto Sans JP Regular},   % 通常
+%     BoldFont      = {Noto Sans JP Bold},      % 太字
+%     MediumFont    = {Noto Sans JP Medium},    % 中太
+%     SemiBoldFont  = {Noto Sans JP SemiBold},  % セミボールド
+%     BlackFont     = {Noto Sans JP Black},     % 黒字
+%     LightFont     = {Noto Sans JP Light},     % 細字
+%     ExtraLightFont= {Noto Sans JP ExtraLight},% 極細
+%     ExtraBoldFont = {Noto Sans JP ExtraBold}  % 超太字
+% ]{Noto Sans JP Regular}
+
+\usepackage{booktabs} % 表の罫線を扱う
 \usepackage{multirow}
 \usepackage{multicol}
-\usepackage{float}
 \usepackage{enumitem}
-\usepackage{caption}
+\usepackage{float}
+
+% キャプションを設定
+\usepackage[hang,small,bf]{caption}
 \usepackage[subrefformat=parens]{subcaption}
+% \captionsetup[subfigure]{labelformat=simple}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 
-\usepackage[dvipdfmx]{hyperref}
-\usepackage{cleveref}
+% ソースコードを扱う
+\usepackage{listings}
+\lstset{
+  tabsize={4}, % タブの展開後のサイズ
+  numbers=left, % 行番号表示，デフォルト: none 他のオプション: left, right
+  basicstyle={\small},   % 識別子の書体指定
+  identifierstyle={\small},  % 識別子の書体指定
+  %numberstyle=\scriptsize,  % 行番号の書体指定
+  commentstyle={\small\ttfamily},  % 注釈の書体。
+  ndkeywordstyle={\small},
+  keywordstyle={\small\bfseries},  % キーワードの書体指定。
+  stringstyle={\small\ttfamily},
+  columns=[l]{fullflexible},
+  xrightmargin=0\zw,
+  xleftmargin=0\zw,
+  numbersep=1\zw,
+  %backgroundcolor={\color[gray]{.85}},
+  frame=lines,  % frameの指定．デフォルト: none 他のオプション: leftline, topline, bottomline, lines, single, shadowbox
+  breaklines=true,  % 行が長くなってしまった場合の改行．デフォルト: false
+}
+\floatplacement{figure}{!htbp}
+\floatplacement{table}{!htbp}
 
-\usepackage[version=4]{mhchem}
-\usepackage{titlesec}
-\usepackage{siunitx}
+
+% =============================================================================
+% 参考文献（natbib + BibTeX）
+% =============================================================================
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none]{biblatex}
+
+% \DefineBibliographyStrings{japanese}{
+%   andothers={他} % 和文文献の "et al." 相当
+% }
+% \DefineBibliographyStrings{english}{
+%   andothers={\textit{et al.}} % 欧文文献
+% }
+
+% ラベル形式
+\DeclareFieldFormat{labelnumberwidth}{[#1]\hspace{0.5em}}
+
+% 左マージンなどの調整
+\setlength{\biblabelsep}{0pt}
+\setlength{\bibitemsep}{0pt}
+\setlength{\bibparsep}{0pt}
+
+% フォーマットを文献タイプ別に分ける
+\DeclareFieldFormat[article]{title}{%
+  \iffieldequalstr{langid}{japanese}{「#1」}{\textit{#1}}%
+}
+\DeclareFieldFormat[book]{title}{%
+  \iffieldequalstr{langid}{japanese}{『#1』}{\textit{#1}}%
+}
+\DeclareFieldFormat{journaltitle}{%
+  \iffieldequalstr{langid}{japanese}{#1}{\textit{#1}}%
+}
+\DeclareFieldFormat{booktitle}{%
+  \iffieldequalstr{langid}{japanese}{#1}{\textit{#1}}%
+}
+
+% "In:" マクロを削除
+\renewbibmacro{in:}{}
+
+% 欧文・和文で連名の区切りを制御
+\DeclareDelimFormat{finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \addspace\multinamedelim
+}
+
+% Bib ファイルの登録
+\addbibresource{reference.bib}
+
+% =============================================================================
+% その他
+% =============================================================================
 \usepackage{comment}
 \usepackage{url}
+\usepackage{indentfirst}
 
 % =============================================================================
-\parindent 1zw
+% ハイパーリンク
 % =============================================================================
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
 
-% --- ここ以下のマクロ・設定は元のまま ---
+\crefname{figure}{図}{図}
+\Crefname{figure}{図}{図}
+
+\crefname{table}{表}{表}
+\Crefname{table}{表}{表}
+
+\crefname{equation}{式}{式}
+\Crefname{equation}{式}{式}
+
+\crefname{inlineitem}{}{}
+\Crefname{inlineitem}{}{}
+
+\crefformat{equation}{(#2#1#3)式}
+\Crefformat{equation}{(#2#1#3)式}
+\crefrangeformat{equation}{(#3#1#4)–(#5#2#6)式}
+\crefmultiformat{equation}
+  {(#2#1#3)式}
+  {, (#2#1#3)式}
+  {, (#2#1#3)式}
+  {, (#2#1#3)式}
+\crefrangemultiformat{equation}
+  {(#3#1#4)–(#5#2#6)式}
+  {, (#3#1#4)–(#5#2#6)式}
+  {, (#3#1#4)–(#5#2#6)式}
+  {, (#3#1#4)–(#5#2#6)式}
+\crefformat{inlineitem}{%
+  \textcircled{\scriptsize#2#1#3}%
+}
+
+% 図表周りの空間調整
+\renewcommand{\textfloatsep}{10pt}  % 図表と本文の間隔（ページ上端・下端）
+\renewcommand{\floatsep}{10pt}      % 図表同士の間隔
+\renewcommand{\intextsep}{5pt}     % 本文中に置かれた図表との間隔
+\renewcommand{\belowcaptionskip}{5pt}
+  
+% =============================================================================
+% 諸設定
+% =============================================================================
+% 和文用タイトル再設定
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\renewcommand{\contentsname}{目次}
+\renewcommand{\listfigurename}{図目次}
+\renewcommand{\listtablename}{表目次}
+\renewcommand{\baselinestretch}{0.95}  % 行間調整
+
+% =============================================================================
+%　マクロ
+% =============================================================================
+% Keep same float settings as original
+\newcounter{inlineitem}
+\newcommand{\inlineitem}[1]{%
+	\refstepcounter{inlineitem}%
+	\label{#1}%
+	\space\textcircled{\scriptsize\theinlineitem}%
+}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\subrm}[2]{\ensuremath{#1_{\mathrm{#2}}}}
+\newcommand{\cntmerr}{\ensuremath{\varepsilon_{\mathrm{cntm}}}}
+\newcommand{\staterr}{\ensuremath{\varepsilon_{\mathrm{stat}}}}
+
+% =============================================================================
 
 \begin{document}
-
 \include{title}
-% \maketitle
-
+\pagenumbering{roman}
 \tableofcontents
-\pagenumbering{arabic}
 
+\clearpage
+\listoffigures
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
 \include{chapt1}
 \include{chapt2}
-% \include{chapt3}
+\include{chapt3}
 % \include{chapt4}
 % \include{chapt5}
 % \include{thanks}
 
-\bibliographystyle{unsrt}
-\bibliography{reference}
-
+\printbibliography[title=参考文献]
 % \include{appendix}
 
 \end{document}
