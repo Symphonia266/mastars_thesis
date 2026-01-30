@@ -103,6 +103,10 @@
     // ビルドのレシピ
     "latex-workshop.latex.recipes": [
         {
+        "name": "latexmk (LuaLaTeX + Biber)",
+        "tools": ["lualatex-step1", "biber", "lualatex-step2", "lualatex-step3"]
+        },
+        {
         "name": "latexmk (LuaLaTeX)",
         "tools": ["latexmk-lua"]
         },
@@ -118,7 +122,8 @@
         "name": "latexmk-lua",
         "command": "latexmk",
         "args": [
-            "-lualatex",
+            "-pdf", 
+            "-pdflatex=lualatex %O %S",
             "-outdir=out",
             "-synctex=1",
             "-interaction=nonstopmode",
@@ -139,6 +144,50 @@
             "-file-line-error",
             "%DOC%"
         ]
+        },
+        {
+            "name": "lualatex-step1",
+            "command": "lualatex",
+            "args": [
+                "-outdir=out",
+                "-synctex=1",                
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "--output-directory=out",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "lualatex-step2",
+            "command": "lualatex",
+            "args": [
+                "-outdir=out",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "lualatex-step3",
+            "command": "lualatex",
+            "args": [
+                "-outdir=out",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-halt-on-error",
+                "-file-line-error",
+                "%DOC%"
+            ]
         }
     ],    
 

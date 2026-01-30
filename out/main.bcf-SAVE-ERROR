@@ -2375,3 +2375,16 @@
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">bousai2021</bcf:citekey>
     <bcf:citekey order="2" intorder="1">Hirabayashi2003VolcanicGas</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">miyake</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">miyake</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">PowerEqu</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">ramanXS</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">DIALEqu</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">StatErrorEqu</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">MPI_Mainz_UV_VIS_Atlas2013</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">SO2_dataset_Hermans2009_I</bcf:citekey>
+    <bcf:citekey order="9" intorder="3">SO2_dataset_Vandaele2009_II</bcf:citekey>
+    <bcf:citekey order="9" intorder="4">O3_dataset_Bogumil2003</bcf:citekey>
+    <bcf:citekey order="9" intorder="5">H2S_dataset_Grosch2015</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">Previous_research</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">miyake</bcf:citekey>

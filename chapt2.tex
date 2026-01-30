@@ -1,17 +1,18 @@
-\chapter[二酸化硫黄分布測定におけるラマンDIALの最適仕様]{ラマンDIALによる二酸化硫黄分布観測のシミュレーション}\label{chapt2}
+\chapter{ラマンDIALによる二酸化硫黄分布観測のシミュレーション}\label{chapt2}
 
 \section{ラマンDIALの統計誤差}
-ラマンDIALによる測定で発生する統計誤差は\cref{equ:stat_err}で求められる
-\cite{StatErrorEqu}. 
-式中の$D$はダークカウント, $B_j$は背景光雑音, $F$はディテクターの雑音指数を表す. 
+ラマンDIALによる測定で発生する統計誤差は
+\cref{equ:stat_err}で求められる\cite{StatErrorEqu}. 
+式中の$D$はダークカウント, $B_j$は背景光雑音, 
+$F$はディテクターの雑音指数を表す. 
 $\mathrm{i}=1,2$ はon波長及びoff波長,  
 $\mathrm{j}=1,2$ は視線距離$R_1, R_2$に相当する. 
 \begin{align}
     \staterr 
-    &= \dfrac{1}{2\Delta\subrm{\sigma}{SO2}\Delta R}\left[
+    &= \dfrac{1}{2\Delta\subrm{\sigma}{SO2} \Delta R}\ab[
         \sum^2_{i=1}\sum^2_{j=1}
         \frac{D+(P_{ij}+B_j)F}{P_{ij}}
-    \right]^{1/2}
+    ]^{1/2}
     \label{equ:stat_err}
 \end{align}
 
@@ -36,7 +37,7 @@ H2S_dataset_Grosch2015,
 }.
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{fig/sim_01_3gases_absorptance.png}
+    \includegraphics{fig/sim_01_3gases_absorptance.png}
     \caption{\ce{SO2}, \ce{O3}, \ce{H2S}の吸収スペクトル}
     \label{fig:3gases_absorption}
 \end{figure}
@@ -76,16 +77,10 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 \ce{SO2}の吸収は\qty{240}{nm}付近や\qty{320}{nm}以降で
 吸収が弱まるため, レーザ波長とラマン散乱波長の関係によっては
 アンチストークス散乱波長の利用が優位となる可能性があるため, 
-検証する必要があると考えた. 
+検証する必要がある. 
 
-\cref{fig:raman_shift}より, 
-取り得る組み合わせは6通りとなる
-したがって, 4つのラマン散乱波長で\cref{equ:power}による受信光子数を計算し,
-\cref{equ:stat_err}に代入して6通りの\staterr を算出する. 
-それぞれで, \staterr が最小となるレーザ波長を探索し, 
-それを比較することで最適な受信波長の構成を決定する.
 \newpage
-\section{シミュレーション方法}
+\section{シミュレーション条件}
 高度$z$, 波長$\lambda$, ライダー視線距離$R$における大気モデルは以下の通りとした. 
 \cref{equ:atmnumber}は大気密度, 
 \cref{equ:sigmaray}はレイリー散乱断面積, 
@@ -122,6 +117,7 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
     =\sigma_{i=1}^{N}\subrm{N}{gas}(z, R)\subrm{\sigma}{gas}(\lambda)&[\si{m^{-1}}]
     \label{equ:alphagas}
 \end{align}
+
 \cref{fig:gas_setting}に, シミュレーションに用いる火山ガス濃度分布の設定値を示す. 
 設定値を決めるにあたって, 三宅島での観測データを参考にした\cite{miyake}.
 \begin{figure}
@@ -150,8 +146,9 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 そのため, 高濃度区間は二酸化硫黄が\qty{30}{ppm},
 硫化水素が\qty{15}{ppm}とし, 
 低濃度区間は二酸化硫黄が\qty{0.07}{ppm}
-低濃度区間は二酸化硫黄が\qty{0.035}{ppm}とした. 
+低濃度区間は二酸化硫黄が\qty{0.035}{ppm}に設定した. 
 オゾンは観測領域全体で一定の\qty{0.005}{ppm}とした. 
+
 
 \cref{equ:power}及び\cref{equ:stat_err}で用いる
 システムパラメータは\cref{tab:sys_params}に示すとおりである.
@@ -162,27 +159,193 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
     \begin{tabular}{lcc}
         \hline
         \hline
-        パルスエネルギー    &$E_0$                      & \qty{10}{mJ} \\
-        レーザ繰返し周波数  &$f$                        & \qty{100}{Hz} \\
-        積算時間            &$\subrm{t}{m}$             & \qty{10}{min} \\
-        積算回数            &$M=f\times \subrm{t}{m}$    & \num{6.0e4}\\
-        受信鏡直径          &$A$                       & \qty{0.3}{m} \\
-        光学系全効率        &$q$                        & 0.3 \\
-        ディテクター量子効率 &$\eta$                    & 0.3 \\
-        距離分解能          &$\Delta R$                 & \qty{5}{m} \\
-        ダークカウント      &$D$                        & 0\\
-        背景光雑音          &$B$                        & 0\\
-        ディテクター雑音指数 &$F$                        & 1 \\
+        Pluse energy                &$E_0$                      & \qty{10}{mJ} \\
+        Laser repetition frequency  &$f$                        & \qty{100}{Hz} \\
+        Integration time            &$\subrm{t}{m}$             & \qty{10}{min} \\
+        Number of integrations      &$M=f\times \subrm{t}{m}$   & \num{6.0e4}\\
+        Receiver telescope diameter &$A$                        & \qty{0.3}{m} \\
+        Total optical efficiency    &$q$                        & 0.3 \\
+        Detector quantum efficiency &$\eta$                     & 0.3 \\
+        Spatial resolution          &$\Delta R$                 & \qty{5}{m} \\
+        Dark counts                 &$D$                        & 0\\
+        Background light noise      &$B$                        & 0\\
+        Detector noise factor       &$F$                        & 1 \\
         \hline
         \hline
     \end{tabular}
 \end{table}
+\noindent
+今回は, 本研究全体を通して, 
+背景光雑音及びダークカウント, ディテクター雑音指数による影響を
+無視した理想条件でシミュレーションした. 
+
+\newpage
+\section{受信波長の構成による統計誤差の比較}
+\cref{fig:raman_shift}に示したように, 
+レーザ波長によって生じるラマン散乱波長は4つあり, 
+それらから受信する2波長を選択するとき取り得る構成は6通りとなる. 
+それぞれで, \staterr が最小となるレーザ波長を探索し, 
+そのときの\staterr の距離特性を比較することで最適な受信波長の構成を決定する.
+\cref{fig:6combies_stat}に, 
+各受信波長の構成における統計誤差を示す.
+\begin{figure}
+    \centering
+    \includegraphics{fig/sim_01_6combies_stat.pdf}
+    \caption{受信波長の構成による統計誤差の比較}
+    \label{fig:6combies_stat}
+\end{figure}
 
 \noindent
-背景光雑音
+横軸はライダーの視線距離, 
+縦軸は\ce{SO2}測定値に対する統計誤差を表し, 
+単位はそれぞれ\unit{m}, \unit{ppm}である. 
+それぞれの最適レーザ波長は, 
+高濃度区間（\qty{300}{m}から\qty{700}{m}）で最遠方測定点となる
+\qty{700}{m}の少し手前を基準に最も統計誤差が最小となるものを選択した.
+\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成は, 
+視線距離で近傍の低濃度区間では優位であるものの, 
+高濃度区間での悪化が激しく, 
+観測領域終端では\qty{10}{ppm}を超過した. 
+反対に, 
+\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長の構成は, 
+統計誤差の距離悪化が緩やかで, 
+その他の構成と比較しても統計誤差が小さかった. 
 
+6つの組み合わせそれぞれの最適レーザ波長とオン波長, オフ波長, 
+そして基準点での統計誤差を\cref{tab:6combies_3wlandstaterr}に示す. 
+レーザ波長に注目すると, 
+\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成は
+最適レーザ波長が\qty{240}{nm}で, 
+それ以外の構成では\qty{340}{ppm}前後となっている.
+\cref{fig:3gases_absorption}に示したように, 
+波長\qty{240}{nm}付近は\ce{H2S}吸収が存在するため統計誤差が悪化しやすい. 
+また, それ以降の波長でも\ce{SO2}, 
+\ce{O3}ともに吸収が強くなるため同様に統計誤差が悪化しやすい. 
+そのため, 紫外領域となる\ce{340}{nm}付近に最適レーザ波長が集まったと考えられる. 
+そして, \staterr に注目すると, 
+\ce{SO2}濃度の設定値\qty{30}{ppm}に対して, 
+\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成では
+\staterr は\qty{5}{ppm}以上であり, 設定値の10\%を超過している. 
+しかし, それ以外の構成では1\sim 2\unit{ppm}と数\%であるため, 
+これらの組み合わせは今回の条件下において, 
+\ce{SO2}測定に適する構成だといえる. 
+\begin{table}
+    \centering
+    \caption{}
+    \label{tab:6combies_3wlandstaterr}
+    \begin{tabular}{ccccc}
+        \hline
+        Combi.  
+        & Laser wavelength[\unit{nm}] 
+        & \subrm{\lambda}{on}[\unit{nm}] 
+        & \subrm{\lambda}{off}[\unit{nm}] 
+        & \staterr [\unit{ppm}]\\
+
+        \ce{O2} Stokes, \ce{O2} a-Stokes
+        & 334.6
+        & 318.0
+        & 353.0
+        & 1.21\\
+
+        \ce{N2} Stokes, \ce{O2} a-Stokes
+        & 334.6
+        & 318.0
+        & 362.9
+        & 1.22\\
+
+        \ce{O2} Stokes, \ce{N2} a-Stokes
+        & 343.7
+        & 318.2
+        & 362.1
+        & 1.47\\
+
+        \ce{N2} Stokes, \ce{N2} a-Stokes
+        & 338.9
+        & 314.1
+        & 368.0
+        & 1.61\\
+
+        \ce{N2} a-Stokes, \ce{O2} a-Stokes
+        & 343.6
+        & 318.1
+        & 326.1
+        & 1.75\\
+
+        \ce{N2} Stokes, \ce{O2} Stokes
+        & 240.0
+        & 254.2
+        & 249.3
+        & 5.56\\
+
+
+
+
+
+
+        \hline
+    \end{tabular}
+\end{table}
+
+さらに, 統計誤差の距離特性が劣っていた
+\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成と, 
+統計誤差の距離特性が優れた
+\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長の構成に注目する. 
+\cref{fig:6combies_stat}に2つの受信波長構成それぞれのレーザ波長, 
+on波長及びoff波長における吸収断面積を示す. 
+横軸は波長, 縦軸は吸収断面積である. 
+\begin{figure}
+    \centering
+    \includegraphics{fig/sim_01_cond_2case.pdf}
+    \caption{二つの受信波長構成（\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長, 
+        \ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長）における\ce{SO2}吸収断面積}
+    \label{fig:cond_wl_combi}
+\end{figure}
+
+\noindent
+どちらもレーザ波長は山なりの吸収スペクトルから外れており, 
+on波長, off波長それぞれの吸収断面積は, 
+赤色（\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成）の方が大きい. 
+\Delta \subrm{\sigma}{SO2}はそれぞれ, 
+\qty{6.83e-24}{m^2}, \qty{7.22e-24}{m^2}であり, 
+これも, 赤色の方が大きい. 
+これは, \Delta \subrm{\sigma}{SO2}が大きかったことで
+視線距離で近傍の測定では統計誤差が小さかったが, 
+ラマン散乱波長による吸収が強く, 
+信号減衰が激しかったために統計誤差の悪化が著しかったことを裏付けている. 
+
+\cref{fig:cond_power_combi}は, 
+\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成と, 
+\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長の構成における
+on波長及びoff波長の信号強度の距離特性であり, 縦軸は受信光子数である. 
+\begin{figure}
+    \centering
+    \includegraphics{fig/sim_01_power.pdf}
+    \caption{
+        二つの受信波長構成（\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長, 
+        \ce{O2}ストークス散乱波長と\ce{O2}アンチストークス）における受信光子数の距離特性
+    }
+    \label{fig:cond_power_combi}
+\end{figure}
+
+\noindent
+赤色において, on波長は\ce{N2}ストークス散乱波長であり, 
+青色において, on波長は\ce{O2}アンチストークス散乱波長である. 
+\cref{equ:power}を解く際に, 
+アンチストークス散乱の信号強度はストークス散乱のものに対して1/10となるよう計算したため, 
+\cref{fig:cond_wl_combi}に示したように, 
+on波長の吸収断面積は赤色の方が大きいにもかかわらず, 
+$\subrm{P}{on}$も赤色の方が大きい. 
+しかし, 高濃度区間では強い吸収によって大小関係が逆転している. 
+また, レーザ波長が\ce{O3}や\ce{H2S}の影響の小さい紫外領域にあることや, 
+off波長の吸収断面積が小さいため, 
+$\subrm{P}{off}$は青色の方が大きい. 
+結果として, 信号強度が微弱なアンチストークス散乱も, 
+波長選択によって十分に選択可能であることが示された. 
+
+
+\newpage
 \section{ラマンDIALによる二酸化硫黄測定における干渉誤差}
-ラマンIALにおいて測定対象でない物質による吸収は, 
+ラマンDIALにおいて測定対象でない物質による吸収は, 
 干渉誤差（オフセット誤差）を発生させる. 
 火山環境において, 大気や火山ガス中には二酸化硫黄以外にも紫外域に吸収を持つ気体
 （オゾンや硫化水素）が存在するため,
@@ -207,10 +370,82 @@ on波長とoff波長における二酸化硫黄, オゾンの差分吸収断面�
 このとき, 推定した濃度が実際の濃度と異なる場合,
 干渉誤差が残存することになる.
 
-基本的に
-測定精度は統計誤差だけでなく, 
-他ガスによる干渉誤差とのバランスで評価する必要がある. 
+測定する火山ガス濃度は, 
+その火山の熱水系構造や活動状況によって放出量は異なり, 
+また, 火口からの距離などによって移流や拡散を伴って濃度は変動する.
+そのため, 二酸化硫黄放出が微量であったり, 
+それ以外の干渉気体が豊富であったりという
+二酸化硫黄の相対量が少ない環境での測定を考えると, 
+干渉誤差の影響は無視できないため, 
+統計誤差と同様に考慮する必要がある.
 
+\cref{fig:6combies_cntm}に各受信波長の構成における統計誤差を示す. 
+横軸はライダーの視線距離, 
+縦軸は\ce{SO2}濃度の測定値である. 
+\begin{figure}
+    \centering
+    \includegraphics{fig/sim_01_6combies_cntm.pdf}
+    \caption{}
+    \label{fig:6combies_cntm}
+\end{figure}
 
-\newpage
-\section{ラマンシフトの組み合わせとシミュレーション結果}
+\cref{tab:6combies_cntmerr}は低濃度区間にあたる視線距離\qty{100}{m}と
+高濃度区間にあたる視線距離\qty{500}{m}における
+各受信波長構成の干渉誤差である.
+
+\begin{table}
+    \centering
+    \caption{}
+    \label{tab:6combies_cntmerr}
+    \begin{tabular}{ccc}
+        \hline
+        Combi.  
+        & \cntmerr(R=100) [\unit{ppm}] 
+        & \cntmerr(R=500) [\unit{ppm}] \\
+
+        \ce{O2} Stokes, \ce{O2} a-Stokes
+        & 353.0
+        & 1.21\\
+
+        \ce{N2} Stokes, \ce{O2} a-Stokes
+        & 362.9
+        & 1.22\\
+
+        \ce{O2} Stokes, \ce{N2} a-Stokes
+        & 362.1
+        & 1.47\\
+
+        \ce{N2} Stokes, \ce{N2} a-Stokes
+        & 368.0
+        & 1.61\\
+
+        \ce{N2} a-Stokes, \ce{O2} a-Stokes
+        & 326.1
+        & 1.75\\
+
+        \ce{N2} Stokes, \ce{O2} Stokes
+        & 249.3
+        & 5.56\\
+
+        \hline
+    \end{tabular}
+\end{table}
+
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{subfigure}[b]{0.49\linewidth}
+%         \centering
+%         \includegraphics[scale=0.5]{fig/sim_01_6combies_cntm.pdf}
+%         \caption{干渉誤差}
+%         \label{fig:left}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{0.49\linewidth}
+%         \centering
+%         \includegraphics[scale=0.5]{fig/sim_01_6combies_stat.pdf}
+%         \caption{統計誤差}
+%         \label{fig:right}
+%     \end{subfigure}
+%     \caption{受信波長の構成による(a)干渉誤差, (b)統計誤差の比較}
+%     \label{fig:two_side_by_side}
+% \end{figure}

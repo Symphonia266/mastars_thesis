@@ -81,7 +81,7 @@
 \usepackage[hang,small,bf]{caption}
 \usepackage[subrefformat=parens]{subcaption}
 % \captionsetup[subfigure]{labelformat=simple}
-\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
 
 % ソースコードを扱う
 \usepackage{listings}
@@ -229,6 +229,22 @@
 \newcommand{\subrm}[2]{\ensuremath{#1_{\mathrm{#2}}}}
 \newcommand{\cntmerr}{\ensuremath{\varepsilon_{\mathrm{cntm}}}}
 \newcommand{\staterr}{\ensuremath{\varepsilon_{\mathrm{stat}}}}
+
+% % 日本語用マクロ（目次やPDF文字列も安全）
+% \newcommand{\n2sO2sJ}{\texorpdfstring{\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長}{N2 Stokes, O2 Stokes}}
+% \newcommand{\n2sO2aJ}{\texorpdfstring{\ce{N2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長}{N2 Stokes, O2 a-Stokes}}
+% \newcommand{\n2sN2aJ}{\texorpdfstring{\ce{N2}ストークス散乱波長と\ce{N2}アンチストークス散乱波長}{N2 Stokes, N2 a-Stokes}}
+% \newcommand{\n2aO2aJ}{\texorpdfstring{\ce{N2}アンチストークス散乱波長と\ce{O2}アンチストークス散乱波長}{N2 a-Stokes, O2 a-Stokes}}
+% \newcommand{\o2sN2aJ}{\texorpdfstring{\ce{O2}ストークス散乱波長と\ce{N2}アンチストークス散乱波長}{O2 Stokes, N2 a-Stokes}}
+% \newcommand{\o2sO2aJ}{\texorpdfstring{\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長}{O2 Stokes, O2 a-Stokes}}
+
+% % 英語用マクロ
+% \newcommand{\n2sO2sE}{\ce{N2} Stokes, \ce{O2} Stokes}
+% \newcommand{\n2sO2aE}{\ce{N2} Stokes, \ce{O2} a-Stokes}
+% \newcommand{\n2sN2aE}{\ce{N2} Stokes, \ce{N2} a-Stokes}
+% \newcommand{\n2aO2aE}{\ce{N2} a-Stokes, \ce{O2} a-Stokes}
+% \newcommand{\o2sN2aE}{\ce{O2} Stokes, \ce{N2} a-Stokes}
+% \newcommand{\o2sO2aE}{\ce{O2} Stokes, \ce{O2} a-Stokes}
 
 % =============================================================================
 
