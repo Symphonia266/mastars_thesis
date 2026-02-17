@@ -21,12 +21,14 @@ $\mathrm{j}=1,2$ は視線距離$R_1, R_2$に相当する.
 \end{align}
 
 \cref{equ:stat_err}より, 
-統計誤差\staterr は受信光子数$P$に強く依存することが分かる. 
-一方で, $P$は\ce{SO2}吸収が強すぎる
+統計誤差\staterr は
+受信光子数$P$及び
+\ce{SO2}差分吸収断面積$\Delta\subrm{\sigma}{SO2}$に依存する. 
+$P$は\ce{SO2}吸収が強すぎる
 レーザ波長\subrm{\lambda}{ls}
-及びラマン散乱波長\subrm{\lambda}{ram}では減衰し, 
-\subrm{\lambda}{on}（=\subrm{\lambda}{ram}）での\ce{SO2}吸収が弱すぎる波長では
-\subrm{\sigma}{SO2} が小さくなるため, 
+及びラマン散乱波長\subrm{\lambda}{ram}では減衰する一方で, 
+\ce{SO2}差分吸収断面積$\Delta\subrm{\sigma}{SO2}$は
+\ce{SO2}吸収が弱すぎる\subrm{\lambda}{on}（=\subrm{\lambda}{ram}）では小さくなるため, 
 これらの場合には\staterr が増大する.
 
 二酸化硫黄, オゾン, 硫化水素の吸収スペクトルを\cref{fig:3gases_absorption}に示す. 
@@ -50,7 +52,8 @@ H2S_dataset_Grosch2015,
 二酸化硫黄は紫外領域に吸収スペクトルを持ち, 
 300 nm 付近の波長では吸収が櫛状に増減する特徴を持つ. 
 二酸化硫黄測定にラマン DIALを適応する場合, 
-\cref{equ:stat_err}の $P$ と \Delta\subrm{\sigma}{SO2}はon波長とoff波長に依存し, 
+\staterr は, これらの吸収スペクトルに依存する. 
+\cref{equ:stat_err}の $P$ と $\Delta\subrm{\sigma}{SO2}$はon波長とoff波長に依存
 on波長及びoff波長に相当するラマン散乱波長はレーザ波長に依存する. 
 したがって, 受信強度と差分吸収が十分に確保できるレーザ波長の最適点が存在する.
 
@@ -58,13 +61,14 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 ラマン散乱におけるレーザ波長\subrm{\lambda}{ls}と
 ラマン散乱波長\subrm{\lambda}{ram}, 
 ラマンシフト\subrm{\lambda}{shift}の関係は\cref{fig:raman_shift}に示すとおりである. 
-\newpage
+
 \begin{figure}
     \centering
     \includegraphics[width=0.6\linewidth]{fig/raman_stokes_Astokes.png}
     \caption{レーザ波長とラマン散乱波長の関係}
     \label{fig:raman_shift}
 \end{figure}
+
 \noindent
 酸素分子\ce{O2}によるラマン散乱波長は
 ストークス散乱波長$\subrm{\lambda}{O2}^{S}$と
@@ -128,14 +132,6 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 
 \cref{fig:gas_setting}に, シミュレーションに用いる火山ガス濃度分布の設定値を示す. 
 設定値を決めるにあたって, 三宅島での観測データを参考にした\cite{miyake}.
-\begin{figure}
-    \centering
-    \includegraphics{fig/sim_01_env_LoS.pdf}
-    \caption{火山ガス濃度分布の設定}
-    \label{fig:gas_setting}
-\end{figure}
-
-\noindent
 地表面の火口から二酸化硫黄を含む火山ガスが噴出している環境を想定し, 
 高度\qty{1}{km}地点の水平\qty{1}{km}を観測領域に設定した. 
 観測領域内の\qty{300}{m}から\qty{700}{m}を火山ガスが濃厚な高濃度区間, 
@@ -155,7 +151,14 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 硫化水素は\qty{0.035}{ppm}に設定した. 
 オゾンは観測領域全体で一定の\qty{0.005}{ppm}とした. 
 
+\begin{figure}
+    \centering
+    \includegraphics{fig/sim_01_env_LoS.pdf}
+    \caption{火山ガス濃度分布の設定}
+    \label{fig:gas_setting}
+\end{figure}
 
+\newpage
 \cref{equ:power}及び\cref{equ:stat_err}で用いる
 システムパラメータは\cref{tab:sys_params}に示すとおりである.
 \begin{table}
@@ -180,8 +183,13 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
         \hline
     \end{tabular}
 \end{table}
+
 \noindent
-今回は, 本研究全体を通して, 
+ラマンDIALによる観測の特徴である時間連続性は積算時間を10 分としており, 
+分布観測性は距離分解能を\qty{5}{m}としている. 
+すなわち得られる測定データは10分間の時間平均, 
+\qty{5}{m}区間の距離平均濃度を意味する. 
+また, 本研究全体を通して, 
 背景光雑音及びダークカウント, ディテクター雑音指数による影響を
 無視した理想条件でシミュレーションした. 
 
@@ -311,13 +319,10 @@ on波長及びoff波長における吸収断面積を示す.
 どちらもレーザ波長は山なりの吸収スペクトルから外れており, 
 on波長, off波長それぞれの吸収断面積は, 
 \ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成の方が大きい. 
-\Delta \subrm{\sigma}{SO2}はそれぞれ, 
-\qty{6.83e-24}{m^2}, \qty{7.22e-24}{m^2}であり, 
-これも, \ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成の方が大きい. 
-つまり, \Delta \subrm{\sigma}{SO2}が大きかったことで
-視線距離で近傍の測定では統計誤差が小さかったが, 
-ラマン散乱波長による吸収が強く, 
-信号減衰が激しかったために統計誤差の悪化が著しかったことを裏付けている. 
+また, \Delta \subrm{\sigma}{SO2}は, 
+\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の受信構成で\qty{6.83e-24}{m^2}, 
+\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長の受信構成で\qty{7.22e-24}{m^2}であり, 
+僅かに\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長の受信構成の方が大きい. 
 
 \cref{fig:cond_power_combi}は, 
 \ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長の構成と, 
@@ -334,17 +339,33 @@ on波長及びoff波長の信号強度の距離特性であり, 縦軸は受信�
 \end{figure}
 
 \noindent
-赤色において, on波長は\ce{N2}ストークス散乱波長であり, 
-青色において, on波長は\ce{O2}アンチストークス散乱波長である. 
-\cref{equ:power}を解く際に, 
-アンチストークス散乱の信号強度はストークス散乱のものに対して1/10となるよう計算したため, 
-\cref{fig:cond_wl_combi}に示したように, 
-on波長の吸収断面積は赤色の方が大きいにもかかわらず, 
-$\subrm{P}{on}$も赤色の方が大きい. 
-しかし, 高濃度区間では強い吸収によって大小関係が逆転している. 
-また, レーザ波長が\ce{O3}や\ce{H2S}の影響の小さい紫外領域にあることや, 
-off波長の吸収断面積が小さいため, 
-$\subrm{P}{off}$は青色の方が大きい. 
+赤色で示す\ce{O2}ストークス散乱波長と\ce{N2}ストークス散乱波長の受信波長構成において, 
+実線は\ce{N2}ストークス散乱信号（$\subrm{\lambda}{on}=\qty{254.2}{nm}$）, 
+点線は\ce{O2}ストークス散乱信号（$\subrm{\lambda}{off}=\qty{249.3}{nm}$）である. 
+青色で示す\ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長の受信波長構成において,
+実線は\ce{O2}アンチストークス散乱信号（$\subrm{\lambda}{on}=\qty{318.0}{nm}$）, 
+点線は\ce{O2}ストークス散乱信号（$\subrm{\lambda}{off}=\qty{353.0}{nm}$）である. 
+
+高濃度の\ce{SO2}による吸収を受ける\qty{300}{m}以前の信号強度を比較すると, 
+\cref{equ:power}を解く際に
+アンチストークス散乱の信号強度は
+ストークス散乱のものに対して1/10となるよう計算したため, 
+青実線で示す\ce{O2}アンチストークス散乱は他の3つと比べて小さい.
+また, on波長同士では赤色実線で示す\ce{N2}ストークス散乱波長の方が強く, 
+off波長同士では青色点線で示す\ce{O2}ストークス散乱波長の方が強い. 
+一方で, \qty{700}{m}地点の信号強度を比較すると, 
+on波長, off波長どちらも青色で示す
+\ce{O2}アンチストークス散乱波長, 
+\ce{O2}ストークス散乱波長の方が強い. 
+2つの受信構成の$\Delta \subrm{\sigma}{SO2}$は同程度であるため, 
+$\subrm{P}{on}, \subrm{P}{off}$が大きい方が
+\staterr は小さくなる. 
+したがって, 
+\ce{O2}アンチストークス散乱波長$\subrm{\lambda}{on}=\qty{318.0}{nm}$の信号強度は
+近傍で弱かったものの, 
+\ce{SO2}吸収が弱いために信号減衰が小さく, 
+遠方での統計誤差に優れた. 
+
 結果として, 信号強度が微弱なアンチストークス散乱も, 
 波長選択によって十分に選択可能であることが示された. 
 
@@ -385,22 +406,24 @@ on波長とoff波長における二酸化硫黄, オゾンの差分吸収断面�
 干渉誤差の影響は無視できないため, 
 統計誤差と同様に考慮する必要がある.
 
+\newpage
 \cref{fig:6combies_cntm}に各受信波長の構成における干渉誤差を示す. 
 横軸はライダーの視線距離, 
 縦軸は\ce{SO2}濃度の測定値である. 
+\cref{tab:6combies_cntmerr}は低濃度区間にあたる視線距離\qty{100}{m}と
+高濃度区間にあたる視線距離\qty{500}{m}における
+各受信波長構成の干渉誤差である.
+
 \begin{figure}
     \centering
-    \includegraphics{fig/sim_01_6combies_cntm.pdf}
+    \includegraphics[width=0.9\linewidth]{fig/sim_01_6combies_cntm.pdf}
     \caption{受信波長の構成による干渉誤差の比較}
     \label{fig:6combies_cntm}
 \end{figure}
 
-\cref{tab:6combies_cntmerr}は低濃度区間にあたる視線距離\qty{100}{m}と
-高濃度区間にあたる視線距離\qty{500}{m}における
-各受信波長構成の干渉誤差である.
 \begin{table}
     \centering
-    \caption{}
+    \caption{各受信波長構成の近傍（\qty{100}{m}）及び遠方（\qty{500}{m}）における干渉誤差}
     \label{tab:6combies_cntmerr}
     \begin{tabular}{ccc}
         \hline

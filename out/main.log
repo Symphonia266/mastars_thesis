@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.29)  2 FEB 2026 16:38
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.29)  18 FEB 2026 07:08
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/symph/workspace/2026_thesis/main.tex
@@ -1976,37 +1976,38 @@ Package cleveref Info: `listings' support loaded on input line 3131.
 (c:/texlive/2025/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
 Package: lltjp-array 2024-07-21 Patch to array for LuaTeX-ja
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 251.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 258.
 \@quotelevel=\count547
 \@quotereset=\count548
- (./out/main.aux (./out/title.aux) (./out/chapt1.aux) (./out/chapt2.aux) (./out/chapt3.aux))
-\openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 251.
-LaTeX Font Info:    ... okay on input line 251.
- (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+No file main.aux.
+
+\openout1 = main.aux
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+(c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count549
 \scratchdimen=\dimen320
@@ -2027,9 +2028,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) (c:/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 251.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 258.
 
-Package chemgreek Info: Activating mapping `fontspec' on line 251.
+Package chemgreek Info: Activating mapping `fontspec' on line 258.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -2048,18 +2049,18 @@ Package biblatex Info: Automatic encoding selection.
 
 \openout4 = main.bcf
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (./out/main.bbl)
-Package biblatex Info: Reference section=0 on input line 251.
-Package biblatex Info: Reference segment=0 on input line 251.
-Package hyperref Info: Link coloring OFF on input line 251.
- (./out/main.out) (./out/main.out)
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 258.
+Package biblatex Info: Reference segment=0 on input line 258.
+Package hyperref Info: Link coloring OFF on input line 258.
 \@outlinefile=\write6
 
 \openout6 = main.out
 
 \openout2 = title.aux
- (./title.tex
+(./title.tex
 LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
 (Font)              scaled to size 15.4pt on input line 3.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
@@ -2081,55 +2082,57 @@ LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])(load cache: extra_lmsans17-regular.luc)
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
-(Font)              scaled to size 22.0pt on input line 254.
+(Font)              scaled to size 22.0pt on input line 261.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
-(Font)              scaled to size 22.0pt on input line 254.
- (./out/main.toc
-LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 7.7pt on input line 1.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 5.5pt on input line 1.
-)
+(Font)              scaled to size 22.0pt on input line 261.
+
+No file main.toc.
 \tf@toc=\write7
 
 \openout7 = main.toc
 LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 9.89993pt on input line 256.
+(Font)              scaled to size 9.89993pt on input line 263.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 9.89993pt on input line 256.
- [1
+(Font)              scaled to size 9.89993pt on input line 263.
+[1
 
 
 
 ]
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 15.4pt on input line 257.
+(Font)              scaled to size 15.4pt on input line 264.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 15.4pt on input line 257.
+(Font)              scaled to size 15.4pt on input line 264.
 LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
-(Font)              scaled to size 15.4pt on input line 257.
+(Font)              scaled to size 15.4pt on input line 264.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
-(Font)              scaled to size 15.4pt on input line 257.
- (./out/main.lof(load cache: extra_lmroman8-regular.luc)
-LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 7.7pt on input line 3.
-(load cache: extra_lmroman5-regular.luc)
-LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 5.5pt on input line 3.
-)
+(Font)              scaled to size 15.4pt on input line 264.
+
+No file main.lof.
 \tf@lof=\write8
 
 \openout8 = main.lof
- (./out/main.lot)
+No file main.lot.
 \tf@lot=\write9
 
 \openout9 = main.lot
- [2
+[2
 
 ]
 \openout2 = chapt1.aux
  (./chapt1.tex
-<fig/volcano_distribution.png, id=117, 412.815pt x 290.832pt>
+LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
+(Font)              scaled to size 11.0pt on input line 10.
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
+(Font)              scaled to size 11.0pt on input line 10.
+
+
+LaTeX Warning: Reference `fig:volcano_dist' on page 1 undefined on input line 10.
+
+
+LaTeX Warning: Citation 'bousai2021' on page 1 undefined on input line 13.
+
+<fig/volcano_distribution.png, id=24, 412.815pt x 290.832pt>
 File: fig/volcano_distribution.png Graphic file (type png)
 <use fig/volcano_distribution.png>
 Package luatex.def Info: fig/volcano_distribution.png  used on input line 17.
@@ -2138,10 +2141,32 @@ LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 9.89993pt on input line 18.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 9.89993pt on input line 18.
+
+LaTeX Warning: Citation 'Hirabayashi2003VolcanicGas' on page 1 undefined on input line 25.
+
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 7.7pt on input line 26.
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 5.5pt on input line 26.
+(load cache: extra_lmroman8-regular.luc)
+LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 7.7pt on input line 26.
+(load cache: extra_lmroman5-regular.luc)
+LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 5.5pt on input line 26.
+
+LaTeX Warning: Reference `tab:SO2_toxicity' on page 1 undefined on input line 27.
+
 LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
 (Font)              scaled to size 8.80003pt on input line 54.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
 (Font)              scaled to size 8.80003pt on input line 54.
+
+LaTeX Warning: Citation 'miyake' on page 1 undefined on input line 59.
+
+
+LaTeX Warning: Citation 'miyake' on page 1 undefined on input line 64.
+
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
@@ -2149,12 +2174,37 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 
 
 <./fig/volcano_distribution.png>]
-<fig/ramanDIAL.png, id=137, 1023.07219pt x 464.4853pt>
+
+LaTeX Warning: Reference `fig:ramanDIAL' on page 1 undefined on input line 96.
+
+<fig/ramanDIAL.png, id=40, 1023.07219pt x 464.4853pt>
 File: fig/ramanDIAL.png Graphic file (type png)
 <use fig/ramanDIAL.png>
 Package luatex.def Info: fig/ramanDIAL.png  used on input line 99.
 (luatex.def)             Requested size: 352.00142pt x 159.80818pt.
- [2] [3<./fig/ramanDIAL.png>]
+[2]
+
+LaTeX Warning: Reference `equ:alpha' on page 1 undefined on input line 117.
+
+
+LaTeX Warning: Reference `equ:power' on page 1 undefined on input line 117.
+
+
+LaTeX Warning: Citation 'PowerEqu' on page 3 undefined on input line 117.
+
+
+LaTeX Warning: Citation 'ramanXS' on page 3 undefined on input line 147.
+
+
+LaTeX Warning: Reference `equ:alpha' on page 1 undefined on input line 153.
+
+[3<./fig/ramanDIAL.png>]
+
+LaTeX Warning: Reference `equ:n_SO2' on page 1 undefined on input line 158.
+
+
+LaTeX Warning: Citation 'DIALEqu' on page 4 undefined on input line 158.
+
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝜎 (U+1D70E) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
@@ -2169,75 +2219,176 @@ Missing character: There is no 𝜎 (U+1D70E) in font "name:Latin Modern Roman:m
 ]
 \openout2 = chapt2.aux
  (./chapt2.tex
-<fig/sim_01_3gases_absorptance.png, id=187, 363.87946pt x 155.01915pt>
-File: fig/sim_01_3gases_absorptance.png Graphic file (type png)
-<use fig/sim_01_3gases_absorptance.png>
-Package luatex.def Info: fig/sim_01_3gases_absorptance.png  used on input line 40.
-(luatex.def)             Requested size: 363.87856pt x 155.01877pt.
-LaTeX Font Info:    Calculating math sizes for size <9.89993> on input line 41.
-(load cache: extra_lmroman7-regular.luc)
-LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 6.92992pt on input line 41.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 4.94997pt on input line 41.
-LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 6.92992pt on input line 41.
-LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 4.94997pt on input line 41.
 
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-<fig/raman_stokes_Astokes.png, id=190, 260.391pt x 205.422pt>
-File: fig/raman_stokes_Astokes.png Graphic file (type png)
-<use fig/raman_stokes_Astokes.png>
-Package luatex.def Info: fig/raman_stokes_Astokes.png  used on input line 57.
-(luatex.def)             Requested size: 264.00275pt x 208.28325pt.
+LaTeX Warning: Reference `equ:stat_err' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Citation 'StatErrorEqu' on page 5 undefined on input line 9.
+
+
+LaTeX Warning: Reference `equ:stat_err' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Reference `fig:3gases_absorption' on page 1 undefined on input line 34.
+
+
+LaTeX Warning: Citation 'MPI_Mainz_UV_VIS_Atlas2013' on page 5 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'SO2_dataset_Hermans2009_I' on page 5 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'SO2_dataset_Vandaele2009_II' on page 5 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'O3_dataset_Bogumil2003' on page 5 undefined on input line 43.
+
+
+LaTeX Warning: Citation 'H2S_dataset_Grosch2015' on page 5 undefined on input line 43.
+
+
+Overfull \hbox (47.12842pt too wide) in paragraph at lines 34--44
+[]\TU/LatinModernRoman(0)/m/n/11 , [], []]. 
+ []
+
 [5
 
 
 
 
+]
+<fig/sim_01_3gases_absorptance.png, id=80, 363.87946pt x 155.01915pt>
+File: fig/sim_01_3gases_absorptance.png Graphic file (type png)
+<use fig/sim_01_3gases_absorptance.png>
+Package luatex.def Info: fig/sim_01_3gases_absorptance.png  used on input line 47.
+(luatex.def)             Requested size: 363.87856pt x 155.01877pt.
+LaTeX Font Info:    Calculating math sizes for size <9.89993> on input line 48.
+(load cache: extra_lmroman7-regular.luc)
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 6.92992pt on input line 48.
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 4.94997pt on input line 48.
+LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 6.92992pt on input line 48.
+LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/m/n' will be
+(Font)              scaled to size 4.94997pt on input line 48.
 
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-<./fig/sim_01_3gases_absorptance.png>] [6<./fig/raman_stokes_Astokes.png>]
-<fig/sim_01_env_LoS.pdf, id=226, 382.77065pt x 214.48224pt>
+
+LaTeX Warning: Reference `equ:stat_err' on page 1 undefined on input line 56.
+
+
+LaTeX Warning: Reference `fig:raman_shift' on page 1 undefined on input line 63.
+
+<fig/raman_stokes_Astokes.png, id=81, 260.391pt x 205.422pt>
+File: fig/raman_stokes_Astokes.png Graphic file (type png)
+<use fig/raman_stokes_Astokes.png>
+Package luatex.def Info: fig/raman_stokes_Astokes.png  used on input line 67.
+(luatex.def)             Requested size: 264.00275pt x 208.28325pt.
+[6<./fig/sim_01_3gases_absorptance.png><./fig/raman_stokes_Astokes.png>]
+
+LaTeX Warning: Citation 'Previous_research' on page 7 undefined on input line 87.
+
+
+LaTeX Warning: Reference `fig:3gases_absorption' on page 1 undefined on input line 88.
+
+[7]
+
+LaTeX Warning: Reference `equ:atmnumber' on page 1 undefined on input line 97.
+
+
+LaTeX Warning: Reference `equ:sigmaray' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Reference `equ:betamol' on page 1 undefined on input line 99.
+
+
+LaTeX Warning: Reference `equ:aermodel' on page 1 undefined on input line 100.
+
+
+LaTeX Warning: Reference `equ:betaaer' on page 1 undefined on input line 101.
+
+
+LaTeX Warning: Reference `equ:alphamol' on page 1 undefined on input line 102.
+
+
+LaTeX Warning: Reference `equ:alphaaer' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Reference `equ:alphagas' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Reference `fig:gas_setting' on page 1 undefined on input line 133.
+
+
+LaTeX Warning: Citation 'miyake' on page 8 undefined on input line 134.
+
+<fig/sim_01_env_LoS.pdf, id=95, 382.77065pt x 214.48224pt>
 File: fig/sim_01_env_LoS.pdf Graphic file (type pdf)
 <use fig/sim_01_env_LoS.pdf>
-Package luatex.def Info: fig/sim_01_env_LoS.pdf  used on input line 125.
+Package luatex.def Info: fig/sim_01_env_LoS.pdf  used on input line 156.
 (luatex.def)             Requested size: 382.76971pt x 214.4817pt.
- [7] [8<./fig/sim_01_env_LoS.pdf>] [9]
-<fig/sim_01_6combies_stat.pdf, id=294, 433.98564pt x 219.9028pt>
+[8]
+
+LaTeX Warning: Reference `equ:power' on page 1 undefined on input line 162.
+
+
+LaTeX Warning: Reference `equ:stat_err' on page 1 undefined on input line 162.
+
+
+LaTeX Warning: Reference `tab:sys_params' on page 1 undefined on input line 163.
+
+[9<./fig/sim_01_env_LoS.pdf>]
+
+LaTeX Warning: Reference `fig:raman_shift' on page 1 undefined on input line 198.
+
+
+LaTeX Warning: Reference `fig:6combies_stat' on page 1 undefined on input line 203.
+
+<fig/sim_01_6combies_stat.pdf, id=156, 433.98564pt x 219.9028pt>
 File: fig/sim_01_6combies_stat.pdf Graphic file (type pdf)
 <use fig/sim_01_6combies_stat.pdf>
-Package luatex.def Info: fig/sim_01_6combies_stat.pdf  used on input line 193.
+Package luatex.def Info: fig/sim_01_6combies_stat.pdf  used on input line 207.
 (luatex.def)             Requested size: 433.98457pt x 219.90225pt.
- [10<./fig/sim_01_6combies_stat.pdf>]
-<fig/sim_01_cond_2case.pdf, id=349, 433.63354pt x 203.79572pt>
+
+LaTeX Warning: Reference `tab:6combies_3wlandstaterr' on page 1 undefined on input line 229.
+
+
+LaTeX Warning: Reference `fig:3gases_absorption' on page 1 undefined on input line 234.
+
+[10<./fig/sim_01_6combies_stat.pdf>]
+
+LaTeX Warning: Reference `fig:6combies_stat' on page 1 undefined on input line 307.
+
+<fig/sim_01_cond_2case.pdf, id=208, 433.63354pt x 203.79572pt>
 File: fig/sim_01_cond_2case.pdf Graphic file (type pdf)
 <use fig/sim_01_cond_2case.pdf>
-Package luatex.def Info: fig/sim_01_cond_2case.pdf  used on input line 298.
+Package luatex.def Info: fig/sim_01_cond_2case.pdf  used on input line 312.
 (luatex.def)             Requested size: 433.63248pt x 203.79521pt.
-
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 [11
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 <./fig/sim_01_cond_2case.pdf>]
-<fig/sim_01_power.pdf, id=403, 432.6742pt x 219.9028pt>
+
+LaTeX Warning: Reference `fig:cond_power_combi' on page 1 undefined on input line 327.
+
+<fig/sim_01_power.pdf, id=263, 432.6742pt x 219.9028pt>
 File: fig/sim_01_power.pdf Graphic file (type pdf)
 <use fig/sim_01_power.pdf>
-Package luatex.def Info: fig/sim_01_power.pdf  used on input line 322.
+Package luatex.def Info: fig/sim_01_power.pdf  used on input line 333.
 (luatex.def)             Requested size: 432.67313pt x 219.90225pt.
- [12<./fig/sim_01_power.pdf>]
+
+LaTeX Warning: Reference `equ:power' on page 1 undefined on input line 350.
+
+[12<./fig/sim_01_power.pdf>]
+
+LaTeX Warning: Reference `equ:contam_err' on page 1 undefined on input line 380.
+
+
+LaTeX Warning: Reference `equ:n_SO2' on page 1 undefined on input line 395.
+
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
@@ -2246,91 +2397,187 @@ Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:m
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-<fig/sim_01_6combies_cntm.pdf, id=468, 434.04286pt x 219.9028pt>
+[13
+Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
+Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
+]
+
+LaTeX Warning: Reference `fig:6combies_cntm' on page 1 undefined on input line 410.
+
+
+LaTeX Warning: Reference `tab:6combies_cntmerr' on page 1 undefined on input line 413.
+
+<fig/sim_01_6combies_cntm.pdf, id=330, 434.04286pt x 219.9028pt>
 File: fig/sim_01_6combies_cntm.pdf Graphic file (type pdf)
 <use fig/sim_01_6combies_cntm.pdf>
-Package luatex.def Info: fig/sim_01_6combies_cntm.pdf  used on input line 387.
-(luatex.def)             Requested size: 434.0418pt x 219.90225pt.
-) [13
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-] [14<./fig/sim_01_6combies_cntm.pdf>]
+Package luatex.def Info: fig/sim_01_6combies_cntm.pdf  used on input line 419.
+(luatex.def)             Requested size: 395.9974pt x 200.63194pt.
+) [14<./fig/sim_01_6combies_cntm.pdf>]
 \openout2 = chapt3.aux
- (./chapt3.tex) [15
+ (./chapt3.tex
+
+LaTeX Warning: Reference `fig:gas_setting_SO2thick' on page 1 undefined on input line 27.
+
+<fig/sim_02_1_env.pdf, id=382, 389.7969pt x 210.28688pt>
+File: fig/sim_02_1_env.pdf Graphic file (type pdf)
+<use fig/sim_02_1_env.pdf>
+Package luatex.def Info: fig/sim_02_1_env.pdf  used on input line 30.
+(luatex.def)             Requested size: 389.79594pt x 210.28635pt.
+
+LaTeX Warning: Reference `chapt2' on page 15 undefined on input line 36.
+
+
+LaTeX Warning: Reference `chapt2' on page 15 undefined on input line 38.
+
+[15
+
+
+
+
+<./fig/sim_02_1_env.pdf>]
+
+LaTeX Warning: Reference `fig:fix_res' on page 1 undefined on input line 40.
+
+<fig/sim_02_1_dR-5mto25m.pdf, id=431, 437.55408pt x 223.29549pt>
+File: fig/sim_02_1_dR-5mto25m.pdf Graphic file (type pdf)
+<use fig/sim_02_1_dR-5mto25m.pdf>
+Package luatex.def Info: fig/sim_02_1_dR-5mto25m.pdf  used on input line 46.
+(luatex.def)             Requested size: 437.55301pt x 223.29492pt.
+
+LaTeX Warning: Reference `equ:stat_err' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Reference `fig:fix_power' on page 1 undefined on input line 65.
+
+<fig/sim_02_1_power.pdf, id=432, 435.52202pt x 219.9028pt>
+File: fig/sim_02_1_power.pdf Graphic file (type pdf)
+<use fig/sim_02_1_power.pdf>
+Package luatex.def Info: fig/sim_02_1_power.pdf  used on input line 68.
+(luatex.def)             Requested size: 435.52095pt x 219.90225pt.
+[16<./fig/sim_02_1_dR-5mto25m.pdf>]
+
+LaTeX Warning: Reference `equ:contam_err' on page 1 undefined on input line 85.
+
+
+LaTeX Warning: Reference `chapt2' on page 17 undefined on input line 88.
+
+
+LaTeX Warning: Reference `equ:n_SO2' on page 1 undefined on input line 97.
+
+
+LaTeX Warning: Reference `fig:gas_setting_H2Sthick' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Reference `chapt2' on page 17 undefined on input line 106.
+
+[17<./fig/sim_02_1_power.pdf>]
+<fig/sim_02_2_env.pdf, id=553, 433.62pt x 216.81pt>
+File: fig/sim_02_2_env.pdf Graphic file (type pdf)
+<use fig/sim_02_2_env.pdf>
+Package luatex.def Info: fig/sim_02_2_env.pdf  used on input line 111.
+(luatex.def)             Requested size: 433.61894pt x 216.80946pt.
+
+
+LaTeX Warning: Reference `fig:corr_cntm' on page 1 undefined on input line 133.
+
+[18<./fig/sim_02_2_env.pdf>]
+<fig/sim_02_2_contami_result.pdf, id=604, 433.62pt x 216.81pt>
+File: fig/sim_02_2_contami_result.pdf Graphic file (type pdf)
+<use fig/sim_02_2_contami_result.pdf>
+Package luatex.def Info: fig/sim_02_2_contami_result.pdf  used on input line 139.
+(luatex.def)             Requested size: 433.61894pt x 216.80946pt.
+
+
+LaTeX Warning: Reference `tab:res_cntm' on page 1 undefined on input line 153.
+
+) [19<./fig/sim_02_2_contami_result.pdf>]
+\openout2 = chapt4.aux
+ (./chapt4.tex
+
+LaTeX Warning: Reference `chapt3' on page 20 undefined on input line 12.
+
+
+LaTeX Warning: Reference `equ:plume' on page 1 undefined on input line 27.
+
+
+LaTeX Warning: Citation 'pasquill' on page 20 undefined on input line 44.
+
+
+LaTeX Warning: Citation 'pasquill' on page 20 undefined on input line 46.
+
+
+LaTeX Warning: Citation 'gifford' on page 20 undefined on input line 46.
+
+<fig/sim_04_field_spread_leteral.pdf, id=663, 396.0401pt x 215.02333pt>
+File: fig/sim_04_field_spread_leteral.pdf Graphic file (type pdf)
+<use fig/sim_04_field_spread_leteral.pdf>
+Package luatex.def Info: fig/sim_04_field_spread_leteral.pdf  used on input line 58.
+(luatex.def)             Requested size: 211.19817pt x 114.66722pt.
+(load cache: extra_lmroman9-bold.luc)
+LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
+(Font)              scaled to size 8.80003pt on input line 59.
+LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
+(Font)              scaled to size 8.80003pt on input line 59.
+<fig/sim_04_field_spread_vertical.pdf, id=664, 396.0401pt x 215.02333pt>
+File: fig/sim_04_field_spread_vertical.pdf Graphic file (type pdf)
+<use fig/sim_04_field_spread_vertical.pdf>
+Package luatex.def Info: fig/sim_04_field_spread_vertical.pdf  used on input line 65.
+(luatex.def)             Requested size: 211.19817pt x 114.66722pt.
+
+LaTeX Warning: Reference `tab:plume_params' on page 1 undefined on input line 75.
+
+[20
 
 
 
 
 ]
-LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 269.
-LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
- [16
+
+LaTeX Warning: Reference `fig:gas_map_compare' on page 1 undefined on input line 97.
 
 
+LaTeX Warning: Reference `fig:gas_setting_diffuse_compare' on page 1 undefined on input line 99.
 
-]
-LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/it' undefined
-(Font)              No change on input line 269.
- [17] (./out/main.aux (./out/title.aux) (./out/chapt1.aux) (./out/chapt2.aux) (./out/chapt3.aux))
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
- ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E01EF5C3EEF788D37C396C5B5868A0BB;1886.
-Package logreq Info: Writing requests to 'main.run.xml'.
+<fig/sim_04_env_image1.pdf, id=675, 260.43558pt x 219.69704pt>
+File: fig/sim_04_env_image1.pdf Graphic file (type pdf)
+<use fig/sim_04_env_image1.pdf>
+Package luatex.def Info: fig/sim_04_env_image1.pdf  used on input line 105.
+(luatex.def)             Requested size: 211.19817pt x 178.16815pt.
+<fig/sim_04_env_image2.pdf, id=676, 249.89621pt x 219.69704pt>
+File: fig/sim_04_env_image2.pdf Graphic file (type pdf)
+<use fig/sim_04_env_image2.pdf>
+Package luatex.def Info: fig/sim_04_env_image2.pdf  used on input line 112.
+(luatex.def)             Requested size: 211.19817pt x 185.67732pt.
+<fig/sim_04_env1.pdf, id=677, 245.41249pt x 217.01201pt>
+File: fig/sim_04_env1.pdf Graphic file (type pdf)
+<use fig/sim_04_env1.pdf>
+Package luatex.def Info: fig/sim_04_env1.pdf  used on input line 124.
+(luatex.def)             Requested size: 211.19817pt x 186.75914pt.
+<fig/sim_04_env2.pdf, id=678, 245.41249pt x 221.20737pt>
+File: fig/sim_04_env2.pdf Graphic file (type pdf)
+<use fig/sim_04_env2.pdf>
+Package luatex.def Info: fig/sim_04_env2.pdf  used on input line 131.
+(luatex.def)             Requested size: 211.19817pt x 190.36963pt.
 
-\openout1 = main.run.xml
-)
+LaTeX Warning: Reference `chapt3' on page 21 undefined on input line 144.
+
+
+./chapt4.tex:171: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171   \centering
+                  
 
 Here is how much of LuaTeX's memory you used:
- 42353 strings out of 476076
- 195698,2848258 words of node,token memory allocated
- 1846 words of node memory still in use:
-   12 hlist, 2 vlist, 6 rule, 4 glue, 4 kern, 2 glyph, 491 attribute, 71 glue_spec, 57 attribute_list, 1 write, 15 user_defined, 4 pdf_action nodes
-   avail lists: 1:35,2:54545,3:383,4:533,5:307,6:56,7:5389,8:73,9:2463,10:40,11:279
- 63962 multiletter control sequences out of 65536+600000
- 176 fonts using 180705135 bytes
- 119i,18n,127p,2052b,1882s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on main.pdf (20 pages, 1367299 bytes).
-
-PDF statistics: 672 PDF objects out of 1000 (max. 8388607)
- 399 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 131072)
- 97 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+ 42280 strings out of 476076
+ 195698,3417909 words of node,token memory allocated
+ 122347 words of node memory still in use:
+   270 hlist, 42 vlist, 898 rule, 3 disc, 43 local_par, 3 dir, 40 math, 1296 glue, 46 kern, 210 penalty, 1086 glyph, 41953 attribute, 84 glue_spec, 3851 attribute_list, 2 temp, 4 if_stack, 47 write, 205 user_defined, 12 pdf_dest, 27 pdf_colorstack, 6 pdf_setmatrix, 6 pdf_save, 6 pdf_restore nodes
+   avail lists: 1:47,2:9251,3:49,4:279,5:148,6:1,7:2946,8:73,9:1251,10:40,11:67
+ 63926 multiletter control sequences out of 65536+600000
+ 177 fonts using 184492823 bytes
+ 119i,18n,127p,2052b,1177s stack positions out of 10000i,1000n,20000p,200000b,200000s
+./chapt4.tex:171:  ==> Fatal error occurred, no output PDF file produced!
