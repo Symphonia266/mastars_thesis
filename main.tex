@@ -168,13 +168,17 @@
 % =============================================================================
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
+\crefname{chapter}{章}{章}
+\Crefname{chapter}{章}{章}
+\crefname{section}{節}{節}
+\Crefname{section}{節}{節}
+\crefname{subsection}{項}{項}
+\Crefname{subsection}{項}{項}
 
 \crefname{figure}{図}{図}
 \Crefname{figure}{図}{図}
-
 \crefname{table}{表}{表}
 \Crefname{table}{表}{表}
-
 \crefname{equation}{式}{式}
 \Crefname{equation}{式}{式}
 
@@ -207,7 +211,7 @@
 % =============================================================================
 % 諸設定
 % =============================================================================
-% 和文用タイトル再設定
+% 和文用タイトル再設定]
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
 \renewcommand{\contentsname}{目次}
@@ -262,7 +266,7 @@
 \include{chapt1}
 \include{chapt2}
 \include{chapt3}
-% \include{chapt4}
+\include{chapt4}
 % \include{chapt5}
 % \include{thanks}
 
