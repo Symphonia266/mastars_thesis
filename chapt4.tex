@@ -1,45 +1,126 @@
 \chapter[プルームモデルに従う火山ガス分布のシミュレーション]{プルームモデルに従う火山ガス分布のシミュレーション}
 \label{chapt4}
 
-本章は, これまで用いてきた区間ごとに火山ガス濃度が一定と仮定した理想モデルを発展させ,
-大気中での移流および拡散を考慮したプルームモデルに基づく火山ガス分布を導入し,
-より現実的な測定条件下におけるラマンDIAL観測性能について検討する.
-特に, 大気の拡散条件や火口位置の違いが,
-ライダー測定における距離分解能および濃度推定精度に与える影響を数値シミュレーションにより評価する.
+本章では, 区間ごとに火山ガス濃度が一定と仮定した理想モデルを発展させ,
+大気中での移流および拡散を考慮したプルームモデルに基づく火山ガス濃度分布を用いて,
+ラマンDIALの距離分解能が実際の煙流の濃度変化を追跡できるかを評価する.
+ここで採用するプルームモデルは, 厳密な火口プルームの再現を目的とするものではなく,
+距離分解能評価のための簡便な濃度分布生成手段として利用する.
 
-\section{プルームモデル}
+\section{プルームモデルによる濃度分布生成}
 
-\ref{chapt3}章までは,
-ある区間ごとに火山ガス濃度が一定の理想モデルで
-シミュレーションを行った.
-しかし, 実際の火山ガス濃度分布は大気中を拡散し,
-風によって移流する.
-より現実的な測定条件での検討を行うためには,
-この移流拡散による濃度分布を再現する必要がある.
+\ref{chapt3}章までは, 区間ごとに火山ガス濃度が一定の理想モデルを用いたが,
+実際の火山ガスは大気中で拡散し, 風によって移流する.
+火口直上では濃度が急激に変化するため,
+ラマンDIALがその変化をどの程度追従できるか評価する必要がある.
+この目的のため, 大気中での移流拡散を考慮したプルームモデルを簡便に用い,
+火山ガス濃度の概算分布を生成する.
 
-プルームモデルは,
-流体の移流拡散方程式の解析解であり,
-プラントや自動車の排煙による
-大気汚染のシミュレーションに広く用いられている.
-煙源を原点とした座標系における
-$x, y$方向の地表面濃度は,
-プルームモデルに基づいて\cref{equ:plume}で表される.
+プルームモデルは, 流体の移流拡散方程式の解析解であり,
+プラントや自動車排煙の大気汚染シミュレーションにも広く用いられる.
+常に定常放出される煙源に一定の風が吹く環境における,
+煙源を原点とした座標系における$x, y$方向の地表面濃度は
+次式で表される.
+
+\begin{align}
+  C(x,y) = \frac{Q}{\pi \sprdy \sprdz u}
+  \exp \ab\{
+    - \frac{y^2}{2\sprdy ^2}
+  \}\exp \ab\{
+    - \frac{\subrm{H}{e}^2}{2\sprdz ^2}
+  \}\label{equ:plume}
+\end{align}
 
 \noindent
-式中の$Q$は煙源の放出強度,
-$u$は風速,
-$\subrm{\omega}{y}, \subrm{\omega}{z}$はそれぞれ
-水平方向および鉛直方向の拡散幅,
-$H_\mathrm{e}$は有効煙突高さである.
-なお,
-$\subrm{\omega}{y}, \subrm{\omega}{z}$の算出には,
-Pasquill--Giffordが提案した大気安定度モデルを用いた\cite{pasquill,gifford}.
+ここで$Q$は煙源の放出強度[ \unit{kg/s}], 
+$u$は風速[ \unit{m/s}], 
+$\sprdy, \sprdz$は水平方向・鉛直方向の拡散幅[ \unit{m}], 
+$H_e$は有効煙突高さ[ \unit{m}]である.
 
-\section{拡散条件や火口位置による距離分解能の評価}
+拡散幅 $\sprdy, \sprdz$ の算出には Pasquill の大気安定度分類を用いた. 
+安定度はAからFの6段階に分けられ, 
+Aが最も不安定, Fは最も安定を意味する.
+不安定な大気では煙流が揺らぎやすく拡散幅が大きくなり,
+安定な大気では煙流は筋状に一定移流し, 拡散幅は小さくなる.
+大気の安定度は風速と日照条件に基づき分類され,
+風速が強く, 日照が弱いほど安定的である.
+\begin{itemize}
+    \item \textbf{A}: extremely unstable
+    \item \textbf{B}: moderately unstable
+    \item \textbf{C}: slightly unstable
+    \item \textbf{D}: neutral
+    \item \textbf{E}: slightly stable
+    \item \textbf{F}: moderately stable
+\end{itemize}
 
-\cref{tab:plume_params}に,
-プルームモデルに与える大気の拡散条件とパラメータを示す.
-火口からの放出量は一定とし,
+\begin{table}[h]
+  \centering
+  \caption{Pasquill 大気安定分類表}
+  \label{tab:stability_class_simple}
+  \begin{tabular}{cccccc}
+  \hline
+                            & \multicolumn{5}{c}{\textbf{Weather}} \\
+  \textbf{Wind speed class} & 
+  \textbf{Clear} & 
+  \textbf{Sunny} & 
+  \textbf{Cloudy} & 
+  \textbf{Overcast} & 
+  \textbf{Rain} \\
+  \hline
+  0.3\sim 2 \unit{m/s} & A & A & B & D & F \\
+    2\sim 3 \unit{m/s} & A & B & C & D & E \\
+    3\sim 4 \unit{m/s} & B & B & C & D & D \\
+    4\sim 6 \unit{m/s} & C & C & D & D & D \\
+     \sim 6 \unit{m/s} & C & D & D & D & F \\
+  \hline
+  \end{tabular}
+\end{table}
+
+Pasquill-Giffordモデル（PG線図）により,
+安定分類ごとに風下方向$x$の関数として拡散幅が与えられる.
+元々のPG線図は$x = 10^2 \sim 10^6$ m の遠方条件を対象としていたため,
+本章では近傍領域 $x \lesssim 200$ m に拡張して用いた.
+具体的には, $x = 10^2 \sim 10^3$ m のサンプリングデータを log-log 領域で線形近似し,
+得られた関数をスムーズに接続することで近傍領域の拡散幅関数を生成した.
+\begin{align}
+  \omega = a x^b \label{equ:exp_near}
+\end{align}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{fig/sim_04_field_spread_leteral.pdf}
+    \caption{水平方向拡散幅}
+    \label{fig:spread_lateral}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{fig/sim_04_field_spread_vertical.pdf}
+    \caption{鉛直方向拡散幅}
+    \label{fig:spread_vertical}
+  \end{subfigure}
+  \caption{Pasquill-Giffordモデルによるプルーム拡散幅}
+  \label{fig:pasquill_spread}
+\end{figure}
+
+\newpage
+\section{距離分解能評価のための条件設定とシミュレーション}
+
+火口はライダー視線の50m, 100m, 150m地点に沿って,
+やかんから噴き出すような点煙源として配置した（\cref{fig:plume_plain}）.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig/plume_situation.png}
+  \caption{点煙源として配置した火口位置の模式図}
+  \label{fig:plume_plain}
+\end{figure}
+
+プルームモデルには, \cref{tab:plume_params}に示す
+拡散が強い大気条件と弱い大気条件の二種類を設定した.
+火口からの放出量および日照条件は一定とし,
 拡散条件の違いによる火山ガス濃度分布の変化を比較した.
 
 \begin{table}
@@ -52,29 +133,34 @@ Pasquill--Giffordが提案した大気安定度モデルを用いた\cite{pasqui
     \hline
     風速   & \qty{2}{m/s}  & \qty{10}{m/s} \\
     日照   & 晴れ          & 曇り          \\
-    $\subrm{Q}{SO2}$ & \multicolumn{2}{c}{\qty{30e6}{kg/s}} \\
-    $\subrm{Q}{H2S}$ & \multicolumn{2}{c}{\qty{7.5e6}{kg/s}} \\
+    $\subrm{Q}{SO2}$ & \multicolumn{2}{c}{\qty{60e6}{kg/s}} \\
+    $\subrm{Q}{H2S}$ & \multicolumn{2}{c}{\qty{30e6}{kg/s}} \\
     \hline
   \end{tabular}
 \end{table}
 
-2種類の拡散条件における
-地表面の火山ガス濃度分布を\cref{fig:gas_map_compare}に,
-ライダー視線上の火山ガス濃度分布設定を
-\cref{fig:gas_setting_diffuse_compare}に示す.
+\newpage
+\cref{fig:gas_map_compare}に, 2種類の拡散条件における地表面火山ガス濃度分布を示す.
+縦軸は水平距離, 横軸はライダー視線に沿った水平距離, カラーバーは火山ガス濃度の係数であり, 
+縦軸及び横軸の単位は\unit{m}, カラーバーは無単位である.  
+どちらのグラフもカラーバーのスケールは0\sim \num{1e6}である. 
+\cref{fig:gas_map_high_diffuse}は拡散が強い大気条件であるため
+火山ガスが扇状に広がっており, また濃度も高い. 
+一方で, \cref{fig:gas_map_low_diffuse}は拡散が弱い大気条件であるため
+風によって火山ガスが筋状に移流しており, また風による直接の希釈で全体的に濃度が低い. 
 
 \begin{figure}
   \centering
   \begin{subfigure}{0.48\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_env_image1.pdf}
+    \includegraphics[width=\linewidth]{fig/sim_04_f1_env_image}
     \caption{強拡散大気条件}
     \label{fig:gas_map_high_diffuse}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.48\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_env_image2.pdf}
+    \includegraphics[width=\linewidth]{fig/sim_04_f2_env_image}
     \caption{弱拡散大気条件}
     \label{fig:gas_map_low_diffuse}
   \end{subfigure}
@@ -82,18 +168,27 @@ Pasquill--Giffordが提案した大気安定度モデルを用いた\cite{pasqui
   \label{fig:gas_map_compare}
 \end{figure}
 
+\cref{fig:gas_setting_diffuse_compare}に, ライダー視線上の濃度分布設定を示す.
+縦軸は気体濃度, 縦軸はライダー視線距離であり, 
+それぞれ単位は\unit{ppm}, \unit{m}である. 
+\cref{fig:gas_setting_high_diffuse}では, 
+ライダー視線で手前側の火口直上を通過する\qty{50}{m}地点で強い火山ガスのピークが発生している. 
+\cref{fig:gas_setting_low_diffuse}でも同様に, 
+\qty{50}{m}地点で強い火山ガスのピークが発生しているが, 
+拡散が弱いために\qty{100}{m}地点, \qty{150}{m}地点でもピークが比較的狭域に表れている. 
+
 \begin{figure}
   \centering
-  \begin{subfigure}{0.48\linewidth}
+  \begin{subfigure}{0.43\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_env1.pdf}
+    \includegraphics[width=\linewidth]{fig/sim_04_f1_env_LoS}
     \caption{強拡散大気条件}
     \label{fig:gas_setting_high_diffuse}
   \end{subfigure}
   \hfill
-  \begin{subfigure}{0.48\linewidth}
+  \begin{subfigure}{0.43\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_env2.pdf}
+    \includegraphics[width=\linewidth]{fig/sim_04_f2_env_LoS}
     \caption{弱拡散大気条件}
     \label{fig:gas_setting_low_diffuse}
   \end{subfigure}
@@ -101,16 +196,39 @@ Pasquill--Giffordが提案した大気安定度モデルを用いた\cite{pasqui
   \label{fig:gas_setting_diffuse_compare}
 \end{figure}
 
+
+\newpage
+黒点線は\ce{SO2}濃度の設定値, 青実線はラマンDIALによる推定値である.
+一つ目のピークにあたる火口直上の急激な濃度変化に対し,
+強拡散条件で5ppm, 弱拡散条件で約20ppmの取りこぼしが生じた.
+ラマンDIALは前後2地点の受信強度から平均濃度を推定するため,
+距離分解能ごとの推定値は離散的となる.
+最大分解能をもってしても局所的な高濃度分布を完全に追跡できないが,
+シミュレーションは点煙源の極限状態であり,
+実際の面積を持つ火口ではピークはより緩やかになることが予想される.
+また火口は目視可能であり, 視線が被らないよう配置を工夫できるため,
+実運用上の問題は小さいと考えられる.
+
 \begin{figure}
   \centering
-    \includegraphics{fig/sim_04_plume_meas1.pdf}
-    \caption{強拡散大気条件場における\ce{SO2}測定シミュレーション}
-    \label{fig:plume_meas_high_diffuse}  
+  \includegraphics{fig/sim_04_f1_plume_meas}
+  \caption{強拡散大気条件場における\ce{SO2}測定シミュレーション}
+  \label{fig:plume_meas_high_diffuse}  
 \end{figure}
 
 \begin{figure}
   \centering
-    \includegraphics{fig/sim_04_plume_meas2.pdf}
-    \caption{弱拡散大気条件場における\ce{SO2}測定シミュレーション}
-    \label{fig:plume_meas_low_diffuse}  
+  \includegraphics{fig/sim_04_f2_plume_meas}
+  \caption{弱拡散大気条件場における\ce{SO2}測定シミュレーション}
+  \label{fig:plume_meas_low_diffuse}  
 \end{figure}
+
+\newpage
+\section{濃度変化の激しい火口のラマンDIALによる測定}
+本章の結論として, 
+火口サイズより小さい距離分解能 \qty{1.5}{m} を用いれば,
+点煙源モデルによる極端な濃度変化を除き, 
+火口直上の急峻な変化にも十分追従可能であることが示された.
+また実際の火口は面積を持つため, 濃度分布はさらに緩やかとなり, 
+運用上の問題はほとんどないと考えられる.
+したがって, 本研究条件下においてラマンDIALは火口付近の濃度変化を十分追跡可能である.

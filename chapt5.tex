@@ -26,7 +26,7 @@ DIAL計測に用いる実効吸収断面積へ与える影響を評価し,
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\linewidth]{fig/DIAL.png}
+  \includegraphics[width=0.7\linewidth]{fig/DIAL.png}
   \caption{ラマンDIALの受信側の構成}
   \label{fig:dial}
 \end{figure}
@@ -57,7 +57,7 @@ onチャンネル側のフィルター半値幅を相対的に狭く設定した
 
 フィルター単体のピーク透過率は\qty{90}{\%}とし,
 各チャンネルで2枚重ねて使用することを想定した.
-その結果得られるフィルタースペクトルを図\cref{fig:flt_spec}に示す.
+その結果得られるフィルタースペクトルを\cref{fig:flt_spec}に示す.
 \begin{figure}
   \centering
   \includegraphics{fig/filter_spec}
@@ -183,8 +183,12 @@ offチャンネルでは
   \label{tab:flted_eff_xs}
 \end{table}
 
-以上より,
-設計した干渉フィルターはレーザ波長を十分に遮断しつつ,
+\section{設計したフィルターの評価}
+本章の結論として, 
+ピーク効率\qty{81}{\%}として, 
+onチャンネル側は半値幅\qty{9.2}{nm}, 
+offチャンネル側は半値幅\qty{10.6}{nm}のフィルター関数でシミュレーションした結果,  
+レーザ波長を十分に遮断しつつ,
 目的とする\ce{O2}ラマン散乱信号を選択的に受信可能であり,
 \ce{N2}ラマン散乱成分の漏れ込みを考慮しても,
-ラマンDIAL用受信光学系として実用上妥当な性能を有すると判断される.
+ラマンDIAL用受信光学系として実用上妥当な性能を有すると評価した. 
