@@ -31,6 +31,7 @@ $P$は\ce{SO2}吸収が強すぎる
 \ce{SO2}吸収が弱すぎる\subrm{\lambda}{on}（=\subrm{\lambda}{ram}）では小さくなるため, 
 これらの場合には\staterr が増大する.
 
+\newpage
 二酸化硫黄, オゾン, 硫化水素の吸収スペクトルを\cref{fig:3gases_absorption}に示す. 
 縦軸は消散係数（= $\subrm{n}{gas}(R)\times\subrm{\sigma}{gas}(\lambda)$）である. 
 吸収断面積のデータセットはThe MPI-Mains UV/VIS Spectral Atlasより取得し, 吸収スペクトルは各気体の濃度による数密度と吸収断面積を乗じた消散係数である. 
@@ -41,7 +42,7 @@ SO2_dataset_Vandaele2009_II,
 O3_dataset_Bogumil2003,
 H2S_dataset_Grosch2015,
 }.
-\newpage
+
 \begin{figure}
     \centering
     \includegraphics{fig/sim_01_3gases_absorptance.png}
@@ -64,7 +65,7 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\linewidth]{fig/raman_stokes_Astokes.png}
+    \includegraphics{fig/raman_stokes_Astokes}
     \caption{レーザ波長とラマン散乱波長の関係}
     \label{fig:raman_shift}
 \end{figure}
@@ -74,9 +75,11 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 ストークス散乱波長$\subrm{\lambda}{O2}^{S}$と
 アンチストークス散乱波長$\subrm{\lambda}{O2}^{AS}$の2種類存在し, 
 窒素分子\ce{N2}についても同様である. 
-1つのレーザ波長に対して生じる4つのラマン散乱波長から
-どの2波長を選択するかによっても\staterr は変化するため,
-レーザ波長と同様に最適な受信波長の構成が存在する. 
+1つのレーザ波長に対して生じる4つのラマン散乱波長から取りうる
+6つの受信波長構成それぞれで\staterr は異なる. 
+レーザ波長に従うラマン散乱波長によって統計誤差が変わることから, 
+統計誤差的に最適なレーザ波長と同様に, 
+6つの中に最適な受信波長が存在する. 
 
 ラマン散乱光の強度はレイリー散乱やミー散乱と比べて非常に微弱であり, 
 それに加えてアンチストークス散乱もストークス散乱と比較して弱いため, 
@@ -153,7 +156,7 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 
 \begin{figure}
     \centering
-    \includegraphics{fig/sim_01_env_LoS.pdf}
+    \includegraphics{fig/sim_01_env_LoS}
     \caption{火山ガス濃度分布の設定}
     \label{fig:gas_setting}
 \end{figure}
@@ -204,7 +207,7 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 各受信波長の構成における統計誤差を示す.
 \begin{figure}
     \centering
-    \includegraphics{fig/sim_01_6combies_stat.pdf}
+    \includegraphics{fig/sim_01_6combies_stat}
     \caption{受信波長の構成による統計誤差の比較}
     \label{fig:6combies_stat}
 \end{figure}
@@ -245,7 +248,7 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 \ce{SO2}測定に適する構成である. 
 \begin{table}
     \centering
-    \caption{}
+    \caption{各受信信号構成の最適レーザ波長と受信波長, 統計誤差}
     \label{tab:6combies_3wlandstaterr}
     \begin{tabular}{ccccc}
         \hline
@@ -309,7 +312,7 @@ on波長及びoff波長における吸収断面積を示す.
 横軸は波長, 縦軸は吸収断面積である. 
 \begin{figure}
     \centering
-    \includegraphics{fig/sim_01_cond_2case.pdf}
+    \includegraphics{fig/sim_01_cond_2case}
     \caption{二つの受信波長構成（\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長, 
         \ce{O2}ストークス散乱波長と\ce{O2}アンチストークス散乱波長）における\ce{SO2}吸収断面積}
     \label{fig:cond_wl_combi}
@@ -330,7 +333,7 @@ on波長, off波長それぞれの吸収断面積は,
 on波長及びoff波長の信号強度の距離特性であり, 縦軸は受信光子数である. 
 \begin{figure}
     \centering
-    \includegraphics{fig/sim_01_power.pdf}
+    \includegraphics{fig/sim_01_power}
     \caption{
         二つの受信波長構成（\ce{N2}ストークス散乱波長と\ce{O2}ストークス散乱波長, 
         \ce{O2}ストークス散乱波長と\ce{O2}アンチストークス）における受信光子数の距離特性
@@ -346,6 +349,7 @@ on波長及びoff波長の信号強度の距離特性であり, 縦軸は受信�
 実線は\ce{O2}アンチストークス散乱信号（$\subrm{\lambda}{on}=\qty{318.0}{nm}$）, 
 点線は\ce{O2}ストークス散乱信号（$\subrm{\lambda}{off}=\qty{353.0}{nm}$）である. 
 
+\newpage
 高濃度の\ce{SO2}による吸収を受ける\qty{300}{m}以前の信号強度を比較すると, 
 \cref{equ:power}を解く際に
 アンチストークス散乱の信号強度は
@@ -412,7 +416,7 @@ on波長とoff波長における二酸化硫黄, オゾンの差分吸収断面�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\linewidth]{fig/sim_01_6combies_cntm.pdf}
+    \includegraphics{fig/sim_01_6combies_cntm}
     \caption{受信波長の構成による干渉誤差の比較}
     \label{fig:6combies_cntm}
 \end{figure}

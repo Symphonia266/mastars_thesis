@@ -27,7 +27,7 @@
 \cref{fig:gas_setting_SO2thick}に再設定した火山ガス濃度分布を示す.
 \begin{figure}
   \centering
-  \includegraphics{fig/sim_02_1_env.pdf}
+  \includegraphics{fig/sim_02_1_env}
   \caption{\ce{SO2}が豊富な火山環境を想定した濃度分布設定}
   \label{fig:gas_setting_SO2thick}
 \end{figure}
@@ -58,6 +58,7 @@ $\Delta R=\qty{25}{m}$では\qty{1.2}{ppm}まで低減している.
 $\Delta R=\qty{25}{m}$の場合には,
 設定値（点線）に対する急峻な濃度変化への追従性が低下している.
 
+\newpage
 \cref{equ:stat_err}より,
 統計誤差\staterr は距離分解能$\Delta R$と相反関係にあり,
 信号加算によって高濃度ガスが滞留する区間における
@@ -109,7 +110,7 @@ $\Delta R=\qty{25}{m}$の場合には,
 \begin{figure}
   \centering
   \includegraphics{fig/sim_02_2_env.pdf}
-  \caption{}
+  \caption{\ce{H2S}が高濃度の火山ガス分布設定}
   \label{fig:gas_setting_H2Sthick}
 \end{figure}
 
@@ -137,7 +138,10 @@ $\Delta R=\qty{25}{m}$の場合には,
 \begin{figure}
   \centering
   \includegraphics{fig/sim_02_2_contami_result.pdf}
-  \caption{}
+  \caption{
+    高濃度区間の一部について\ce{H2S}補正を行ったラマンDIALによる
+    \ce{SO2}測定シミュレーション
+  }
   \label{fig:corr_cntm}
 \end{figure}
 

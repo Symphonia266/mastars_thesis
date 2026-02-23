@@ -1,4 +1,8 @@
-\chapter[プルームモデルに従う火山ガス分布のシミュレーション]{プルームモデルに従う火山ガス分布のシミュレーション}
+\chapter[
+  プルームモデルに従う火山ガス分布のシミュレーション
+]{
+  プルームモデルに従う火山ガス分布のシミュレーション
+}
 \label{chapt4}
 
 本章では, 区間ごとに火山ガス濃度が一定と仮定した理想モデルを発展させ,
@@ -37,6 +41,7 @@ $u$は風速[ \unit{m/s}],
 $\sprdy, \sprdz$は水平方向・鉛直方向の拡散幅[ \unit{m}], 
 $H_e$は有効煙突高さ[ \unit{m}]である.
 
+\newpage
 拡散幅 $\sprdy, \sprdz$ の算出には Pasquill の大気安定度分類を用いた. 
 安定度はAからFの6段階に分けられ, 
 Aが最も不安定, Fは最も安定を意味する.
@@ -86,23 +91,19 @@ Pasquill-Giffordモデル（PG線図）により,
   \omega = a x^b \label{equ:exp_near}
 \end{align}
 
+\newpage
 \begin{figure}
   \centering
-  \begin{subfigure}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_field_spread_leteral.pdf}
-    \caption{水平方向拡散幅}
-    \label{fig:spread_lateral}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_field_spread_vertical.pdf}
-    \caption{鉛直方向拡散幅}
-    \label{fig:spread_vertical}
-  \end{subfigure}
-  \caption{Pasquill-Giffordモデルによるプルーム拡散幅}
-  \label{fig:pasquill_spread}
+  \includegraphics{fig/sim_04_field_spread_leteral}
+  \caption{Pasquill-Giffordによる水平方向拡散幅\sprdy の距離特性}
+  \label{fig:spread_lateral}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{fig/sim_04_field_spread_vertical}
+  \caption{Pasquill-Giffordによる鉛直方向拡散幅\sprdz の距離特性}
+  \label{fig:spread_vertical}
 \end{figure}
 
 \newpage
@@ -113,7 +114,7 @@ Pasquill-Giffordモデル（PG線図）により,
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\linewidth]{fig/plume_situation.png}
+  \includegraphics{fig/plume_situation.png}
   \caption{点煙源として配置した火口位置の模式図}
   \label{fig:plume_plain}
 \end{figure}
@@ -140,8 +141,14 @@ Pasquill-Giffordモデル（PG線図）により,
 \end{table}
 
 \newpage
-\cref{fig:gas_map_compare}に, 2種類の拡散条件における地表面火山ガス濃度分布を示す.
-縦軸は水平距離, 横軸はライダー視線に沿った水平距離, カラーバーは火山ガス濃度の係数であり, 
+\cref{fig:gas_map_high_diffuse}および
+\cref{fig:gas_map_low_diffuse}に, 
+2種類の拡散条件における火山ガス地表面分布を示す.
+横軸は$X$方向距離, 
+縦軸は$Y$方向距離であり, 
+ライダー視線に沿う水平方向を$X$, 
+それに対する直行方向を$Y$とした地表面座標系としている.
+また, カラーバーは火山ガス濃度の係数である. 
 縦軸及び横軸の単位は\unit{m}, カラーバーは無単位である.  
 どちらのグラフもカラーバーのスケールは0\sim \num{1e6}である. 
 \cref{fig:gas_map_high_diffuse}は拡散が強い大気条件であるため
@@ -151,51 +158,45 @@ Pasquill-Giffordモデル（PG線図）により,
 
 \begin{figure}
   \centering
-  \begin{subfigure}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_f1_env_image}
-    \caption{強拡散大気条件}
-    \label{fig:gas_map_high_diffuse}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_f2_env_image}
-    \caption{弱拡散大気条件}
-    \label{fig:gas_map_low_diffuse}
-  \end{subfigure}
-  \caption{大気拡散条件の違いによる地表面火山ガス分布}
-  \label{fig:gas_map_compare}
+  \includegraphics{fig/sim_04_f1_env_image}
+  \caption{強拡散大気条件下における火山ガス地表面分布}
+  \label{fig:gas_map_high_diffuse}
 \end{figure}
 
-\cref{fig:gas_setting_diffuse_compare}に, ライダー視線上の濃度分布設定を示す.
-縦軸は気体濃度, 縦軸はライダー視線距離であり, 
+\begin{figure}
+  \centering
+  \includegraphics{fig/sim_04_f2_env_image}
+  \caption{弱拡散大気条件下における火山ガス地表面分布}
+  \label{fig:gas_map_low_diffuse}
+\end{figure}
+
+\newpage
+\cref{fig:gas_setting_high_diffuse}および
+\cref{fig:gas_setting_low_diffuse}に, 
+ライダー視線上の濃度分布設定を示す.
+横軸はライダー視線距離, 
+縦軸は気体濃度であり, 
 それぞれ単位は\unit{ppm}, \unit{m}である. 
 \cref{fig:gas_setting_high_diffuse}では, 
-ライダー視線で手前側の火口直上を通過する\qty{50}{m}地点で強い火山ガスのピークが発生している. 
+ライダー視線で手前側の火口直上を通過する\qty{50}{m}地点で
+強い火山ガスのピークが発生している. 
 \cref{fig:gas_setting_low_diffuse}でも同様に, 
 \qty{50}{m}地点で強い火山ガスのピークが発生しているが, 
 拡散が弱いために\qty{100}{m}地点, \qty{150}{m}地点でもピークが比較的狭域に表れている. 
 
 \begin{figure}
   \centering
-  \begin{subfigure}{0.43\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_f1_env_LoS}
-    \caption{強拡散大気条件}
-    \label{fig:gas_setting_high_diffuse}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}{0.43\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{fig/sim_04_f2_env_LoS}
-    \caption{弱拡散大気条件}
-    \label{fig:gas_setting_low_diffuse}
-  \end{subfigure}
-  \caption{大気拡散条件の違いによるライダー視線上の濃度分布設定}
-  \label{fig:gas_setting_diffuse_compare}
+  \includegraphics{fig/sim_04_f1_env_LoS}
+  \caption{強拡散大気条件下における火山ガス濃度視線距離分布}
+  \label{fig:gas_setting_high_diffuse}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics{fig/sim_04_f2_env_LoS}
+  \caption{弱拡散大気条件下における火山ガス濃度視線距離分布}
+  \label{fig:gas_setting_low_diffuse}
+\end{figure}
 
 \newpage
 黒点線は\ce{SO2}濃度の設定値, 青実線はラマンDIALによる推定値である.
@@ -223,7 +224,6 @@ Pasquill-Giffordモデル（PG線図）により,
   \label{fig:plume_meas_low_diffuse}  
 \end{figure}
 
-\newpage
 \section{濃度変化の激しい火口のラマンDIALによる測定}
 本章の結論として, 
 火口サイズより小さい距離分解能 \qty{1.5}{m} を用いれば,
