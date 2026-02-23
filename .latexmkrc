@@ -32,15 +32,14 @@ $pdflatex .= ' -file-line-error';
 # 余分な再実行を抑制
 $max_repeat = 5;
 
-# ----------------------------
 # クリーン対象の拡張子
-# ----------------------------
 $clean_ext .= ' synctex.gz run.xml';
 
-# ----------------------------
 # biber の入出力ディレクトリ
-# ----------------------------
 $biber = "biber --input-directory=$out_dir --output-directory=$out_dir";
+
+# 変更監視モードで構築後処理
+$success_cmd = 'mv -f out/main.pdf out/XX_R7修士論文.pdf';
 
 # ============================
 # END

@@ -15,9 +15,9 @@
 
 \ref{chapt3}章までは, 区間ごとに火山ガス濃度が一定の理想モデルを用いたが,
 実際の火山ガスは大気中で拡散し, 風によって移流する.
-火口直上では濃度が急激に変化するため,
-ラマンDIALがその変化をどの程度追従できるか評価する必要がある.
-この目的のため, 大気中での移流拡散を考慮したプルームモデルを簡便に用い,
+その場合, 火口直上は局所的に高濃度分布となるため,
+ラマンDIALによる測定が, 急激な距離変化に対してどれだけ追従できるか評価する必要がある.
+そのためにまず, 大気中での移流拡散を考慮したプルームモデルを簡便に用い,
 火山ガス濃度の概算分布を生成する.
 
 プルームモデルは, 流体の移流拡散方程式の解析解であり,
@@ -36,19 +36,15 @@
 \end{align}
 
 \noindent
-ここで$Q$は煙源の放出強度[ \unit{kg/s}], 
-$u$は風速[ \unit{m/s}], 
-$\sprdy, \sprdz$は水平方向・鉛直方向の拡散幅[ \unit{m}], 
-$H_e$は有効煙突高さ[ \unit{m}]である.
+ここで$Q$は煙源の放出強度[\unit{kg/s}], 
+$u$は風速[\unit{m/s}], 
+$\sprdy, \sprdz$は水平方向・鉛直方向の拡散幅[\unit{m}], 
+$H_e$は有効煙突高さ[\unit{m}]である.
 
 \newpage
-拡散幅 $\sprdy, \sprdz$ の算出には Pasquill の大気安定度分類を用いた. 
+拡散幅 $\sprdy, \sprdz$ の算出には Pasquill の大気安定度分類を用いた\cite{pasquill}. 
 安定度はAからFの6段階に分けられ, 
 Aが最も不安定, Fは最も安定を意味する.
-不安定な大気では煙流が揺らぎやすく拡散幅が大きくなり,
-安定な大気では煙流は筋状に一定移流し, 拡散幅は小さくなる.
-大気の安定度は風速と日照条件に基づき分類され,
-風速が強く, 日照が弱いほど安定的である.
 \begin{itemize}
     \item \textbf{A}: extremely unstable
     \item \textbf{B}: moderately unstable
@@ -57,6 +53,10 @@ Aが最も不安定, Fは最も安定を意味する.
     \item \textbf{E}: slightly stable
     \item \textbf{F}: moderately stable
 \end{itemize}
+不安定な大気では煙流が揺らぎやすく拡散幅が大きくなり,
+安定な大気では煙流は筋状に一定移流し, 拡散幅は小さくなる.
+大気の安定度は風速と日照条件に基づき分類され,
+風速が強く, 日照が弱いほど安定的である.
 
 \begin{table}[h]
   \centering
@@ -81,17 +81,14 @@ Aが最も不安定, Fは最も安定を意味する.
   \end{tabular}
 \end{table}
 
+\newpage
 Pasquill-Giffordモデル（PG線図）により,
-安定分類ごとに風下方向$x$の関数として拡散幅が与えられる.
-元々のPG線図は$x = 10^2 \sim 10^6$ m の遠方条件を対象としていたため,
-本章では近傍領域 $x \lesssim 200$ m に拡張して用いた.
-具体的には, $x = 10^2 \sim 10^3$ m のサンプリングデータを log-log 領域で線形近似し,
-得られた関数をスムーズに接続することで近傍領域の拡散幅関数を生成した.
+安定分類ごとに風下方向$x$の関数（\cref{equ:exp_near}に示す指数形で近似可能）として
+拡散幅が与えられる\cite{pasquill,gifford}.
 \begin{align}
   \omega = a x^b \label{equ:exp_near}
 \end{align}
 
-\newpage
 \begin{figure}
   \centering
   \includegraphics{fig/sim_04_field_spread_leteral}
@@ -105,6 +102,13 @@ Pasquill-Giffordモデル（PG線図）により,
   \caption{Pasquill-Giffordによる鉛直方向拡散幅\sprdz の距離特性}
   \label{fig:spread_vertical}
 \end{figure}
+
+\noindent
+元々のPG線図は$x = 10^2 \sim 10^6$ m の遠方条件を対象としていたため,
+本章では近傍領域 $x \lesssim 200$ m に拡張して用いた.
+具体的には, $x = 10^2 \sim 10^3$ m のサンプリングデータを log-log 領域で線形近似し,
+得られた関数をスムーズに接続することで近傍領域の拡散幅関数を生成した.
+
 
 \newpage
 \section{距離分解能評価のための条件設定とシミュレーション}

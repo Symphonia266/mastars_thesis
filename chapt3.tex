@@ -105,8 +105,6 @@ $\Delta R=\qty{25}{m}$の場合には,
 再設定した火山ガス濃度分布を示す.
 高濃度区間の\ce{H2S}濃度を\qty{1000}{ppm}に変更している.
 システムパラメータは\ref{chapt2}章と同一である.
-
-\newpage
 \begin{figure}
   \centering
   \includegraphics{fig/sim_02_2_env.pdf}
@@ -114,12 +112,12 @@ $\Delta R=\qty{25}{m}$の場合には,
   \label{fig:gas_setting_H2Sthick}
 \end{figure}
 
+\newpage
 実観測を想定すると,
 火口位置は目視等により概ね把握可能であり,
 視線上で高濃度ガスが存在する区間を予測できる.
-ここでは, 視線距離\qty{500}{m}に火口が存在し,
-その前後\qty{100}{m}を高濃度区間と仮定した.
-
+そのため, 視線距離\qty{500}{m}に火口が存在し,
+その前後\qty{100}{m}を高濃度区間と推定した場合をシミュレーションした. 
 推定条件として, 次の5ケースを設定した.
 \ce{O3}濃度は観測領域全域で\qty{0.005}{ppm}とした.
 \begin{enumerate}[label=(\arabic*)]
@@ -130,11 +128,9 @@ $\Delta R=\qty{25}{m}$の場合には,
   \item 大気, \ce{O3}, \qty{800}{ppm}の\ce{H2S}を補正
 \end{enumerate}
 
-\noindent
 \cref{fig:corr_cntm}に各推定条件による
 干渉補正後の\ce{SO2}濃度推定結果を示す.
 
-\newpage
 \begin{figure}
   \centering
   \includegraphics{fig/sim_02_2_contami_result.pdf}
@@ -154,6 +150,8 @@ $\Delta R=\qty{25}{m}$の場合には,
 \qty{300}{m}から\qty{400}{m},
 および\qty{600}{m}から\qty{700}{m}では,
 高濃度の\ce{H2S}による干渉誤差が顕著である.
+
+\newpage
 干渉誤差の改善量を\cref{tab:res_cntm}に示す.
 \begin{table}
   \centering
@@ -186,7 +184,6 @@ $\Delta R=\qty{25}{m}$の場合には,
 干渉ガス濃度が比較的安定した火山で事前に妥当な推定値を設定する,
 あるいは他手法による補助的な濃度測定と併用する必要がある.
 
-\newpage
 \section{信号加算と干渉ガス補正による効果}
 本章の結論として, 
 ライダー信号の処理による統計誤差の抑制について, 

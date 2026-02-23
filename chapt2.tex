@@ -21,20 +21,65 @@ $\mathrm{j}=1,2$ は視線距離$R_1, R_2$に相当する.
 \end{align}
 
 \cref{equ:stat_err}より, 
-統計誤差\staterr は
-受信光子数$P$及び
-\ce{SO2}差分吸収断面積$\Delta\subrm{\sigma}{SO2}$に依存する. 
-$P$は\ce{SO2}吸収が強すぎる
-レーザ波長\subrm{\lambda}{ls}
-及びラマン散乱波長\subrm{\lambda}{ram}では減衰する一方で, 
-\ce{SO2}差分吸収断面積$\Delta\subrm{\sigma}{SO2}$は
-\ce{SO2}吸収が弱すぎる\subrm{\lambda}{on}（=\subrm{\lambda}{ram}）では小さくなるため, 
-これらの場合には\staterr が増大する.
+統計誤差\staterr はレーザ波長$\subrm{\lambda}{ls}$に依存し, 
+依存関係は\cref{fig:staterr_dep}に表せる. 
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[
+    mynode/.style={
+        draw, 
+        rectangle, 
+        rounded corners, 
+        minimum width=4cm, 
+        minimum height=1cm,
+        align=center
+    }
+]
+    % 各段のY座標（等間隔）
+    \def\first{0}      % 1段目：レーザ波長
+    \def\second{-2}     % 2段目：ラマン散乱波長
+    \def\third{-4}     % 3段目：PとΔσ
+    \def\fourth{-6}     % 4段目：統計誤差
+
+    % ノード定義
+    \node[mynode, fill=blue!15] (lambda_ls) at (0,\first) {レーザ波長 $\subrm{\lambda}{ls}$};
+    \node[mynode] (lambda_ram) at (0,\second) {ラマン散乱波長 $\subrm{\lambda}{ram}$};
+    \node[mynode] (P) at (-3,\third) {受信光子数 $P$};
+    \node[mynode] (dxs) at (3,\third) {\ce{SO2}差分吸収断面積 $\Delta\subrm{\sigma}{SO2}$};
+    \node[mynode, fill=red!20] (staterr) at (0,\fourth) {統計誤差 $\staterr$};
+
+    % 矢印
+    \draw[->, thick] (lambda_ram) -- (lambda_ls) node[midway, left] {依存};
+    \draw[->, thick] (P) -- (lambda_ram);
+    \draw[->, thick] (dxs) -- (lambda_ram);
+    \draw[->, thick] (staterr) -- (P);
+    \draw[->, thick] (staterr) -- (dxs);
+\end{tikzpicture}
+\caption{ラマンDIALにおけるレーザ波長$\subrm{\lambda}{ls}$と統計誤差 $\staterr$ の依存関係}
+\label{fig:staterr_dep}
+\end{figure}
+
+\noindent
+\ce{SO2}吸収が強すぎる
+ラマン散乱波長$\subrm{\lambda}{ram}$
+で$P$は小さくなる一方で, 
+\ce{SO2}吸収が弱すぎる
+on波長$\subrm{\lambda}{on}(=\subrm{\lambda}{ram})$
+で$\dxs$は小さくなり, 
+いずれも\staterr が増大するため, 
+それぞれのバランスが肝要となる. 
+すなわち, ラマンDIALには
+$P$と$\dxs$が十分大きく, 
+\staterr が最小となる$\subrm{\lambda}{ls}$が存在する. 
 
 \newpage
-二酸化硫黄, オゾン, 硫化水素の吸収スペクトルを\cref{fig:3gases_absorption}に示す. 
+二酸化硫黄（\ce{SO2}）, 
+オゾン（\ce{O3}）, 
+硫化水素（\ce{H2S}）の吸収スペクトルを\cref{fig:3gases_absorption}に示す. 
 縦軸は消散係数（= $\subrm{n}{gas}(R)\times\subrm{\sigma}{gas}(\lambda)$）である. 
-吸収断面積のデータセットはThe MPI-Mains UV/VIS Spectral Atlasより取得し, 吸収スペクトルは各気体の濃度による数密度と吸収断面積を乗じた消散係数である. 
+吸収断面積のデータセットはThe MPI-Mains UV/VIS Spectral Atlasより取得し, 
+吸収スペクトルは各気体の濃度による数密度と吸収断面積を乗じた消散係数である. 
 \cite{
 MPI_Mainz_UV_VIS_Atlas2013,
 SO2_dataset_Hermans2009_I,
@@ -45,7 +90,7 @@ H2S_dataset_Grosch2015,
 
 \begin{figure}
     \centering
-    \includegraphics{fig/sim_01_3gases_absorptance.png}
+    \includegraphics{fig/sim_01_3gases_absorp}
     \caption{\ce{SO2}, \ce{O3}, \ce{H2S}の吸収スペクトル}
     \label{fig:3gases_absorption}
 \end{figure}
@@ -54,10 +99,14 @@ H2S_dataset_Grosch2015,
 300 nm 付近の波長では吸収が櫛状に増減する特徴を持つ. 
 二酸化硫黄測定にラマン DIALを適応する場合, 
 \staterr は, これらの吸収スペクトルに依存する. 
-\cref{equ:stat_err}の $P$ と $\Delta\subrm{\sigma}{SO2}$はon波長とoff波長に依存
+改めて, \cref{equ:stat_err}の 
+$P$ と $\Delta\subrm{\sigma}{SO2}$はon波長とoff波長に依存し, 
 on波長及びoff波長に相当するラマン散乱波長はレーザ波長に依存する. 
-したがって, 受信強度と差分吸収が十分に確保できるレーザ波長の最適点が存在する.
+したがって, \ce{SO2}測定のためのラマンDIALは, 
+火山ガスの吸収スペクトル形状に合わせて,
+受信強度と差分吸収が十分に確保できるレーザ波長の最適点が存在する.
 
+\newpage
 そして, 受信するon波長とoff波長の構成にも注意する必要がある. 
 ラマン散乱におけるレーザ波長\subrm{\lambda}{ls}と
 ラマン散乱波長\subrm{\lambda}{ram}, 
@@ -71,28 +120,32 @@ on波長及びoff波長に相当するラマン散乱波長はレーザ波長に
 \end{figure}
 
 \noindent
-酸素分子\ce{O2}によるラマン散乱波長は
-ストークス散乱波長$\subrm{\lambda}{O2}^{S}$と
-アンチストークス散乱波長$\subrm{\lambda}{O2}^{AS}$の2種類存在し, 
-窒素分子\ce{N2}についても同様である. 
-1つのレーザ波長に対して生じる4つのラマン散乱波長から取りうる
-6つの受信波長構成それぞれで\staterr は異なる. 
-レーザ波長に従うラマン散乱波長によって統計誤差が変わることから, 
-統計誤差的に最適なレーザ波長と同様に, 
-6つの中に最適な受信波長が存在する. 
+酸素分子\ce{O2}によるラマン散乱波長には,
+ストークス散乱波長$\subrm{\lambda}{O2}$と
+アンチストークス散乱波長$\subrm{\lambda}{O2}'$の2種類が存在し,
+窒素分子\ce{N2}についても同様である.
+そのため,1つのレーザ波長からラマンDIALの受信波長を構成する場合, 
+\ce{O2} および \ce{N2} のストークス・アンチストークス散乱を含む
+計 4 つのラマン散乱波長から on 波長および off 波長を選択可能であり,
+その組合せは 6 通りとなる.
 
-ラマン散乱光の強度はレイリー散乱やミー散乱と比べて非常に微弱であり, 
-それに加えてアンチストークス散乱もストークス散乱と比較して弱いため, 
-一般的にラマンDIALをはじめとしたラマン散乱を利用するシステムでは
-アンチストークス散乱波長は利用されにくい.
-先行研究では, Nd:YAGの第4高調波である266 nmに対する
-酸素ストークス散乱波長と窒素ストークス散乱波長による
-ラマンDIALについて検討した\cite{Previous_research}. 
-しかし, \cref{fig:3gases_absorption}に示したように, 
-\ce{SO2}の吸収は\qty{240}{nm}付近や\qty{320}{nm}以降で
-吸収が弱まるため, レーザ波長とラマン散乱波長の関係によっては
-アンチストークス散乱波長の利用が優位となる可能性があるため, 
-検証する必要がある. 
+一般に,アンチストークス散乱はストークス散乱と比較して信号強度が弱く,
+ラマンDIALをはじめとしたラマン散乱を利用する測定系では, 
+アンチストークス散乱波長は実用上利用されにくい.
+そのため,先行研究では Nd:YAG レーザの第 4 高調波である \qty{266}{nm} に対し,
+酸素および窒素のストークス散乱波長のみを用いた
+ラマンDIAL測定系について検討した\cite{Previous_research}.
+
+しかし, アンチストークス散乱波長が受信波長として利用可能であるとすれば,
+従来法の受信波長構成に加えて,新たに 5 つの受信波長構成が検討対象となる.
+これら 6 つの受信波長構成は, 
+同じレーザ波長でも on 波長および off 波長の波長配置がそれぞれ異なるため,
+それに依存する統計誤差 $\staterr$ も異なる.
+したがって, その中でも統計誤差が小さい最適な受信波長構成が存在する.
+
+本章では, 6つの受信波長構成で統計誤差を計算し, 比較した結果を示す.
+6つの受信波長構成それぞれで最適レーザ波長のときの統計誤差を比較し, 
+最も小さいものを最適な受信波長構成とする. 
 
 \newpage
 \section{シミュレーション条件}
