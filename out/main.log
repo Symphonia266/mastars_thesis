@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.30)  20 FEB 2026 15:17
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.29)  24 FEB 2026 00:30
  restricted system commands enabled.
  file:line:error style messages enabled.
-**c:/Users/symph/workspace/mastars_thesis/main.tex
-(c:/Users/symph/workspace/mastars_thesis/main.tex
+**c:/Users/symph/workspace/2026_thesis/main.tex
+(c:/Users/symph/workspace/2026_thesis/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
@@ -2207,45 +2207,37 @@ File: fig/raman_stokes_Astokes.png Graphic file (type png)
 Package luatex.def Info: fig/raman_stokes_Astokes.png  used on input line 68.
 (luatex.def)             Requested size: 279.8813pt x 169.50558pt.
  [7<./fig/sim_01_3gases_absorptance.png><./fig/raman_stokes_Astokes.png>] [8]
-<fig/sim_01_env_LoS.pdf, id=348, 340.24678pt x 196.85483pt>
+<fig/sim_01_env_LoS.pdf, id=348, 281.9791pt x 209.68275pt>
 File: fig/sim_01_env_LoS.pdf Graphic file (type pdf)
 <use fig/sim_01_env_LoS.pdf>
 Package luatex.def Info: fig/sim_01_env_LoS.pdf  used on input line 159.
-(luatex.def)             Requested size: 340.24594pt x 196.85434pt.
+(luatex.def)             Requested size: 281.97841pt x 209.68222pt.
  [9] [10<./fig/sim_01_env_LoS.pdf>]
-<fig/sim_01_6combies_stat.pdf, id=409, 462.71808pt x 354.25475pt>
+<fig/sim_01_6combies_stat.pdf, id=409, 282.04309pt x 209.71474pt>
 File: fig/sim_01_6combies_stat.pdf Graphic file (type pdf)
 <use fig/sim_01_6combies_stat.pdf>
 Package luatex.def Info: fig/sim_01_6combies_stat.pdf  used on input line 210.
-(luatex.def)             Requested size: 462.71695pt x 354.25388pt.
-
-Overfull \hbox (22.71684pt too wide) in paragraph at lines 210--211
- [][] 
- []
-
-[11<./fig/sim_01_6combies_stat.pdf>]
-<fig/sim_01_cond_2case.pdf, id=458, 462.8492pt x 343.23341pt>
+(luatex.def)             Requested size: 282.04239pt x 209.7142pt.
+ [11<./fig/sim_01_6combies_stat.pdf>]
+<fig/sim_01_cond_2case.pdf, id=458, 279.07727pt x 196.80191pt>
 File: fig/sim_01_cond_2case.pdf Graphic file (type pdf)
 <use fig/sim_01_cond_2case.pdf>
 Package luatex.def Info: fig/sim_01_cond_2case.pdf  used on input line 315.
-(luatex.def)             Requested size: 462.84805pt x 343.23256pt.
-
-Overfull \hbox (22.84795pt too wide) in paragraph at lines 315--317
- [][] 
- []
+(luatex.def)             Requested size: 279.07658pt x 196.80142pt.
 
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-<fig/sim_01_power.pdf, id=460, 284.27773pt x 137.44475pt>
+[12
+Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
+<./fig/sim_01_cond_2case.pdf>]
+<fig/sim_01_power.pdf, id=517, 284.27773pt x 209.71474pt>
 File: fig/sim_01_power.pdf Graphic file (type pdf)
 <use fig/sim_01_power.pdf>
 Package luatex.def Info: fig/sim_01_power.pdf  used on input line 336.
-(luatex.def)             Requested size: 284.27701pt x 137.44441pt.
-[12
-Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-] [13<./fig/sim_01_cond_2case.pdf><./fig/sim_01_power.pdf>] [14] [15]
+(luatex.def)             Requested size: 284.27701pt x 209.7142pt.
+ [13<./fig/sim_01_power.pdf>] [14]
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
@@ -2254,65 +2246,55 @@ Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:m
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
-[16
+[15
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no 𝛥 (U+1D6E5) in font "name:Latin Modern Roman:mode=node;script=latn;language=dflt;+tlig;"!
 ]
-<fig/sim_01_6combies_cntm.pdf, id=601, 462.6541pt x 354.25475pt>
+<fig/sim_01_6combies_cntm.pdf, id=598, 281.9791pt x 209.71474pt>
 File: fig/sim_01_6combies_cntm.pdf Graphic file (type pdf)
 <use fig/sim_01_6combies_cntm.pdf>
 Package luatex.def Info: fig/sim_01_6combies_cntm.pdf  used on input line 419.
-(luatex.def)             Requested size: 462.65295pt x 354.25388pt.
-
-Overfull \hbox (22.65285pt too wide) in paragraph at lines 419--420
- [][] 
- []
-
-[17<./fig/sim_01_6combies_cntm.pdf>] [18]) [19]
+(luatex.def)             Requested size: 281.97841pt x 209.7142pt.
+ [16<./fig/sim_01_6combies_cntm.pdf>]) [17]
 \openout2 = chapt3.aux
  (./chapt3.tex
-<fig/sim_02_1_env.pdf, id=658, 305.68716pt x 185.6958pt>
+<fig/sim_02_1_env.pdf, id=651, 260.50638pt x 195.71243pt>
 File: fig/sim_02_1_env.pdf Graphic file (type pdf)
 <use fig/sim_02_1_env.pdf>
 Package luatex.def Info: fig/sim_02_1_env.pdf  used on input line 30.
-(luatex.def)             Requested size: 305.6864pt x 185.69533pt.
- [20
+(luatex.def)             Requested size: 260.50572pt x 195.71194pt.
+ [18
 
 
 
 
 <./fig/sim_02_1_env.pdf>]
-<fig/sim_02_1_dR-5mto25m.pdf, id=704, 437.55408pt x 223.29549pt>
+<fig/sim_02_1_dR-5mto25m.pdf, id=697, 292.50432pt x 208.97197pt>
 File: fig/sim_02_1_dR-5mto25m.pdf Graphic file (type pdf)
 <use fig/sim_02_1_dR-5mto25m.pdf>
 Package luatex.def Info: fig/sim_02_1_dR-5mto25m.pdf  used on input line 46.
-(luatex.def)             Requested size: 437.55301pt x 223.29492pt.
- [21<./fig/sim_02_1_dR-5mto25m.pdf>]
-<fig/sim_02_1_power.pdf, id=772, 435.52202pt x 219.9028pt>
+(luatex.def)             Requested size: 292.5036pt x 208.97144pt.
+ [19<./fig/sim_02_1_dR-5mto25m.pdf>]
+<fig/sim_02_1_power.pdf, id=769, 282.38968pt x 209.71474pt>
 File: fig/sim_02_1_power.pdf Graphic file (type pdf)
 <use fig/sim_02_1_power.pdf>
 Package luatex.def Info: fig/sim_02_1_power.pdf  used on input line 69.
-(luatex.def)             Requested size: 435.52095pt x 219.90225pt.
- [22<./fig/sim_02_1_power.pdf>] [23]
-<fig/sim_02_2_env.pdf, id=837, 340.24678pt x 196.81656pt>
+(luatex.def)             Requested size: 282.38898pt x 209.7142pt.
+ [20<./fig/sim_02_1_power.pdf>] [21]
+<fig/sim_02_2_env.pdf, id=843, 282.0092pt x 209.70471pt>
 File: fig/sim_02_2_env.pdf Graphic file (type pdf)
 <use fig/sim_02_2_env.pdf>
 Package luatex.def Info: fig/sim_02_2_env.pdf  used on input line 112.
-(luatex.def)             Requested size: 340.24594pt x 196.81606pt.
- [24<./fig/sim_02_2_env.pdf>]
-<fig/sim_02_2_contami_result.pdf, id=885, 458.71802pt x 307.25917pt>
+(luatex.def)             Requested size: 282.0085pt x 209.7042pt.
+ [22<./fig/sim_02_2_env.pdf>]
+<fig/sim_02_2_contami_result.pdf, id=891, 334.32327pt x 195.96336pt>
 File: fig/sim_02_2_contami_result.pdf Graphic file (type pdf)
 <use fig/sim_02_2_contami_result.pdf>
 Package luatex.def Info: fig/sim_02_2_contami_result.pdf  used on input line 140.
-(luatex.def)             Requested size: 458.7169pt x 307.2584pt.
-
-Overfull \hbox (18.7168pt too wide) in paragraph at lines 140--144
- [][] 
- []
-
-[25<./fig/sim_02_2_contami_result.pdf>] [26]) [27]
+(luatex.def)             Requested size: 334.32245pt x 195.96286pt.
+ [23<./fig/sim_02_2_contami_result.pdf>]) [24]
 \openout2 = chapt4.aux
- (./chapt4.tex [28
+ (./chapt4.tex [25
 
 
 
@@ -2322,86 +2304,76 @@ LaTeX Font Info:    Font shape `JT3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 11.0pt on input line 53.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiMincho-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 11.0pt on input line 53.
- [29]
-<fig/sim_04_field_spread_leteral.pdf, id=966, 207.74675pt x 209.97885pt>
+ [26]
+<fig/sim_04_field_spread_leteral.pdf, id=967, 347.62987pt x 206.1185pt>
 File: fig/sim_04_field_spread_leteral.pdf Graphic file (type pdf)
 <use fig/sim_04_field_spread_leteral.pdf>
 Package luatex.def Info: fig/sim_04_field_spread_leteral.pdf  used on input line 97.
-(luatex.def)             Requested size: 207.74623pt x 209.97833pt.
-<fig/sim_04_field_spread_vertical.pdf, id=967, 207.74675pt x 209.97885pt>
+(luatex.def)             Requested size: 347.62901pt x 206.11798pt.
+<fig/sim_04_field_spread_vertical.pdf, id=968, 347.62987pt x 206.1185pt>
 File: fig/sim_04_field_spread_vertical.pdf Graphic file (type pdf)
 <use fig/sim_04_field_spread_vertical.pdf>
 Package luatex.def Info: fig/sim_04_field_spread_vertical.pdf  used on input line 104.
-(luatex.def)             Requested size: 207.74623pt x 209.97833pt.
- [30<./fig/sim_04_field_spread_leteral.pdf><./fig/sim_04_field_spread_vertical.pdf>]
-<fig/plume_situation.png, id=1067, 249.222pt x 140.379pt>
+(luatex.def)             Requested size: 347.62901pt x 206.11798pt.
+ [27<./fig/sim_04_field_spread_leteral.pdf><./fig/sim_04_field_spread_vertical.pdf>]
+<fig/plume_situation.png, id=1069, 249.222pt x 140.379pt>
 File: fig/plume_situation.png Graphic file (type png)
 <use fig/plume_situation.png>
 Package luatex.def Info: fig/plume_situation.png  used on input line 117.
 (luatex.def)             Requested size: 249.22137pt x 140.37865pt.
- [31<./fig/plume_situation.png>]
-<fig/sim_04_f1_env_image.pdf, id=1080, 263.22876pt x 229.88585pt>
+ [28<./fig/plume_situation.png>]
+<fig/sim_04_f1_env_image.pdf, id=1082, 242.13043pt x 209.65828pt>
 File: fig/sim_04_f1_env_image.pdf Graphic file (type pdf)
 <use fig/sim_04_f1_env_image.pdf>
 Package luatex.def Info: fig/sim_04_f1_env_image.pdf  used on input line 161.
-(luatex.def)             Requested size: 263.2281pt x 229.88527pt.
-<fig/sim_04_f2_env_image.pdf, id=1081, 263.22876pt x 229.88585pt>
+(luatex.def)             Requested size: 242.12984pt x 209.65775pt.
+<fig/sim_04_f2_env_image.pdf, id=1083, 242.13043pt x 209.65828pt>
 File: fig/sim_04_f2_env_image.pdf Graphic file (type pdf)
 <use fig/sim_04_f2_env_image.pdf>
 Package luatex.def Info: fig/sim_04_f2_env_image.pdf  used on input line 168.
-(luatex.def)             Requested size: 263.2281pt x 229.88527pt.
- [32<./fig/sim_04_f1_env_image.pdf>]
-<fig/sim_04_f1_env_LoS.pdf, id=1133, 233.17812pt x 227.64586pt>
+(luatex.def)             Requested size: 242.12984pt x 209.65775pt.
+ [29<./fig/sim_04_f1_env_image.pdf><./fig/sim_04_f2_env_image.pdf>]
+<fig/sim_04_f1_env_LoS.pdf, id=1177, 281.99666pt x 211.4895pt>
 File: fig/sim_04_f1_env_LoS.pdf Graphic file (type pdf)
 <use fig/sim_04_f1_env_LoS.pdf>
 Package luatex.def Info: fig/sim_04_f1_env_LoS.pdf  used on input line 189.
-(luatex.def)             Requested size: 233.17754pt x 227.6453pt.
-<fig/sim_04_f2_env_LoS.pdf, id=1134, 235.73537pt x 227.64586pt>
+(luatex.def)             Requested size: 281.99596pt x 211.48898pt.
+<fig/sim_04_f2_env_LoS.pdf, id=1178, 287.53737pt x 211.4895pt>
 File: fig/sim_04_f2_env_LoS.pdf Graphic file (type pdf)
 <use fig/sim_04_f2_env_LoS.pdf>
 Package luatex.def Info: fig/sim_04_f2_env_LoS.pdf  used on input line 196.
-(luatex.def)             Requested size: 235.73477pt x 227.6453pt.
- [33<./fig/sim_04_f2_env_image.pdf><./fig/sim_04_f1_env_LoS.pdf>]
-<fig/sim_04_f1_plume_meas.pdf, id=1217, 462.32474pt x 354.25475pt>
+(luatex.def)             Requested size: 287.53667pt x 211.48898pt.
+ [30<./fig/sim_04_f1_env_LoS.pdf><./fig/sim_04_f2_env_LoS.pdf>]
+<fig/sim_04_f1_plume_meas.pdf, id=1257, 261.2435pt x 195.96336pt>
 File: fig/sim_04_f1_plume_meas.pdf Graphic file (type pdf)
 <use fig/sim_04_f1_plume_meas.pdf>
 Package luatex.def Info: fig/sim_04_f1_plume_meas.pdf  used on input line 215.
-(luatex.def)             Requested size: 462.32361pt x 354.25388pt.
-
-Overfull \hbox (22.3235pt too wide) in paragraph at lines 215--216
- [][] 
- []
-
-<fig/sim_04_f2_plume_meas.pdf, id=1218, 462.32474pt x 354.25475pt>
+(luatex.def)             Requested size: 261.24286pt x 195.96286pt.
+<fig/sim_04_f2_plume_meas.pdf, id=1258, 261.2435pt x 195.96336pt>
 File: fig/sim_04_f2_plume_meas.pdf Graphic file (type pdf)
 <use fig/sim_04_f2_plume_meas.pdf>
 Package luatex.def Info: fig/sim_04_f2_plume_meas.pdf  used on input line 222.
-(luatex.def)             Requested size: 462.32361pt x 354.25388pt.
-
-Overfull \hbox (22.3235pt too wide) in paragraph at lines 222--223
- [][] 
- []
-
-) [34<./fig/sim_04_f2_env_LoS.pdf>] [35<./fig/sim_04_f1_plume_meas.pdf>] [36<./fig/sim_04_f2_plume_meas.pdf>]
+(luatex.def)             Requested size: 261.24286pt x 195.96286pt.
+) [31<./fig/sim_04_f1_plume_meas.pdf><./fig/sim_04_f2_plume_meas.pdf>] [32]
 \openout2 = chapt5.aux
- (./chapt5.tex [37
+ (./chapt5.tex [33
 
 
 
 
 ]
-<fig/DIAL.png, id=1374, 290.832pt x 241.338pt>
+<fig/DIAL.png, id=1371, 290.832pt x 241.338pt>
 File: fig/DIAL.png Graphic file (type png)
 <use fig/DIAL.png>
 Package luatex.def Info: fig/DIAL.png  used on input line 30.
 (luatex.def)             Requested size: 307.99872pt x 255.5961pt.
- [38<./fig/DIAL.png>]
-<fig/filter_spec.pdf, id=1382, 433.62pt x 216.81pt>
+ [34<./fig/DIAL.png>]
+<fig/filter_spec.pdf, id=1379, 433.62pt x 216.81pt>
 File: fig/filter_spec.pdf Graphic file (type pdf)
 <use fig/filter_spec.pdf>
 Package luatex.def Info: fig/filter_spec.pdf  used on input line 52.
 (luatex.def)             Requested size: 433.61894pt x 216.80946pt.
- [39<./fig/filter_spec.pdf>]
+ [35<./fig/filter_spec.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\mhchem@cee' on input line 82.
@@ -2417,22 +2389,22 @@ LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 7.7pt on input line 82.
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 7.7pt on input line 82.
-[40]
-<fig/filter_Amplitude.pdf, id=1443, 433.62pt x 216.81pt>
+[36]
+<fig/filter_Amplitude.pdf, id=1440, 433.62pt x 216.81pt>
 File: fig/filter_Amplitude.pdf Graphic file (type pdf)
 <use fig/filter_Amplitude.pdf>
 Package luatex.def Info: fig/filter_Amplitude.pdf  used on input line 146.
 (luatex.def)             Requested size: 433.61894pt x 216.80946pt.
-) [41<./fig/filter_Amplitude.pdf>] [42]
+) [37<./fig/filter_Amplitude.pdf>] [38]
 \openout2 = conclusion.aux
- (./conclusion.tex) [43
+ (./conclusion.tex) [39
 
 
 
 
 ]
 \openout2 = thanks.aux
- (./thanks.tex) [44
+ (./thanks.tex) [40
 
 
 
@@ -2474,14 +2446,14 @@ LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' u
 (Font)              No change on input line 279.
 LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiMincho-Regular.otf(0)/m/it' undefined
 (Font)              No change on input line 279.
- [45
+ [41
 
 
 
 ]
 LaTeX Font Info:    Kanji font shape `JY3/HaranoAjiGothic-Regular.otf(0)/m/it' undefined
 (Font)              No change on input line 279.
- [46] (./out/main.aux (./out/title.aux) (./out/chapt1.aux) (./out/chapt2.aux) (./out/chapt3.aux) (./out/chapt4.aux) (./out/chapt5.aux) (./out/conclusion.aux) (./out/thanks.aux))
+ [42] (./out/main.aux (./out/title.aux) (./out/chapt1.aux) (./out/chapt2.aux) (./out/chapt3.aux) (./out/chapt4.aux) (./out/chapt5.aux) (./out/conclusion.aux) (./out/thanks.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2498,19 +2470,19 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 42912 strings out of 476076
- 244637,4101490 words of node,token memory allocated
- 2011 words of node memory still in use:
-   12 hlist, 2 vlist, 6 rule, 4 glue, 4 kern, 2 glyph, 557 attribute, 74 glue_spec, 63 attribute_list, 1 write, 15 user_defined, 5 pdf_action nodes
-   avail lists: 1:28,2:65400,3:704,4:747,5:294,6:101,7:6265,8:73,9:3062,10:40,11:264
+ 42908 strings out of 476076
+ 195709,4101490 words of node,token memory allocated
+ 2035 words of node memory still in use:
+   12 hlist, 2 vlist, 6 rule, 4 glue, 4 kern, 2 glyph, 568 attribute, 74 glue_spec, 64 attribute_list, 1 write, 15 user_defined, 5 pdf_action nodes
+   avail lists: 1:27,2:46456,3:704,4:747,5:294,6:101,7:4902,8:73,9:2205,10:40,11:264
  64309 multiletter control sequences out of 65536+600000
- 197 fonts using 201483047 bytes
- 119i,18n,127p,2055b,2096s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 197 fonts using 201482943 bytes
+ 119i,18n,127p,2052b,2094s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on main.pdf (50 pages, 2006298 bytes).
+Output written on main.pdf (46 pages, 2098950 bytes).
 
-PDF statistics: 1657 PDF objects out of 1728 (max. 8388607)
- 835 compressed objects within 9 object streams
- 174 named destinations out of 1000 (max. 131072)
+PDF statistics: 1655 PDF objects out of 1728 (max. 8388607)
+ 832 compressed objects within 9 object streams
+ 170 named destinations out of 1000 (max. 131072)
  185 words of extra memory for PDF output out of 10000 (max. 100000000)
 
