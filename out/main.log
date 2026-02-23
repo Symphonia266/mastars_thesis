@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.29)  24 FEB 2026 00:30
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2026.1.29)  24 FEB 2026 01:06
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/symph/workspace/2026_thesis/main.tex
@@ -2368,12 +2368,12 @@ File: fig/DIAL.png Graphic file (type png)
 Package luatex.def Info: fig/DIAL.png  used on input line 30.
 (luatex.def)             Requested size: 307.99872pt x 255.5961pt.
  [34<./fig/DIAL.png>]
-<fig/filter_spec.pdf, id=1379, 433.62pt x 216.81pt>
-File: fig/filter_spec.pdf Graphic file (type pdf)
-<use fig/filter_spec.pdf>
-Package luatex.def Info: fig/filter_spec.pdf  used on input line 52.
-(luatex.def)             Requested size: 433.61894pt x 216.80946pt.
- [35<./fig/filter_spec.pdf>]
+<fig/sim_05_Filter_Spec.pdf, id=1379, 359.27689pt x 199.42944pt>
+File: fig/sim_05_Filter_Spec.pdf Graphic file (type pdf)
+<use fig/sim_05_Filter_Spec.pdf>
+Package luatex.def Info: fig/sim_05_Filter_Spec.pdf  used on input line 52.
+(luatex.def)             Requested size: 359.276pt x 199.42894pt.
+ [35<./fig/sim_05_Filter_Spec.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\mhchem@cee' on input line 82.
@@ -2390,12 +2390,12 @@ LaTeX Font Info:    Font shape `JT3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
 LaTeX Font Info:    Font shape `JY3/HaranoAjiGothic-Regular.otf(0)/b/n' will be
 (Font)              scaled to size 7.7pt on input line 82.
 [36]
-<fig/filter_Amplitude.pdf, id=1440, 433.62pt x 216.81pt>
-File: fig/filter_Amplitude.pdf Graphic file (type pdf)
-<use fig/filter_Amplitude.pdf>
-Package luatex.def Info: fig/filter_Amplitude.pdf  used on input line 146.
-(luatex.def)             Requested size: 433.61894pt x 216.80946pt.
-) [37<./fig/filter_Amplitude.pdf>] [38]
+<fig/sim_05_Amplitude.pdf, id=1440, 347.32599pt x 199.42944pt>
+File: fig/sim_05_Amplitude.pdf Graphic file (type pdf)
+<use fig/sim_05_Amplitude.pdf>
+Package luatex.def Info: fig/sim_05_Amplitude.pdf  used on input line 146.
+(luatex.def)             Requested size: 347.32513pt x 199.42894pt.
+) [37<./fig/sim_05_Amplitude.pdf>] [38]
 \openout2 = conclusion.aux
  (./conclusion.tex) [39
 
@@ -2474,12 +2474,12 @@ Here is how much of LuaTeX's memory you used:
  195709,4101490 words of node,token memory allocated
  2035 words of node memory still in use:
    12 hlist, 2 vlist, 6 rule, 4 glue, 4 kern, 2 glyph, 568 attribute, 74 glue_spec, 64 attribute_list, 1 write, 15 user_defined, 5 pdf_action nodes
-   avail lists: 1:27,2:46456,3:704,4:747,5:294,6:101,7:4902,8:73,9:2205,10:40,11:264
+   avail lists: 1:27,2:46457,3:704,4:747,5:294,6:101,7:4902,8:73,9:2205,10:41,11:264
  64309 multiletter control sequences out of 65536+600000
  197 fonts using 201482943 bytes
  119i,18n,127p,2052b,2094s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf><c:/texlive/2025/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on main.pdf (46 pages, 2098950 bytes).
+Output written on main.pdf (46 pages, 2102402 bytes).
 
 PDF statistics: 1655 PDF objects out of 1728 (max. 8388607)
  832 compressed objects within 9 object streams
